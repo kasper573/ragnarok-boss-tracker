@@ -8,6 +8,7 @@ import { BossSelector } from "./BossSelector";
 import { bosses } from "./bossesFixture";
 import { useListState } from "./useListState";
 import { Hunt } from "./Hunt";
+import { EmptyState } from "./EmptyState";
 
 function App() {
   const [hunts, addHunt] = useListState<Hunt>();
@@ -25,7 +26,7 @@ function App() {
             });
           }}
         />
-        <HuntTimeline hunts={hunts} />
+        {hunts.length > 0 ? <HuntTimeline hunts={hunts} /> : <EmptyState />}
       </Background>
     </ThemeProvider>
   );
