@@ -10,11 +10,22 @@ import MuiTimelineItem from "@material-ui/lab/TimelineItem";
 import { SpawnTime } from "./SpawnTime";
 import styled from "styled-components";
 import Paper from "@material-ui/core/Paper";
+import { Hunt } from "./Hunt";
 
-export const TimelineItem = () => (
+export type HuntTimelineItemProps = Hunt;
+
+export const HuntTimelineItem: React.FC<HuntTimelineItemProps> = ({
+  boss,
+  map,
+  killTime,
+}) => (
   <MuiTimelineItem>
     <TimelineOppositeContent>
-      <SpawnTime />
+      <SpawnTime
+        killTime={killTime}
+        spawnTime={boss.spawnTime}
+        spawnWindow={boss.spawnWindow}
+      />
     </TimelineOppositeContent>
     <TimelineSeparator>
       <TimelineDot>
@@ -25,9 +36,12 @@ export const TimelineItem = () => (
     <TimelineContent>
       <TimelinePaper>
         <Typography variant="h6" component="h1">
-          Tao Gunka
+          {boss.name}
         </Typography>
-        <Typography>Every 300~310 minutes on beach_dun</Typography>
+        <Typography>
+          Every {boss.spawnTime}~{boss.spawnTime + boss.spawnWindow} minutes on{" "}
+          {map}
+        </Typography>
       </TimelinePaper>
     </TimelineContent>
   </MuiTimelineItem>

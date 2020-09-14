@@ -1,21 +1,31 @@
 import React from "react";
-import { Timeline } from "./Timeline";
+import { HuntTimeline } from "./HuntTimeline";
 import { ThemeProvider } from "@material-ui/core/styles";
 import { theme } from "./theme";
 import { CssBaseline } from "@material-ui/core";
 import { Background } from "./Background";
 import { BossSelector } from "./BossSelector";
-import { Boss } from "./Boss";
-
-const bosses: Boss[] = [{ name: "lol" }, { name: "foo" }, { name: "bar" }];
+import { bosses } from "./bossesFixture";
+import { useListState } from "./useListState";
+import { Hunt } from "./Hunt";
 
 function App() {
+  const [hunts, addHunt] = useListState<Hunt>();
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Background>
-        <BossSelector bosses={bosses} onSelect={(boss) => console.log(boss)} />
-        <Timeline />
+        <BossSelector
+          bosses={bosses}
+          onSelect={(boss) => {
+            addHunt({
+              boss,
+              map: boss.map,
+              killTime: new Date(),
+            });
+          }}
+        />
+        <HuntTimeline hunts={hunts} />
       </Background>
     </ThemeProvider>
   );

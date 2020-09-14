@@ -5,7 +5,7 @@ import { Boss } from "./Boss";
 
 export type BossSelectorProps = {
   bosses: Boss[];
-  onSelect: (boss: Boss) => unknown;
+  onSelect: (boss: Boss) => void;
 };
 
 /**
