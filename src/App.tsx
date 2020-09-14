@@ -9,28 +9,38 @@ import { bosses } from "./bossesFixture";
 import { useListState } from "./useListState";
 import { Hunt } from "./Hunt";
 import { EmptyState } from "./EmptyState";
+import { createHunt } from "./createHunt";
+import { Boss } from "./Boss";
 
 function App() {
-  const [hunts, addHunt] = useListState<Hunt>();
-  const notHuntedBosses = bosses.filter((boss) => !hunts.find((hunt) => hunt.boss === boss));
+  const [hunts, addHunt, removeHunt] = useListState<Hunt>(
+    bosses.map(createHunt)
+  );
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Background>
         <BossSelector
-          bosses={notHuntedBosses}
-          onSelect={(boss) => {
-            addHunt({
-              boss,
-              map: boss.map,
-              killTime: new Date(),
-            });
-          }}
+          bosses={notHuntedBosses(bosses, hunts)}
+          onSelect={(boss) => addHunt(createHunt(boss))}
         />
-        {hunts.length > 0 ? <HuntTimeline hunts={hunts} /> : <EmptyState />}
+        {hunts.length > 0 ? (
+          <HuntTimeline
+            hunts={hunts}
+            onDelete={removeHunt}
+            onEdit={openEditHuntUI}
+          />
+        ) : (
+          <EmptyState />
+        )}
       </Background>
     </ThemeProvider>
   );
 }
+
+const openEditHuntUI = (hunt: Hunt) => alert("Edit UI for " + hunt.boss.name);
+
+const notHuntedBosses = (bosses: Boss[], hunts: Hunt[]) =>
+  bosses.filter((boss) => !hunts.find((hunt) => hunt.boss === boss));
 
 export default App;

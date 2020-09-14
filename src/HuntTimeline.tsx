@@ -10,12 +10,23 @@ const Container = styled(MuiTimeline)`
 
 export type HuntTimelineProps = {
   hunts: Hunt[];
+  onEdit: (hunt: Hunt) => void;
+  onDelete: (hunt: Hunt) => void;
 };
 
-export const HuntTimeline: React.FC<HuntTimelineProps> = ({ hunts }) => (
+export const HuntTimeline: React.FC<HuntTimelineProps> = ({
+  hunts,
+  onDelete,
+  onEdit,
+}) => (
   <Container align="alternate">
     {hunts.map((hunt, index) => (
-      <HuntTimelineItem key={`hunt${index}`} {...hunt} />
+      <HuntTimelineItem
+        key={`hunt${index}`}
+        onEdit={onEdit}
+        onDelete={onDelete}
+        hunt={hunt}
+      />
     ))}
   </Container>
 );

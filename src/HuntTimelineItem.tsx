@@ -11,20 +11,28 @@ import { SpawnTime } from "./SpawnTime";
 import styled from "styled-components";
 import Paper from "@material-ui/core/Paper";
 import { Hunt } from "./Hunt";
+import { IconButton, Tooltip } from "@material-ui/core";
+import { Delete, Edit } from "@material-ui/icons";
+import { Row } from "./Row";
+import { Column } from "./Column";
 
-export type HuntTimelineItemProps = Hunt;
+export type HuntTimelineItemProps = {
+  hunt: Hunt;
+  onEdit: (hunt: Hunt) => void;
+  onDelete: (hunt: Hunt) => void;
+};
 
 export const HuntTimelineItem: React.FC<HuntTimelineItemProps> = ({
-  boss,
-  map,
-  killTime,
+  hunt,
+  onEdit,
+  onDelete,
 }) => (
   <MuiTimelineItem>
     <TimelineOppositeContent>
       <SpawnTime
-        killTime={killTime}
-        spawnTime={boss.spawnTime}
-        spawnWindow={boss.spawnWindow}
+        killTime={hunt.killTime}
+        spawnTime={hunt.boss.spawnTime}
+        spawnWindow={hunt.boss.spawnWindow}
       />
     </TimelineOppositeContent>
     <TimelineSeparator>
@@ -34,19 +42,38 @@ export const HuntTimelineItem: React.FC<HuntTimelineItemProps> = ({
       <TimelineConnector />
     </TimelineSeparator>
     <TimelineContent>
-      <TimelinePaper>
-        <Typography variant="h6" component="h1">
-          {boss.name}
-        </Typography>
-        <Typography>
-          Every {boss.spawnTime}~{boss.spawnTime + boss.spawnWindow} minutes on{" "}
-          {map}
-        </Typography>
-      </TimelinePaper>
+      <PaddedPaper>
+        <Row style={{ flex: 1 }}>
+          <Column style={{ flex: 1 }}>
+            <Typography variant="h6" component="h1">
+              {hunt.boss.name}
+            </Typography>
+            <Typography>
+              Every {hunt.boss.spawnTime}~
+              {hunt.boss.spawnTime + hunt.boss.spawnWindow} minutes on{" "}
+              {hunt.map}
+            </Typography>
+          </Column>
+          <Column>
+            <Tooltip title="Set kill time">
+              <IconButton onClick={() => onEdit(hunt)}>
+                <Edit />
+              </IconButton>
+            </Tooltip>
+          </Column>
+          <Column>
+            <Tooltip title="Stop hunting">
+              <IconButton onClick={() => onDelete(hunt)}>
+                <Delete />
+              </IconButton>
+            </Tooltip>
+          </Column>
+        </Row>
+      </PaddedPaper>
     </TimelineContent>
   </MuiTimelineItem>
 );
 
-const TimelinePaper = styled(Paper).attrs({ elevation: 3 })`
+const PaddedPaper = styled(Paper).attrs({ elevation: 3 })`
   padding: 6px 16px;
 `;
