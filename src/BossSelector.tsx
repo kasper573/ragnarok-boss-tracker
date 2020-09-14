@@ -25,6 +25,7 @@ export const BossSelector: React.FC<BossSelectorProps> = ({
       options={bosses}
       value={value}
       inputValue={inputValue}
+      noOptionsText="No bosses available"
       onChange={(e, newValue) => {
         if (newValue) {
           // Reset autocomplete input field whenever a boss gets selected
@@ -40,7 +41,7 @@ export const BossSelector: React.FC<BossSelectorProps> = ({
       renderInput={(params) => (
         <TextField
           {...params}
-          label="freeSolo"
+          label="Select boss to hunt"
           margin="normal"
           variant="outlined"
         />
