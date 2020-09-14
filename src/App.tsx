@@ -12,12 +12,13 @@ import { EmptyState } from "./EmptyState";
 
 function App() {
   const [hunts, addHunt] = useListState<Hunt>();
+  const notHuntedBosses = bosses.filter((boss) => !hunts.find((hunt) => hunt.boss === boss));
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Background>
         <BossSelector
-          bosses={bosses}
+          bosses={notHuntedBosses}
           onSelect={(boss) => {
             addHunt({
               boss,
