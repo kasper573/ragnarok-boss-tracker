@@ -1,6 +1,7 @@
 import React from "react";
+import moment from "moment";
+import styled from "styled-components";
 import Typography from "@material-ui/core/Typography";
-import { format } from "timeago.js";
 import { Minutes } from "./Minutes";
 import { useTimer } from "./useTimer";
 
@@ -16,25 +17,47 @@ export const SpawnTime: React.FC<SpawnTimeProps> = ({
   spawnWindow,
 }) => {
   const now = useTimer();
-  const spawnTimestamp = killTime.getTime() + spawnTime * 1000;
+  const spawnTimestamp = killTime.getTime() + spawnTime * 60 * 1000;
   const start = new Date(spawnTimestamp);
-  const end = new Date(spawnTimestamp + spawnWindow);
+  const end = new Date(spawnTimestamp + spawnWindow * 60 * 1000);
 
+  // Spawn time is in the future
+  if (now < start) {
+    return (
+      <Typography variant="body2" color="textSecondary">
+        Starting {format(start)}
+      </Typography>
+    );
+  }
+
+  // Spawn time is in the past
+  if (now > end) {
+    return (
+      <Typography variant="body2" color="textSecondary">
+        Ended {format(end)}
+      </Typography>
+    );
+  }
+
+  // Spawn timing window is still open
   return (
-    <Typography variant="body2" color="textSecondary">
-      {renderText(now, start, end)}
-    </Typography>
+    <>
+      <Typography variant="body2" color="textSecondary">
+        Started <PastText>{format(start)}</PastText>
+      </Typography>
+      <Typography variant="body2" color="textSecondary">
+        Ends in <FutureText>{format(end)}</FutureText>
+      </Typography>
+    </>
   );
 };
 
-function renderText (now: Date, start: Date, end: Date) {
-  if (now < start) {
-    return format(start);
-  }
-  if (now > end) {
-    return format(end);
-  }
-  return 'Spawning';
-}
+const format = (date: Date) => moment(date).fromNow();
 
-// TODO from <span>5 minutes ago</span> to <span>5 minutes</span> from now
+const PastText = styled.span`
+  color: ${({ theme }) => theme.palette.error.main};
+`;
+
+const FutureText = styled.span`
+  color: ${({ theme }) => theme.palette.success.main};
+`;
