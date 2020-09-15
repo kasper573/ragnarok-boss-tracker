@@ -1,6 +1,7 @@
 import React from "react";
+import { ThemeProvider as SCThemeProvider } from "styled-components";
 import { HuntTimeline } from "./HuntTimeline";
-import { ThemeProvider } from "@material-ui/core/styles";
+import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
 import { theme } from "./theme";
 import { CssBaseline } from "@material-ui/core";
 import { Background } from "./Background";
@@ -17,24 +18,26 @@ function App() {
     bosses.map(createHunt)
   );
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Background>
-        <BossSelector
-          bosses={notHuntedBosses(bosses, hunts)}
-          onSelect={(boss) => addHunt(createHunt(boss))}
-        />
-        {hunts.length > 0 ? (
-          <HuntTimeline
-            hunts={hunts}
-            onDelete={removeHunt}
-            onEdit={openEditHuntUI}
+    <MuiThemeProvider theme={theme}>
+      <SCThemeProvider theme={theme}>
+        <CssBaseline />
+        <Background>
+          <BossSelector
+            bosses={notHuntedBosses(bosses, hunts)}
+            onSelect={(boss) => addHunt(createHunt(boss))}
           />
-        ) : (
-          <EmptyState />
-        )}
-      </Background>
-    </ThemeProvider>
+          {hunts.length > 0 ? (
+            <HuntTimeline
+              hunts={hunts}
+              onDelete={removeHunt}
+              onEdit={openEditHuntUI}
+            />
+          ) : (
+            <EmptyState />
+          )}
+        </Background>
+      </SCThemeProvider>
+    </MuiThemeProvider>
   );
 }
 

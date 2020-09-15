@@ -3,12 +3,7 @@ import "styled-components";
 
 // and extend them!
 declare module "styled-components" {
-  export interface DefaultTheme {
-    borderRadius: string;
+  import {Theme} from '@material-ui/core';
 
-    colors: {
-      main: string;
-      secondary: string;
-    };
-  }
+  export type DefaultTheme = Theme;
 }
