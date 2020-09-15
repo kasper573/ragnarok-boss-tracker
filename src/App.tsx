@@ -1,19 +1,25 @@
 import React from "react";
 import { ThemeProvider as SCThemeProvider } from "styled-components";
 import { HuntTimeline } from "./HuntTimeline";
-import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
-import { theme } from "./theme";
+import {
+  Theme,
+  ThemeProvider as MuiThemeProvider,
+} from "@material-ui/core/styles";
 import { CssBaseline } from "@material-ui/core";
 import { Background } from "./Background";
 import { BossSelector } from "./BossSelector";
-import { bosses } from "./bossesFixture";
 import { useListState } from "./useListState";
 import { Hunt } from "./Hunt";
 import { EmptyState } from "./EmptyState";
 import { createHunt } from "./createHunt";
 import { Boss } from "./Boss";
 
-function App() {
+export type AppProps = {
+  theme: Theme;
+  bosses: Boss[];
+};
+
+export const App: React.FC<AppProps> = ({ theme, bosses }) => {
   const [hunts, addHunt, removeHunt] = useListState<Hunt>(
     bosses.map(createHunt)
   );
@@ -39,11 +45,9 @@ function App() {
       </SCThemeProvider>
     </MuiThemeProvider>
   );
-}
+};
 
 const openEditHuntUI = (hunt: Hunt) => alert("Edit UI for " + hunt.boss.name);
 
 const notHuntedBosses = (bosses: Boss[], hunts: Hunt[]) =>
   bosses.filter((boss) => !hunts.find((hunt) => hunt.boss === boss));
-
-export default App;

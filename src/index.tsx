@@ -1,12 +1,14 @@
 //import {} from 'styled-components/cssprop'
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+import { App } from "./App";
 import * as serviceWorker from "./serviceWorker";
+import { theme } from "./theme";
+import { bosses } from "./bossesFixture";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App theme={theme} bosses={bosses} />
   </React.StrictMode>,
   document.getElementById("root")
 );
