@@ -26,6 +26,7 @@ export const HuntTimeline: React.FC<HuntTimelineProps> = ({
         onEdit={onEdit}
         onDelete={onDelete}
         hunt={hunt}
+        reverse={index % 2 !== 0}
       />
     ))}
   </Container>
