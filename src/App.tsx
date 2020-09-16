@@ -32,11 +32,14 @@ export const App: React.FC<AppProps> = ({ bosses }) => {
     setEditedHunt(hunt);
     setVisibleEditor(editor);
   };
-  const saveEdit = (updatedHunt: Hunt) => {
+  const saveEdit = (updatedHunt: Hunt, stop = true) => {
+    setEditedHunt(updatedHunt);
     if (!replaceHunt(editedHunt!, updatedHunt)) {
       addHunt(updatedHunt);
     }
-    stopEditing();
+    if (stop) {
+      stopEditing();
+    }
   };
   const startCreating = (boss: Boss) => startEditing(new Hunt(boss), "time");
   const theme = createAppTheme(prefersDarkTheme ? "dark" : "light");
@@ -70,7 +73,7 @@ export const App: React.FC<AppProps> = ({ bosses }) => {
                   value={editedHunt}
                   open={visibleEditor === "location"}
                   onClose={stopEditing}
-                  onChange={saveEdit}
+                  onChange={(hunt) => saveEdit(hunt, false)}
                 />
               </>
             )}
