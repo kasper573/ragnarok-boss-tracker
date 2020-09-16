@@ -15,8 +15,12 @@ export const HuntLocationEditor: React.FC<HuntLocationEditorProps> = ({
   onChange,
   onClose,
 }) => {
-  const setLocation = (location: MapLocation) =>
-    onChange(value.update({ tombstoneLocation: location }));
+  const setLocation = (location: MapLocation) => {
+    // Don't allow changing fixed spawn locations
+    if (!value.boss.fixedSpawnLocation) {
+      onChange(value.update({ tombstoneLocation: location }))
+    }
+  };
   return (
     <Dialog open={open} onClose={onClose}>
       <DialogTitle>Tombstone location</DialogTitle>

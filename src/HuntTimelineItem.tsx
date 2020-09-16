@@ -50,11 +50,21 @@ export const HuntTimelineItem: React.FC<HuntTimelineItemProps> = ({
             <AccessTime />
           </IconButton>
         </Tooltip>
-        <Tooltip title="Tombstone location">
-          <IconButton onClick={() => onEditTombstoneLocation(hunt)}>
-            <Room />
-          </IconButton>
-        </Tooltip>
+        {hunt.boss.tombstone ? (
+          <Tooltip title="Tombstone location">
+            <IconButton onClick={() => onEditTombstoneLocation(hunt)}>
+              <Room />
+            </IconButton>
+          </Tooltip>
+        ) : (
+          <Tooltip title="Does not leave a tombstone">
+            <span>
+              <IconButton disabled>
+                <Room />
+              </IconButton>
+            </span>
+          </Tooltip>
+        )}
         <Tooltip title="Stop hunting">
           <IconButton onClick={() => onDelete(hunt)}>
             <Delete />
