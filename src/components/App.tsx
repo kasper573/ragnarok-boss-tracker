@@ -44,6 +44,8 @@ export const App: React.FC<AppProps> = ({ bosses }) => {
     }
   };
   const startCreating = (boss: Boss) => addHunt(new Hunt(boss));
+  const killNow = (hunt: Hunt) =>
+    replaceHunt(hunt, hunt.update({ killTime: new Date() }));
   const theme = createAppTheme(prefersDarkTheme ? "dark" : "light");
   return (
     <MuiThemeProvider theme={theme}>
@@ -57,6 +59,7 @@ export const App: React.FC<AppProps> = ({ bosses }) => {
             <HuntTimeline
               hunts={hunts}
               onDelete={removeHunt}
+              onKillNow={killNow}
               onEditKillTime={(hunt) => startEditing(hunt, "time")}
               onEditTombstoneLocation={(hunt) => startEditing(hunt, "location")}
             />

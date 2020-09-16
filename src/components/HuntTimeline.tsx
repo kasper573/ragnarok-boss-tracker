@@ -11,7 +11,7 @@ const Container = styled(MuiTimeline)`
 
 export type HuntTimelineProps = Pick<
   HuntTimelineItemProps,
-  "onEditTombstoneLocation" | "onEditKillTime" | "onDelete"
+  "onEditTombstoneLocation" | "onEditKillTime" | "onKillNow" | "onDelete"
 > & {
   hunts: Hunt[];
 };

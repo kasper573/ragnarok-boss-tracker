@@ -16,13 +16,14 @@ import {
   useMediaQuery,
   useTheme,
 } from "@material-ui/core";
-import { AccessTime, Delete, Room } from "@material-ui/icons";
+import { AlarmOn, Delete, Room, Update } from "@material-ui/icons";
 import { HuntInfo } from "./HuntInfo";
 
 export type HuntTimelineItemProps = {
   hunt: Hunt;
   onEditKillTime: (hunt: Hunt) => void;
   onEditTombstoneLocation: (hunt: Hunt) => void;
+  onKillNow: (hunt: Hunt) => void;
   onDelete: (hunt: Hunt) => void;
   alignActions: "right" | "left";
   connector: boolean;
@@ -32,6 +33,7 @@ export const HuntTimelineItem: React.FC<HuntTimelineItemProps> = ({
   hunt,
   onEditKillTime,
   onEditTombstoneLocation,
+  onKillNow,
   onDelete,
   alignActions,
   connector,
@@ -58,7 +60,12 @@ export const HuntTimelineItem: React.FC<HuntTimelineItemProps> = ({
         <Actions align={alignActions}>
           <Tooltip title="Set kill time">
             <IconButton size={buttonSize} onClick={() => onEditKillTime(hunt)}>
-              <AccessTime />
+              <Update />
+            </IconButton>
+          </Tooltip>
+          <Tooltip title="Kill now">
+            <IconButton size={buttonSize} onClick={() => onKillNow(hunt)}>
+              <AlarmOn />
             </IconButton>
           </Tooltip>
           {hunt.boss.tombstone ? (
