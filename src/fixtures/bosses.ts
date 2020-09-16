@@ -199,7 +199,7 @@ export const bosses: Boss[] = [
   },
   {
     id: -1,
-    name: "Bio3 MVP",
+    name: "Bio3 boss",
     tombstone: true,
     map: {
       name: "lhz_dun03",
@@ -211,7 +211,7 @@ export const bosses: Boss[] = [
   },
   {
     id: -2,
-    name: "Bio4 MVP",
+    name: "Bio4 boss",
     tombstone: true,
     map: {
       name: "lhz_dun04",
