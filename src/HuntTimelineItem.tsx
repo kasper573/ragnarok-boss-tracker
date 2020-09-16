@@ -31,11 +31,7 @@ export const HuntTimelineItem: React.FC<HuntTimelineItemProps> = ({
 }) => (
   <MuiTimelineItem>
     <TimelineOppositeContent>
-      <SpawnTime
-        killTime={hunt.killTime}
-        spawnTime={hunt.boss.spawnTime}
-        spawnWindow={hunt.boss.spawnWindow}
-      />
+      <SpawnTime hunt={hunt} />
     </TimelineOppositeContent>
     <TimelineSeparator>
       <TimelineDot>
@@ -51,8 +47,8 @@ export const HuntTimelineItem: React.FC<HuntTimelineItemProps> = ({
               {hunt.boss.name}
             </Typography>
             <Typography>
-              Every {hunt.boss.spawnTime}~
-              {hunt.boss.spawnTime + hunt.boss.spawnWindow} minutes on{" "}
+              Every {hunt.boss.spawnCooldown}~
+              {hunt.boss.spawnCooldown + hunt.boss.spawnWindow} minutes on{" "}
               {hunt.map}
             </Typography>
           </Column>

@@ -20,7 +20,7 @@ export const HuntTimeline: React.FC<HuntTimelineProps> = ({
   onEdit,
 }) => (
   <Container align="alternate">
-    {hunts.map((hunt, index) => (
+    {ordered(hunts).map((hunt, index) => (
       <HuntTimelineItem
         key={`hunt${index}`}
         onEdit={onEdit}
@@ -31,3 +31,6 @@ export const HuntTimeline: React.FC<HuntTimelineProps> = ({
     ))}
   </Container>
 );
+
+const ordered = (hunts: Hunt[]) =>
+  hunts.slice().sort((a, b) => a.start.getTime() - b.start.getTime());

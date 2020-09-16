@@ -2,24 +2,17 @@ import React from "react";
 import moment from "moment";
 import styled from "styled-components";
 import Typography from "@material-ui/core/Typography";
-import { Minutes } from "./Minutes";
 import { useTimer } from "./useTimer";
+import { Hunt } from "./Hunt";
 
 export type SpawnTimeProps = {
-  killTime: Date;
-  spawnTime: Minutes;
-  spawnWindow: Minutes;
+  hunt: Hunt;
 };
 
 export const SpawnTime: React.FC<SpawnTimeProps> = ({
-  killTime,
-  spawnTime,
-  spawnWindow,
+  hunt: { start, end },
 }) => {
   const now = useTimer();
-  const spawnTimestamp = killTime.getTime() + spawnTime * 60 * 1000;
-  const start = new Date(spawnTimestamp);
-  const end = new Date(spawnTimestamp + spawnWindow * 60 * 1000);
 
   // Spawn time is in the future
   if (now < start) {

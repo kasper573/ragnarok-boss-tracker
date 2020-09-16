@@ -10,7 +10,6 @@ import { Hunt } from "./Hunt";
 import { MaterialUiPickersDate } from "@material-ui/pickers/typings/date";
 import React, { useState } from "react";
 import { TimePicker } from "@material-ui/pickers";
-import { updateHunt } from "./updateHunt";
 
 export type HuntEditorProps = Pick<DialogProps, "open" | "onClose"> & {
   value: Hunt;
@@ -24,7 +23,7 @@ export const HuntEditor: React.FC<HuntEditorProps> = ({
   onClose,
 }) => {
   const [time, setTime] = useState<Date>(value.killTime);
-  const submit = () => onChange(updateHunt(value, { killTime: time }));
+  const submit = () => onChange(value.update({ killTime: time }));
   const handleTimeChange = (newTime: MaterialUiPickersDate) =>
     setTime(newTime ? newTime.toDate() : new Date(0));
   return (

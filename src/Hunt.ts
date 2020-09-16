@@ -1,8 +1,23 @@
 import { Boss } from "./Boss";
 import { Map } from "./Map";
 
-export type Hunt = {
-  boss: Boss;
-  map: Map;
-  killTime: Date;
-};
+export class Hunt {
+  public get start() {
+    return new Date(
+      this.killTime.getTime() + this.boss.spawnCooldown * 60 * 1000
+    );
+  }
+  public get end() {
+    return new Date(this.start.getTime() + this.boss.spawnWindow * 60 * 1000);
+  }
+  public constructor(
+    public readonly boss: Boss,
+    public readonly map: Map = boss.map,
+    public readonly killTime: Date = new Date()
+  ) {}
+
+  update(changes: Partial<Hunt>) {
+    const { boss, map, killTime } = { ...this, ...changes };
+    return new Hunt(boss, map, killTime);
+  }
+}

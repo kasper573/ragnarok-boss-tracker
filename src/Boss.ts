@@ -4,6 +4,6 @@ import { Minutes } from "./Minutes";
 export type Boss = {
   name: string;
   map: Map;
-  spawnTime: Minutes;
+  spawnCooldown: Minutes;
   spawnWindow: Minutes;
 };

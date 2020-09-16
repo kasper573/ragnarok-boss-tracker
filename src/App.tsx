@@ -11,7 +11,6 @@ import { BossSelector } from "./BossSelector";
 import { useListState } from "./useListState";
 import { Hunt } from "./Hunt";
 import { EmptyState } from "./EmptyState";
-import { createHunt } from "./createHunt";
 import { Boss } from "./Boss";
 import MomentUtils from "@date-io/moment";
 import { MuiPickersUtilsProvider } from "@material-ui/pickers";
@@ -24,7 +23,7 @@ export type AppProps = {
 
 export const App: React.FC<AppProps> = ({ theme, bosses }) => {
   const [hunts, addHunt, removeHunt, replaceHunt] = useListState<Hunt>(
-    bosses.map(createHunt)
+    bosses.map((boss) => new Hunt(boss))
   );
   const [editedHunt, setEditedHunt] = useState<Hunt>();
   const [isEditing, setEditing] = useState(false);
@@ -48,7 +47,7 @@ export const App: React.FC<AppProps> = ({ theme, bosses }) => {
           <Background>
             <BossSelector
               bosses={notHuntedBosses(bosses, hunts)}
-              onSelect={(boss) => addHunt(createHunt(boss))}
+              onSelect={(boss) => addHunt(new Hunt(boss))}
             />
             {hunts.length > 0 ? (
               <HuntTimeline
