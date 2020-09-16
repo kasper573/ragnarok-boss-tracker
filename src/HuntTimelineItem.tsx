@@ -10,14 +10,14 @@ import styled from "styled-components";
 import Paper from "@material-ui/core/Paper";
 import { Hunt } from "./Hunt";
 import { Avatar, IconButton, Tooltip } from "@material-ui/core";
-import { Delete, Edit } from "@material-ui/icons";
+import { AccessTime, Delete } from "@material-ui/icons";
 import { HuntInfo } from "./HuntInfo";
 
 export type HuntTimelineItemProps = {
   hunt: Hunt;
   onEdit: (hunt: Hunt) => void;
   onDelete: (hunt: Hunt) => void;
-  alignActions: 'right' | 'left';
+  alignActions: "right" | "left";
   connector: boolean;
 };
 
@@ -26,7 +26,7 @@ export const HuntTimelineItem: React.FC<HuntTimelineItemProps> = ({
   onEdit,
   onDelete,
   alignActions,
-  connector
+  connector,
 }) => (
   <MuiTimelineItem>
     <TimelineOppositeContent>
@@ -45,7 +45,7 @@ export const HuntTimelineItem: React.FC<HuntTimelineItemProps> = ({
       <Actions align={alignActions}>
         <Tooltip title="Set kill time">
           <IconButton onClick={() => onEdit(hunt)}>
-            <Edit />
+            <AccessTime />
           </IconButton>
         </Tooltip>
         <Tooltip title="Stop hunting">
