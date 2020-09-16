@@ -13,15 +13,6 @@ export const Container: React.FC = ({ children }) => (
 );
 
 const padding = 30;
-const breakpoints = [768, 1024];
-const mediaQueries = breakpoints
-  .slice()
-  .reverse()
-  .map(
-    (bp) =>
-      `@media screen and (min-width: ${bp}px) {width: ${bp - padding * 2}px;}`
-  )
-  .join();
 
 const AlignAndPadding = styled.div`
   width: 100%;
@@ -32,9 +23,14 @@ const AlignAndPadding = styled.div`
   padding: ${padding}px;
 `;
 
-const FixedSizePaper = styled(Paper)`
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  ${mediaQueries}
-`;
+const FixedSizePaper = styled(Paper)(({ theme }) => ({
+  display: "flex",
+  flexDirection: "column",
+  flex: 1,
+  [theme.breakpoints.up("sm")]: {
+    width: '100%',
+  },
+  [theme.breakpoints.up("md")]: {
+    width: theme.breakpoints.values.md - padding * 2,
+  },
+}));
