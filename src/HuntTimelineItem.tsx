@@ -18,6 +18,7 @@ export type HuntTimelineItemProps = {
   onEdit: (hunt: Hunt) => void;
   onDelete: (hunt: Hunt) => void;
   alignActions: 'right' | 'left';
+  connector: boolean;
 };
 
 export const HuntTimelineItem: React.FC<HuntTimelineItemProps> = ({
@@ -25,6 +26,7 @@ export const HuntTimelineItem: React.FC<HuntTimelineItemProps> = ({
   onEdit,
   onDelete,
   alignActions,
+  connector
 }) => (
   <MuiTimelineItem>
     <TimelineOppositeContent>
@@ -34,7 +36,7 @@ export const HuntTimelineItem: React.FC<HuntTimelineItemProps> = ({
       <TimelineDot>
         <Avatar src={hunt.boss.icon} />
       </TimelineDot>
-      <TimelineConnector />
+      {connector && <TimelineConnector />}
     </TimelineSeparator>
     <TimelineContent>
       <PaddedPaper>
