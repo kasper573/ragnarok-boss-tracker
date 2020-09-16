@@ -671,7 +671,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 60 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    fixedSpawnLocation: [0.5, 0.6226],
   },
   {
     name: "Orc Hero",
@@ -803,7 +803,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 60 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    fixedSpawnLocation: [0.5, 0.55],
   },
   {
     name: "Valkyrie Randgris",
