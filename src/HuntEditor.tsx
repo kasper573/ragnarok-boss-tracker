@@ -1,6 +1,5 @@
 import {
   Dialog,
-  DialogContent,
   DialogProps,
   DialogTitle,
   DialogActions,
@@ -29,15 +28,13 @@ export const HuntEditor: React.FC<HuntEditorProps> = ({
   return (
     <Dialog open={open} onClose={onClose}>
       <DialogTitle>Set kill time</DialogTitle>
-      <DialogContent>
-        <TimePicker
-          variant="static"
-          openTo="hours"
-          value={time}
-          onChange={handleTimeChange}
-          ampm
-        />
-      </DialogContent>
+      <TimePicker
+        variant="static"
+        openTo="hours"
+        value={time}
+        onChange={handleTimeChange}
+        ampm
+      />
       <DialogActions>
         <Button onClick={submit} autoFocus>
           Save
