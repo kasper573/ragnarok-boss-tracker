@@ -22,9 +22,7 @@ type Editor = "time" | "location";
 
 export const App: React.FC<AppProps> = ({ bosses }) => {
   const prefersDarkTheme = useMediaQuery("(prefers-color-scheme: dark)");
-  const [hunts, addHunt, removeHunt, replaceHunt] = useListState<Hunt>(
-    bosses.slice(0, 3).map((boss) => new Hunt(boss))
-  );
+  const [hunts, addHunt, removeHunt, replaceHunt] = useListState<Hunt>();
   const [editedHunt, setEditedHunt] = useState<Hunt>();
   const [visibleEditor, setVisibleEditor] = useState<Editor>();
   const stopEditing = () => setVisibleEditor(undefined);
@@ -51,7 +49,7 @@ export const App: React.FC<AppProps> = ({ bosses }) => {
           <Container>
             <BossSelectorPadding>
               <BossSelector
-                bosses={notHuntedBosses(bosses, hunts)}
+                bosses={bosses}
                 onSelect={startCreating}
               />
             </BossSelectorPadding>
@@ -83,9 +81,6 @@ export const App: React.FC<AppProps> = ({ bosses }) => {
     </MuiThemeProvider>
   );
 };
-
-const notHuntedBosses = (bosses: Boss[], hunts: Hunt[]) =>
-  bosses.filter((boss) => !hunts.find((hunt) => hunt.boss === boss));
 
 const BossSelectorPadding = styled.div`
   padding: 0 16px;
