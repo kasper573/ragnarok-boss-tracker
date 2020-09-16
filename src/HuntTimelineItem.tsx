@@ -2,7 +2,6 @@ import React from "react";
 import TimelineOppositeContent from "@material-ui/lab/TimelineOppositeContent";
 import TimelineSeparator from "@material-ui/lab/TimelineSeparator";
 import TimelineDot from "@material-ui/lab/TimelineDot";
-import FastfoodIcon from "@material-ui/icons/Fastfood";
 import TimelineConnector from "@material-ui/lab/TimelineConnector";
 import TimelineContent from "@material-ui/lab/TimelineContent";
 import MuiTimelineItem from "@material-ui/lab/TimelineItem";
@@ -10,7 +9,7 @@ import { SpawnTime } from "./SpawnTime";
 import styled from "styled-components";
 import Paper from "@material-ui/core/Paper";
 import { Hunt } from "./Hunt";
-import { IconButton, Tooltip } from "@material-ui/core";
+import {Avatar, IconButton, Tooltip} from '@material-ui/core';
 import { Delete, Edit } from "@material-ui/icons";
 import { HuntInfo } from "./HuntInfo";
 
@@ -33,7 +32,7 @@ export const HuntTimelineItem: React.FC<HuntTimelineItemProps> = ({
     </TimelineOppositeContent>
     <TimelineSeparator>
       <TimelineDot>
-        <FastfoodIcon />
+        <Avatar src={hunt.boss.icon}/>
       </TimelineDot>
       <TimelineConnector />
     </TimelineSeparator>
