@@ -3,6 +3,8 @@ import { Minutes } from "./Minutes";
 
 export const bosses: Boss[] = [
   {
+    id: 1511,
+    icon: require("./assets/mobs/1511.gif"),
     name: "Amon Ra",
     tombstone: true,
     map: {
@@ -14,6 +16,8 @@ export const bosses: Boss[] = [
     spawnLocation: [0.5, 0.6226],
   },
   {
+    id: 1852,
+    icon: require("./assets/mobs/1852.gif"),
     name: "Angeling",
     tombstone: false,
     map: {
@@ -25,6 +29,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1852,
+    icon: require("./assets/mobs/1852.gif"),
     name: "Angeling",
     tombstone: false,
     map: {
@@ -36,6 +42,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1852,
+    icon: require("./assets/mobs/1852.gif"),
     name: "Angeling",
     tombstone: false,
     map: {
@@ -47,6 +55,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 2249,
+    icon: require("./assets/mobs/2249.gif"),
     name: "Angry Student Pyuriel",
     tombstone: true,
     map: {
@@ -58,6 +68,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1388,
+    icon: require("./assets/mobs/1388.gif"),
     name: "Archangeling",
     tombstone: false,
     map: {
@@ -69,6 +81,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1785,
+    icon: require("./assets/mobs/1785.gif"),
     name: "Atroce",
     tombstone: true,
     map: {
@@ -80,6 +94,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1785,
+    icon: require("./assets/mobs/1785.gif"),
     name: "Atroce",
     tombstone: true,
     map: {
@@ -91,6 +107,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1785,
+    icon: require("./assets/mobs/1785.gif"),
     name: "Atroce",
     tombstone: true,
     map: {
@@ -102,6 +120,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1785,
+    icon: require("./assets/mobs/1785.gif"),
     name: "Atroce",
     tombstone: true,
     map: {
@@ -113,6 +133,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1785,
+    icon: require("./assets/mobs/1785.gif"),
     name: "Atroce",
     tombstone: true,
     map: {
@@ -124,6 +146,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1630,
+    icon: require("./assets/mobs/1630.gif"),
     name: "Bacsojin",
     tombstone: true,
     map: {
@@ -135,6 +159,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1399,
+    icon: require("./assets/mobs/1399.gif"),
     name: "Baphomet",
     tombstone: true,
     map: {
@@ -146,6 +172,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1399,
+    icon: require("./assets/mobs/1399.gif"),
     name: "Baphomet",
     tombstone: true,
     map: {
@@ -157,6 +185,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1874,
+    icon: require("./assets/mobs/1874.gif"),
     name: "Beelzebub",
     tombstone: true,
     map: {
@@ -168,6 +198,7 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: -1,
     name: "Bio3 MVP",
     tombstone: true,
     map: {
@@ -179,6 +210,7 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: -1,
     name: "Bio4 MVP",
     tombstone: true,
     map: {
@@ -190,6 +222,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 2068,
+    icon: require("./assets/mobs/2068.gif"),
     name: "Boitata",
     tombstone: true,
     map: {
@@ -201,6 +235,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 2255,
+    icon: require("./assets/mobs/2255.gif"),
     name: "Dark Guardian Kades",
     tombstone: true,
     map: {
@@ -212,6 +248,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1272,
+    icon: require("./assets/mobs/1272.gif"),
     name: "Dark Lord",
     tombstone: true,
     map: {
@@ -223,6 +261,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1272,
+    icon: require("./assets/mobs/1272.gif"),
     name: "Dark Lord",
     tombstone: true,
     map: {
@@ -234,6 +274,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1817,
+    icon: require("./assets/mobs/1817.gif"),
     name: "Detale",
     tombstone: true,
     map: {
@@ -245,6 +287,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1767,
+    icon: require("./assets/mobs/1767.gif"),
     name: "Deviling",
     tombstone: false,
     map: {
@@ -256,6 +300,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1767,
+    icon: require("./assets/mobs/1767.gif"),
     name: "Deviling",
     tombstone: false,
     map: {
@@ -267,6 +313,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1731,
+    icon: require("./assets/mobs/1731.gif"),
     name: "Doppelganger",
     tombstone: true,
     map: {
@@ -278,6 +326,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1731,
+    icon: require("./assets/mobs/1731.gif"),
     name: "Doppelganger",
     tombstone: true,
     map: {
@@ -289,6 +339,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1530,
+    icon: require("./assets/mobs/1530.gif"),
     name: "Dracula",
     tombstone: true,
     map: {
@@ -300,6 +352,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1112,
+    icon: require("./assets/mobs/1112.gif"),
     name: "Drake",
     tombstone: true,
     map: {
@@ -311,6 +365,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1115,
+    icon: require("./assets/mobs/1115.gif"),
     name: "Eddga",
     tombstone: true,
     map: {
@@ -322,6 +378,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1115,
+    icon: require("./assets/mobs/1115.gif"),
     name: "Eddga",
     tombstone: true,
     map: {
@@ -333,6 +391,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1967,
+    icon: require("./assets/mobs/1967.gif"),
     name: "Egnigem Cenia",
     tombstone: true,
     map: {
@@ -344,6 +404,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1529,
+    icon: require("./assets/mobs/1529.gif"),
     name: "Evil Snake Lord",
     tombstone: true,
     map: {
@@ -355,6 +417,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1871,
+    icon: require("./assets/mobs/1871.gif"),
     name: "Fallen Bishop Hibram",
     tombstone: true,
     map: {
@@ -366,6 +430,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1252,
+    icon: require("./assets/mobs/1252.gif"),
     name: "Garm",
     tombstone: true,
     map: {
@@ -377,6 +443,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 2253,
+    icon: require("./assets/mobs/2253.gif"),
     name: "General Daehyun",
     tombstone: true,
     map: {
@@ -388,6 +456,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1576,
+    icon: require("./assets/mobs/1576.gif"),
     name: "Ghostring",
     tombstone: false,
     map: {
@@ -399,6 +469,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1576,
+    icon: require("./assets/mobs/1576.gif"),
     name: "Ghostring",
     tombstone: false,
     map: {
@@ -410,6 +482,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1576,
+    icon: require("./assets/mobs/1576.gif"),
     name: "Ghostring",
     tombstone: false,
     map: {
@@ -421,6 +495,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1576,
+    icon: require("./assets/mobs/1576.gif"),
     name: "Ghostring",
     tombstone: false,
     map: {
@@ -432,6 +508,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 2251,
+    icon: require("./assets/mobs/2251.gif"),
     name: "Gioia",
     tombstone: true,
     map: {
@@ -443,6 +521,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1768,
+    icon: require("./assets/mobs/1768.gif"),
     name: "Gloom Under Night",
     tombstone: true,
     map: {
@@ -454,6 +534,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1086,
+    icon: require("./assets/mobs/1086.gif"),
     name: "Golden Thief Bug",
     tombstone: true,
     map: {
@@ -465,6 +547,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1885,
+    icon: require("./assets/mobs/1885.gif"),
     name: "Gopinich",
     tombstone: true,
     map: {
@@ -476,6 +560,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1990,
+    icon: require("./assets/mobs/1990.gif"),
     name: "Hardrock Mammoth",
     tombstone: true,
     map: {
@@ -487,6 +573,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1832,
+    icon: require("./assets/mobs/1832.gif"),
     name: "Ifrit",
     tombstone: true,
     map: {
@@ -498,6 +586,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1542,
+    icon: require("./assets/mobs/1542.gif"),
     name: "Incantation Samurai",
     tombstone: true,
     map: {
@@ -509,6 +599,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1734,
+    icon: require("./assets/mobs/1734.gif"),
     name: "Kiel D-01",
     tombstone: true,
     map: {
@@ -520,6 +612,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 2202,
+    icon: require("./assets/mobs/2202.gif"),
     name: "Kraken",
     tombstone: true,
     map: {
@@ -531,6 +625,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1779,
+    icon: require("./assets/mobs/1779.gif"),
     name: "Ktullanux",
     tombstone: true,
     map: {
@@ -542,6 +638,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1688,
+    icon: require("./assets/mobs/1688.gif"),
     name: "Lady Tanee",
     tombstone: true,
     map: {
@@ -553,6 +651,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 2156,
+    icon: require("./assets/mobs/2156.gif"),
     name: "Leak",
     tombstone: true,
     map: {
@@ -564,6 +664,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1373,
+    icon: require("./assets/mobs/1373.gif"),
     name: "Lord of Death",
     tombstone: true,
     map: {
@@ -575,6 +677,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1147,
+    icon: require("./assets/mobs/1147.gif"),
     name: "Maya",
     tombstone: true,
     map: {
@@ -586,6 +690,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1147,
+    icon: require("./assets/mobs/1147.gif"),
     name: "Maya",
     tombstone: true,
     map: {
@@ -597,6 +703,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1289,
+    icon: require("./assets/mobs/1289.gif"),
     name: "Maya Purple",
     tombstone: true,
     map: {
@@ -608,6 +716,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1289,
+    icon: require("./assets/mobs/1289.gif"),
     name: "Maya Purple",
     tombstone: true,
     map: {
@@ -619,6 +729,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1059,
+    icon: require("./assets/mobs/1059.gif"),
     name: "Mistress",
     tombstone: true,
     map: {
@@ -630,6 +742,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1059,
+    icon: require("./assets/mobs/1059.gif"),
     name: "Mistress",
     tombstone: true,
     map: {
@@ -641,6 +755,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1814,
+    icon: require("./assets/mobs/1814.gif"),
     name: "Moonlight Flower",
     tombstone: true,
     map: {
@@ -652,6 +768,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1814,
+    icon: require("./assets/mobs/1814.gif"),
     name: "Moonlight Flower",
     tombstone: true,
     map: {
@@ -663,6 +781,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 2362,
+    icon: require("./assets/mobs/2362.gif"),
     name: "Nightmare Amon Ra",
     tombstone: true,
     map: {
@@ -674,6 +794,8 @@ export const bosses: Boss[] = [
     spawnLocation: [0.5, 0.6226],
   },
   {
+    id: 1087,
+    icon: require("./assets/mobs/1087.gif"),
     name: "Orc Hero",
     tombstone: true,
     map: {
@@ -685,6 +807,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1190,
+    icon: require("./assets/mobs/1190.gif"),
     name: "Orc Lord",
     tombstone: true,
     map: {
@@ -696,6 +820,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1038,
+    icon: require("./assets/mobs/1038.gif"),
     name: "Osiris",
     tombstone: true,
     map: {
@@ -707,6 +833,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1157,
+    icon: require("./assets/mobs/1157.gif"),
     name: "Pharaoh",
     tombstone: true,
     map: {
@@ -718,6 +846,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1159,
+    icon: require("./assets/mobs/1159.gif"),
     name: "Phreeoni",
     tombstone: true,
     map: {
@@ -729,6 +859,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 2165,
+    icon: require("./assets/mobs/2165.gif"),
     name: "Queen Scaraba",
     tombstone: true,
     map: {
@@ -740,6 +872,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1623,
+    icon: require("./assets/mobs/1623.gif"),
     name: "RSX-0806",
     tombstone: true,
     map: {
@@ -751,6 +885,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1251,
+    icon: require("./assets/mobs/1251.gif"),
     name: "Stormy Knight",
     tombstone: true,
     map: {
@@ -762,6 +898,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1583,
+    icon: require("./assets/mobs/1583.gif"),
     name: "Tao Gunka",
     tombstone: true,
     map: {
@@ -773,6 +911,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1991,
+    icon: require("./assets/mobs/1991.gif"),
     name: "Tendrillion",
     tombstone: true,
     map: {
@@ -784,6 +924,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1708,
+    icon: require("./assets/mobs/1708.gif"),
     name: "Thanatos",
     tombstone: true,
     map: {
@@ -795,6 +937,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1312,
+    icon: require("./assets/mobs/1312.gif"),
     name: "Turtle General",
     tombstone: true,
     map: {
@@ -806,6 +950,8 @@ export const bosses: Boss[] = [
     spawnLocation: [0.5, 0.55],
   },
   {
+    id: 1751,
+    icon: require("./assets/mobs/1751.gif"),
     name: "Valkyrie Randgris",
     tombstone: true,
     map: {
@@ -817,6 +963,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1685,
+    icon: require("./assets/mobs/1685.gif"),
     name: "Vesper",
     tombstone: true,
     map: {
@@ -828,6 +976,8 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
+    id: 1917,
+    icon: require("./assets/mobs/1917.gif"),
     name: "Wounded Morroc",
     tombstone: true,
     map: {

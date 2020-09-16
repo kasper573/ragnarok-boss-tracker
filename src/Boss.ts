@@ -3,6 +3,7 @@ import { Minutes } from "./Minutes";
 import { MapLocation } from "./MapLocation";
 
 export type Boss = {
+  id: number;
   icon?: string;
   name: string;
   map: Map;
