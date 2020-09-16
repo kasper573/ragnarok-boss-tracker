@@ -20,14 +20,14 @@ export type HuntTimelineItemProps = {
   hunt: Hunt;
   onEdit: (hunt: Hunt) => void;
   onDelete: (hunt: Hunt) => void;
-  reverse?: boolean
+  reverse?: boolean;
 };
 
 export const HuntTimelineItem: React.FC<HuntTimelineItemProps> = ({
   hunt,
   onEdit,
   onDelete,
-  reverse
+  reverse,
 }) => (
   <MuiTimelineItem>
     <TimelineOppositeContent>
@@ -80,7 +80,7 @@ const PaddedPaper = styled(Paper).attrs({ elevation: 3 })`
   padding: 6px 16px;
 `;
 
-const ContentRow = styled(Row)<{reverse?: boolean}>`
-  flex-direction: ${({reverse}) => reverse ? 'row-reverse' : 'row'};
+const ContentRow = styled(Row)<{ reverse?: boolean }>`
+  flex-direction: ${({ reverse }) => (reverse ? "row-reverse" : "row")};
   align-items: center;
 `;
