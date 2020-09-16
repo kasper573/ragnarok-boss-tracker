@@ -9,7 +9,13 @@ import { SpawnTime } from "./SpawnTime";
 import styled from "styled-components";
 import Paper from "@material-ui/core/Paper";
 import { Hunt } from "../state/Hunt";
-import { Avatar, IconButton, Tooltip } from "@material-ui/core";
+import {
+  Avatar,
+  IconButton,
+  Tooltip,
+  useMediaQuery,
+  useTheme,
+} from "@material-ui/core";
 import { AccessTime, Delete, Room } from "@material-ui/icons";
 import { HuntInfo } from "./HuntInfo";
 
@@ -29,51 +35,60 @@ export const HuntTimelineItem: React.FC<HuntTimelineItemProps> = ({
   onDelete,
   alignActions,
   connector,
-}) => (
-  <MuiTimelineItem>
-    <TimelineOppositeContent>
-      <SpawnTime hunt={hunt} />
-    </TimelineOppositeContent>
-    <TimelineSeparator>
-      <TimelineDot>
-        <Avatar src={hunt.boss.icon} />
-      </TimelineDot>
-      {connector && <TimelineConnector />}
-    </TimelineSeparator>
-    <TimelineContent>
-      <PaddedPaper>
-        <HuntInfo hunt={hunt} />
-      </PaddedPaper>
-      <Actions align={alignActions}>
-        <Tooltip title="Set kill time">
-          <IconButton onClick={() => onEditKillTime(hunt)}>
-            <AccessTime />
-          </IconButton>
-        </Tooltip>
-        {hunt.boss.tombstone ? (
-          <Tooltip title="Tombstone location">
-            <IconButton onClick={() => onEditTombstoneLocation(hunt)}>
-              <Room />
+}) => {
+  const theme = useTheme();
+  const compact = useMediaQuery(theme.breakpoints.down("xs"));
+  const buttonSize = compact ? "small" : "medium";
+
+  return (
+    <MuiTimelineItem>
+      <TimelineOppositeContent>
+        <SpawnTime hunt={hunt} />
+      </TimelineOppositeContent>
+      <TimelineSeparator>
+        <TimelineDot>
+          <Avatar src={hunt.boss.icon} />
+        </TimelineDot>
+        {connector && <TimelineConnector />}
+      </TimelineSeparator>
+      <TimelineContent>
+        <PaddedPaper>
+          <HuntInfo hunt={hunt} />
+        </PaddedPaper>
+        <Actions align={alignActions}>
+          <Tooltip title="Set kill time">
+            <IconButton size={buttonSize} onClick={() => onEditKillTime(hunt)}>
+              <AccessTime />
             </IconButton>
           </Tooltip>
-        ) : (
-          <Tooltip title="Does not leave a tombstone">
-            <span>
-              <IconButton disabled>
+          {hunt.boss.tombstone ? (
+            <Tooltip title="Tombstone location">
+              <IconButton
+                size={buttonSize}
+                onClick={() => onEditTombstoneLocation(hunt)}
+              >
                 <Room />
               </IconButton>
-            </span>
+            </Tooltip>
+          ) : (
+            <Tooltip title="Does not leave a tombstone">
+              <span>
+                <IconButton size={buttonSize} disabled>
+                  <Room />
+                </IconButton>
+              </span>
+            </Tooltip>
+          )}
+          <Tooltip title="Stop hunting">
+            <IconButton size={buttonSize} onClick={() => onDelete(hunt)}>
+              <Delete />
+            </IconButton>
           </Tooltip>
-        )}
-        <Tooltip title="Stop hunting">
-          <IconButton onClick={() => onDelete(hunt)}>
-            <Delete />
-          </IconButton>
-        </Tooltip>
-      </Actions>
-    </TimelineContent>
-  </MuiTimelineItem>
-);
+        </Actions>
+      </TimelineContent>
+    </MuiTimelineItem>
+  );
+};
 
 const PaddedPaper = styled(Paper).attrs({ elevation: 3 })`
   padding: 6px 16px;
