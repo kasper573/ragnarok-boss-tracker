@@ -48,10 +48,7 @@ export const App: React.FC<AppProps> = ({ bosses }) => {
           <CssBaseline />
           <Container>
             <BossSelectorPadding>
-              <BossSelector
-                bosses={bosses}
-                onSelect={startCreating}
-              />
+              <BossSelector bosses={bosses} onSelect={startCreating} />
             </BossSelectorPadding>
             <HuntTimeline
               hunts={hunts}
