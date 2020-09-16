@@ -18,6 +18,8 @@ import {
 } from "@material-ui/core";
 import { AlarmOn, Delete, Room, Update } from "@material-ui/icons";
 import { HuntInfo } from "./HuntInfo";
+import Typography from "@material-ui/core/Typography";
+import { TimeText } from "./TimeText";
 
 export type HuntTimelineItemProps = {
   hunt: Hunt;
@@ -45,6 +47,9 @@ export const HuntTimelineItem: React.FC<HuntTimelineItemProps> = ({
   return (
     <MuiTimelineItem>
       <TimelineOppositeContent>
+        <Typography variant="body2" color="textSecondary">
+          Killed <TimeText time={hunt.killTime} color="error" />
+        </Typography>
         <SpawnTime hunt={hunt} />
       </TimelineOppositeContent>
       <TimelineSeparator>
