@@ -2,7 +2,7 @@ import { Map } from "./Map";
 import { Minutes } from "./Minutes";
 
 export type Boss = {
-  icon: string;
+  icon?: string;
   name: string;
   map: Map;
   spawnCooldown: Minutes;
