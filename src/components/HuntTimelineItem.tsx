@@ -53,7 +53,7 @@ export const HuntTimelineItem: React.FC<HuntTimelineItemProps> = ({
         <SpawnTime hunt={hunt} />
       </TimelineOppositeContent>
       <TimelineSeparator>
-        <TimelineDot>
+        <TimelineDot style={{ padding: 0 }}>
           <Avatar src={hunt.boss.icon} />
         </TimelineDot>
         {connector && <TimelineConnector />}
