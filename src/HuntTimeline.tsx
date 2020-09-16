@@ -27,8 +27,8 @@ export const HuntTimeline: React.FC<HuntTimelineProps> = ({
         onEdit={onEdit}
         onDelete={onDelete}
         hunt={hunt}
-        alignActions={index % 2 !== 0 ? 'right' : 'left'}
-        connector={index < (hunts.length - 1)}
+        alignActions={index % 2 !== 0 ? "right" : "left"}
+        connector={index < hunts.length - 1}
       />
     ))}
   </Container>
