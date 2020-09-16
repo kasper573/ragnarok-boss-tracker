@@ -1,6 +1,5 @@
 import { Boss } from "./Boss";
 import { Map } from "./Map";
-import { MapLocation } from "./MapLocation";
 
 export class Hunt {
   public get start() {
@@ -15,7 +14,7 @@ export class Hunt {
     public readonly boss: Boss,
     public readonly map: Map = boss.map,
     public readonly killTime: Date = new Date(),
-    public readonly tombstoneLocation?: MapLocation
+    public readonly tombstoneLocation = boss.fixedSpawnLocation
   ) {}
 
   update(changes: Partial<Hunt>) {

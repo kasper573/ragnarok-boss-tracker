@@ -1,5 +1,6 @@
 import { Map } from "./Map";
 import { Minutes } from "./Minutes";
+import { MapLocation } from "./MapLocation";
 
 export type Boss = {
   icon?: string;
@@ -7,4 +8,6 @@ export type Boss = {
   map: Map;
   spawnCooldown: Minutes;
   spawnWindow: Minutes;
+  tombstone: boolean;
+  fixedSpawnLocation: MapLocation | undefined;
 };
