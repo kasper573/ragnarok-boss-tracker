@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Getting started
 
-- Make sure you have [NPM](https://www.npmjs.com/) installed
+- Make sure you have [Node](https://nodejs.org/) installed
 - Navigate to the root directory of this project in a console
 - Run `npm install`
 - Run `npm run start`
