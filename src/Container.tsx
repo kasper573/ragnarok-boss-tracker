@@ -14,7 +14,9 @@ export const Container: React.FC = ({ children }) => (
 
 const padding = 30;
 const breakpoints = [768, 1024];
-const mediaQueries = breakpoints.slice().reverse()
+const mediaQueries = breakpoints
+  .slice()
+  .reverse()
   .map(
     (bp) =>
       `@media screen and (min-width: ${bp}px) {width: ${bp - padding * 2}px;}`
