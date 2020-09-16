@@ -17,7 +17,7 @@ export const SpawnTime: React.FC<SpawnTimeProps> = ({
   if (now < start) {
     return (
       <Typography variant="body2" color="textSecondary">
-        Starting <TimeText time={end} color="success" />
+        Could spawn <TimeText time={end} color="success" />
       </Typography>
     );
   }
@@ -26,7 +26,7 @@ export const SpawnTime: React.FC<SpawnTimeProps> = ({
   if (now > end) {
     return (
       <Typography variant="body2" color="textSecondary">
-        Ended <TimeText time={end} color="error" />
+        Spawned <TimeText time={end} color="error" />
       </Typography>
     );
   }
@@ -35,10 +35,8 @@ export const SpawnTime: React.FC<SpawnTimeProps> = ({
   return (
     <>
       <Typography variant="body2" color="textSecondary">
-        Started <TimeText time={start} color="success" />
-      </Typography>
-      <Typography variant="body2" color="textSecondary">
-        Ends in <TimeText time={end} color="error" />
+        Could spawn <TimeText time={start} color="error" /> or{" "}
+        <TimeText time={end} color="success" />
       </Typography>
     </>
   );
