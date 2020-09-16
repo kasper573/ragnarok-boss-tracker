@@ -1,3 +1,3 @@
 import React from "react";
 
-export const EmptyState = () => <span>No MVPs have been selected</span>;
+export const EmptyState = () => <span>No bosses have been selected</span>;
