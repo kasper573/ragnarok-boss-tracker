@@ -2,7 +2,7 @@ import React from "react";
 import { Dialog, DialogProps, DialogTitle } from "@material-ui/core";
 import { Hunt } from "../state/Hunt";
 import { MapLocation } from "../state/MapLocation";
-import { MapView, Pin } from "./MapView";
+import { MapLocationPicker } from "./MapLocationPicker";
 
 export type HuntLocationEditorProps = Pick<DialogProps, "open" | "onClose"> & {
   value: Hunt;
@@ -26,30 +26,5 @@ export const HuntLocationEditor: React.FC<HuntLocationEditorProps> = ({
         onChange={setLocation}
       />
     </Dialog>
-  );
-};
-
-export type MapLocationPickerProps = {
-  imageUrl: string;
-  value?: MapLocation;
-  onChange: (value: MapLocation) => void;
-};
-
-const MapLocationPicker: React.FC<MapLocationPickerProps> = ({
-  imageUrl,
-  value,
-  onChange,
-}) => {
-  const emitLocation = (e: React.MouseEvent<HTMLDivElement>) => {
-    const { x, y, width, height } = e.currentTarget.getBoundingClientRect();
-    onChange([(e.clientX - x) / width, (e.clientY - y) / height]);
-  };
-  return (
-    <MapView
-      style={{ backgroundImage: `url(${imageUrl})` }}
-      onClick={emitLocation}
-    >
-      {value && <Pin x={value[0]} y={value[1]} />}
-    </MapView>
   );
 };
