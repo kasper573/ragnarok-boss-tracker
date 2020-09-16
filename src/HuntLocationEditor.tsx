@@ -18,7 +18,7 @@ export const HuntLocationEditor: React.FC<HuntLocationEditorProps> = ({
   const setLocation = (location: MapLocation) => {
     // Don't allow changing fixed spawn locations
     if (!value.boss.fixedSpawnLocation) {
-      onChange(value.update({ tombstoneLocation: location }))
+      onChange(value.update({ tombstoneLocation: location }));
     }
   };
   return (

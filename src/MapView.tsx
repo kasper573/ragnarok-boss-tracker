@@ -1,16 +1,16 @@
 import styled from "styled-components";
 import { Square } from "./Square";
 
-export const MapView = styled(Square)(({theme}) => ({
+export const MapView = styled(Square)(({ theme }) => ({
   width: 310,
-  backgroundSize: 'contain',
-  backgroundPosition: '50% 50%',
-  position: 'relative',
-  overflow: 'hidden',
-  [theme.breakpoints.up('md')]: {
-    width: 500
-  }
-})) ;
+  backgroundSize: "contain",
+  backgroundPosition: "50% 50%",
+  position: "relative",
+  overflow: "hidden",
+  [theme.breakpoints.up("md")]: {
+    width: 500,
+  },
+}));
 
 export const Pin = styled.div<{ x: number; y: number }>`
   width: 32px;
