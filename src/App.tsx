@@ -33,12 +33,12 @@ export const App: React.FC<AppProps> = ({ theme, bosses }) => {
     setEditing(true);
   };
   const saveEdit = (updatedHunt: Hunt) => {
-    if (editedHunt) {
-      replaceHunt(editedHunt, updatedHunt);
+    if (!replaceHunt(editedHunt!, updatedHunt)) {
+      addHunt(updatedHunt);
     }
     stopEditing();
   };
-
+  const startCreating = (boss: Boss) => startEditing(new Hunt(boss));
   return (
     <MuiThemeProvider theme={theme}>
       <SCThemeProvider theme={theme}>
@@ -47,7 +47,7 @@ export const App: React.FC<AppProps> = ({ theme, bosses }) => {
           <Background>
             <BossSelector
               bosses={notHuntedBosses(bosses, hunts)}
-              onSelect={(boss) => addHunt(new Hunt(boss))}
+              onSelect={startCreating}
             />
             {hunts.length > 0 ? (
               <HuntTimeline
