@@ -36,7 +36,9 @@ export const BossSelector: React.FC<BossSelectorProps> = ({
         }
       }}
       onInputChange={(e, newInputValue) => setInputValue(newInputValue)}
-      renderOption={(boss) => <Typography noWrap>{getBossLabel(boss)}</Typography>}
+      renderOption={(boss) => (
+        <Typography noWrap>{getBossLabel(boss)}</Typography>
+      )}
       getOptionLabel={getBossLabel}
       renderInput={(params) => (
         <TextField
@@ -51,4 +53,3 @@ export const BossSelector: React.FC<BossSelectorProps> = ({
 };
 
 const getBossLabel = (boss: Boss) => `${boss.name} (${boss.map.name})`;
-
