@@ -14,22 +14,23 @@ export const Container: React.FC = ({ children }) => (
 
 const padding = 30;
 
-const AlignAndPadding = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: ${padding}px;
-`;
+const AlignAndPadding = styled.div(({theme}) => ({
+  width: '100%',
+  height: '100%',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  padding: padding,
+  [theme.breakpoints.down('xs')]: {
+    padding: 0
+  }
+}));
 
 const FixedSizePaper = styled(Paper)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   flex: 1,
-  [theme.breakpoints.up("sm")]: {
-    width: '100%',
-  },
+  width: '100%',
   [theme.breakpoints.up("md")]: {
     width: theme.breakpoints.values.md - padding * 2,
   },
