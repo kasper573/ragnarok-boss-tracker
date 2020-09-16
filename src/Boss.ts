@@ -9,5 +9,5 @@ export type Boss = {
   spawnCooldown: Minutes;
   spawnWindow: Minutes;
   tombstone: boolean;
-  fixedSpawnLocation: MapLocation | undefined;
+  spawnLocation: MapLocation | undefined;
 };

@@ -14,7 +14,7 @@ export class Hunt {
     public readonly boss: Boss,
     public readonly map: Map = boss.map,
     public readonly killTime: Date = new Date(),
-    public readonly tombstoneLocation = boss.fixedSpawnLocation
+    public readonly tombstoneLocation = boss.spawnLocation
   ) {}
 
   update(changes: Partial<Hunt>) {

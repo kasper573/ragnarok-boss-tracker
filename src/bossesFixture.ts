@@ -11,7 +11,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 60 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: [0.5, 0.6226],
+    spawnLocation: [0.5, 0.6226],
   },
   {
     name: "Angeling",
@@ -22,7 +22,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 60 as Minutes,
     spawnWindow: 30 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Angeling",
@@ -33,7 +33,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 60 as Minutes,
     spawnWindow: 30 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Angeling",
@@ -44,7 +44,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 60 as Minutes,
     spawnWindow: 30 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Angry Student Pyuriel",
@@ -55,7 +55,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 480 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Archangeling",
@@ -66,7 +66,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 60 as Minutes,
     spawnWindow: 3 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Atroce",
@@ -77,7 +77,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 480 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Atroce",
@@ -88,7 +88,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 180 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Atroce",
@@ -99,7 +99,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 300 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Atroce",
@@ -110,7 +110,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 180 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Atroce",
@@ -121,7 +121,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 360 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Bacsojin",
@@ -132,7 +132,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 117 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Baphomet",
@@ -143,7 +143,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 480 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Baphomet",
@@ -154,7 +154,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Beelzebub",
@@ -165,7 +165,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 720 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Bio3 MVP",
@@ -176,7 +176,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 100 as Minutes,
     spawnWindow: 30 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Bio4 MVP",
@@ -187,7 +187,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 100 as Minutes,
     spawnWindow: 30 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Boitata",
@@ -198,7 +198,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Dark Guardian Kades",
@@ -209,7 +209,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 480 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Dark Lord",
@@ -220,7 +220,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 480 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Dark Lord",
@@ -231,7 +231,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 60 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Detale",
@@ -242,7 +242,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 180 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Deviling",
@@ -253,7 +253,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 60 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Deviling",
@@ -264,7 +264,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 60 as Minutes,
     spawnWindow: 30 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Doppelganger",
@@ -275,7 +275,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Doppelganger",
@@ -286,7 +286,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 480 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Dracula",
@@ -297,7 +297,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 60 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Drake",
@@ -308,7 +308,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Eddga",
@@ -319,7 +319,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 480 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Eddga",
@@ -330,7 +330,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Egnigem Cenia",
@@ -341,7 +341,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Evil Snake Lord",
@@ -352,7 +352,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 94 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Fallen Bishop Hibram",
@@ -363,7 +363,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Garm",
@@ -374,7 +374,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "General Daehyun",
@@ -385,7 +385,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 480 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Ghostring",
@@ -396,7 +396,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 240 as Minutes,
     spawnWindow: 120 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Ghostring",
@@ -407,7 +407,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 60 as Minutes,
     spawnWindow: 30 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Ghostring",
@@ -418,7 +418,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 113 as Minutes,
     spawnWindow: 57 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Ghostring",
@@ -429,7 +429,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 33 as Minutes,
     spawnWindow: 20 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Gioia",
@@ -440,7 +440,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 480 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Gloom Under Night",
@@ -451,7 +451,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 300 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Golden Thief Bug",
@@ -462,7 +462,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 60 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Gopinich",
@@ -473,7 +473,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Hardrock Mammoth",
@@ -484,7 +484,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 240 as Minutes,
     spawnWindow: 1 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Ifrit",
@@ -495,7 +495,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 660 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Incantation Samurai",
@@ -506,7 +506,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 91 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Kiel D-01",
@@ -517,7 +517,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 60 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Kraken",
@@ -528,7 +528,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 30 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Ktullanux",
@@ -539,7 +539,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 1 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Lady Tanee",
@@ -550,7 +550,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 420 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Leak",
@@ -561,7 +561,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Lord of Death",
@@ -572,7 +572,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 133 as Minutes,
     spawnWindow: 1 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Maya",
@@ -583,7 +583,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Maya",
@@ -594,7 +594,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 480 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Maya Purple",
@@ -605,7 +605,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 20 as Minutes,
     spawnWindow: 1 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Maya Purple",
@@ -616,7 +616,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 20 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Mistress",
@@ -627,7 +627,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 480 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Mistress",
@@ -638,7 +638,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Moonlight Flower",
@@ -649,7 +649,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 480 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Moonlight Flower",
@@ -660,7 +660,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 60 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Nightmare Amon Ra",
@@ -671,7 +671,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 60 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: [0.5, 0.6226],
+    spawnLocation: [0.5, 0.6226],
   },
   {
     name: "Orc Hero",
@@ -682,7 +682,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 60 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Orc Lord",
@@ -693,7 +693,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Osiris",
@@ -704,7 +704,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 60 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Pharaoh",
@@ -715,7 +715,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 60 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Phreeoni",
@@ -726,7 +726,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Queen Scaraba",
@@ -737,7 +737,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 1 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "RSX-0806",
@@ -748,7 +748,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 125 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Stormy Knight",
@@ -759,7 +759,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 60 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Tao Gunka",
@@ -770,7 +770,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 300 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Tendrillion",
@@ -781,7 +781,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 60 as Minutes,
     spawnWindow: 1 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Thanatos",
@@ -792,7 +792,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 1 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Turtle General",
@@ -803,7 +803,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 60 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: [0.5, 0.55],
+    spawnLocation: [0.5, 0.55],
   },
   {
     name: "Valkyrie Randgris",
@@ -814,7 +814,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 480 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Vesper",
@@ -825,7 +825,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 10 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
   {
     name: "Wounded Morroc",
@@ -836,6 +836,6 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 720 as Minutes,
     spawnWindow: 60 as Minutes,
-    fixedSpawnLocation: undefined,
+    spawnLocation: undefined,
   },
 ];
