@@ -1,9 +1,8 @@
 import React from "react";
-import moment from "moment";
-import styled from "styled-components";
 import Typography from "@material-ui/core/Typography";
 import { useTimer } from "./useTimer";
 import { Hunt } from "./Hunt";
+import { TimeText } from "./TimeText";
 
 export type SpawnTimeProps = {
   hunt: Hunt;
@@ -18,7 +17,7 @@ export const SpawnTime: React.FC<SpawnTimeProps> = ({
   if (now < start) {
     return (
       <Typography variant="body2" color="textSecondary">
-        Starting <FutureText>{format(start)}</FutureText>
+        Starting <TimeText time={end} color="success" />
       </Typography>
     );
   }
@@ -27,7 +26,7 @@ export const SpawnTime: React.FC<SpawnTimeProps> = ({
   if (now > end) {
     return (
       <Typography variant="body2" color="textSecondary">
-        Ended <PastText>{format(end)}</PastText>
+        Ended <TimeText time={end} color="error" />
       </Typography>
     );
   }
@@ -36,21 +35,11 @@ export const SpawnTime: React.FC<SpawnTimeProps> = ({
   return (
     <>
       <Typography variant="body2" color="textSecondary">
-        Started <PastText>{format(start)}</PastText>
+        Started <TimeText time={start} color="success" />
       </Typography>
       <Typography variant="body2" color="textSecondary">
-        Ends in <FutureText>{format(end)}</FutureText>
+        Ends in <TimeText time={end} color="error" />
       </Typography>
     </>
   );
 };
-
-const format = (date: Date) => moment(date).fromNow();
-
-const PastText = styled.span`
-  color: ${({ theme }) => theme.palette.error.main};
-`;
-
-const FutureText = styled.span`
-  color: ${({ theme }) => theme.palette.success.main};
-`;
