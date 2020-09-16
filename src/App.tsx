@@ -10,7 +10,6 @@ import { Container } from "./Container";
 import { BossSelector } from "./BossSelector";
 import { useListState } from "./useListState";
 import { Hunt } from "./Hunt";
-import { EmptyState } from "./EmptyState";
 import { Boss } from "./Boss";
 import MomentUtils from "@date-io/moment";
 import { MuiPickersUtilsProvider } from "@material-ui/pickers";
@@ -51,15 +50,11 @@ export const App: React.FC<AppProps> = ({ theme, bosses }) => {
                 onSelect={startCreating}
               />
             </BossSelectorPadding>
-            {hunts.length > 0 ? (
-              <HuntTimeline
-                hunts={hunts}
-                onDelete={removeHunt}
-                onEdit={startEditing}
-              />
-            ) : (
-              <EmptyState />
-            )}
+            <HuntTimeline
+              hunts={hunts}
+              onDelete={removeHunt}
+              onEdit={startEditing}
+            />
             {editedHunt && (
               <HuntEditor
                 value={editedHunt}
