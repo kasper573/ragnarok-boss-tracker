@@ -23,7 +23,7 @@ type Editor = "time" | "location";
 export const App: React.FC<AppProps> = ({ bosses }) => {
   const prefersDarkTheme = useMediaQuery("(prefers-color-scheme: dark)");
   const [hunts, addHunt, removeHunt, replaceHunt] = useListState<Hunt>(
-    bosses.map((boss) => new Hunt(boss))
+    bosses.slice(0, 3).map((boss) => new Hunt(boss))
   );
   const [editedHunt, setEditedHunt] = useState<Hunt>();
   const [visibleEditor, setVisibleEditor] = useState<Editor>();
