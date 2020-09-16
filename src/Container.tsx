@@ -1,14 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { Paper } from "@material-ui/core";
 
 /**
  * The primary content container for everything shown on the web page.
- * Centers content horizontally and wraps everything in a fixed size Paper.
+ * Centers content horizontally and maintains a responsive content size.
  */
 export const Container: React.FC = ({ children }) => (
   <AlignAndPadding>
-    <FixedSizePaper>{children}</FixedSizePaper>
+    <FixedSize>{children}</FixedSize>
   </AlignAndPadding>
 );
 
@@ -26,7 +25,7 @@ const AlignAndPadding = styled.div(({ theme }) => ({
   },
 }));
 
-const FixedSizePaper = styled(Paper)(({ theme }) => ({
+const FixedSize = styled.div(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   flex: 1,
