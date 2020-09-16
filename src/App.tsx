@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import styled, { ThemeProvider as SCThemeProvider } from "styled-components";
 import { HuntTimeline } from "./HuntTimeline";
-import {
-  Theme,
-  ThemeProvider as MuiThemeProvider,
-} from "@material-ui/core/styles";
-import { CssBaseline } from "@material-ui/core";
+import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
+import { CssBaseline, useMediaQuery } from "@material-ui/core";
 import { Container } from "./Container";
 import { BossSelector } from "./BossSelector";
 import { useListState } from "./useListState";
@@ -14,13 +11,14 @@ import { Boss } from "./Boss";
 import MomentUtils from "@date-io/moment";
 import { MuiPickersUtilsProvider } from "@material-ui/pickers";
 import { HuntEditor } from "./HuntEditor";
+import { createAppTheme } from "./theme";
 
 export type AppProps = {
-  theme: Theme;
   bosses: Boss[];
 };
 
-export const App: React.FC<AppProps> = ({ theme, bosses }) => {
+export const App: React.FC<AppProps> = ({ bosses }) => {
+  const prefersDarkTheme = useMediaQuery("(prefers-color-scheme: dark)");
   const [hunts, addHunt, removeHunt, replaceHunt] = useListState<Hunt>(
     bosses.map((boss) => new Hunt(boss))
   );
@@ -38,6 +36,7 @@ export const App: React.FC<AppProps> = ({ theme, bosses }) => {
     stopEditing();
   };
   const startCreating = (boss: Boss) => startEditing(new Hunt(boss));
+  const theme = createAppTheme(prefersDarkTheme ? "dark" : "light");
   return (
     <MuiThemeProvider theme={theme}>
       <SCThemeProvider theme={theme}>
