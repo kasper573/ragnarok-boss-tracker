@@ -9,7 +9,7 @@ import { SpawnTime } from "./SpawnTime";
 import styled from "styled-components";
 import Paper from "@material-ui/core/Paper";
 import { Hunt } from "./Hunt";
-import {Avatar, IconButton, Tooltip} from '@material-ui/core';
+import { Avatar, IconButton, Tooltip } from "@material-ui/core";
 import { Delete, Edit } from "@material-ui/icons";
 import { HuntInfo } from "./HuntInfo";
 
@@ -32,7 +32,7 @@ export const HuntTimelineItem: React.FC<HuntTimelineItemProps> = ({
     </TimelineOppositeContent>
     <TimelineSeparator>
       <TimelineDot>
-        <Avatar src={hunt.boss.icon}/>
+        <Avatar src={hunt.boss.icon} />
       </TimelineDot>
       <TimelineConnector />
     </TimelineSeparator>
