@@ -18,7 +18,7 @@ export const SpawnTime: React.FC<SpawnTimeProps> = ({
   if (now < start) {
     return (
       <Typography variant="body2" color="textSecondary">
-        Starting {format(start)}
+        Starting <FutureText>{format(start)}</FutureText>
       </Typography>
     );
   }
@@ -27,7 +27,7 @@ export const SpawnTime: React.FC<SpawnTimeProps> = ({
   if (now > end) {
     return (
       <Typography variant="body2" color="textSecondary">
-        Ended {format(end)}
+        Ended <PastText>{format(end)}</PastText>
       </Typography>
     );
   }
