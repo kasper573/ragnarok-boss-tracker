@@ -1,1 +1,4 @@
-export type Map = Opaque<string, "Map">;
+export type Map = {
+  name: string;
+  imageUrl: string;
+};

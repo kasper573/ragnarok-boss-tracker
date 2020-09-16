@@ -10,12 +10,12 @@ import { MaterialUiPickersDate } from "@material-ui/pickers/typings/date";
 import React, { useState } from "react";
 import { TimePicker } from "@material-ui/pickers";
 
-export type HuntEditorProps = Pick<DialogProps, "open" | "onClose"> & {
+export type HuntTimeEditorProps = Pick<DialogProps, "open" | "onClose"> & {
   value: Hunt;
   onChange: (value: Hunt) => void;
 };
 
-export const HuntEditor: React.FC<HuntEditorProps> = ({
+export const HuntTimeEditor: React.FC<HuntTimeEditorProps> = ({
   value,
   open,
   onChange,

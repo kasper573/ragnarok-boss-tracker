@@ -10,12 +10,15 @@ import { Hunt } from "./Hunt";
 import { Boss } from "./Boss";
 import MomentUtils from "@date-io/moment";
 import { MuiPickersUtilsProvider } from "@material-ui/pickers";
-import { HuntEditor } from "./HuntEditor";
+import { HuntTimeEditor } from "./HuntTimeEditor";
 import { createAppTheme } from "./theme";
+import { HuntLocationEditor } from "./HuntLocationEditor";
 
 export type AppProps = {
   bosses: Boss[];
 };
+
+type Editor = "time" | "location";
 
 export const App: React.FC<AppProps> = ({ bosses }) => {
   const prefersDarkTheme = useMediaQuery("(prefers-color-scheme: dark)");
@@ -23,11 +26,11 @@ export const App: React.FC<AppProps> = ({ bosses }) => {
     bosses.map((boss) => new Hunt(boss))
   );
   const [editedHunt, setEditedHunt] = useState<Hunt>();
-  const [isEditing, setEditing] = useState(false);
-  const stopEditing = () => setEditing(false);
-  const startEditing = (hunt: Hunt) => {
+  const [visibleEditor, setVisibleEditor] = useState<Editor>();
+  const stopEditing = () => setVisibleEditor(undefined);
+  const startEditing = (hunt: Hunt, editor: Editor) => {
     setEditedHunt(hunt);
-    setEditing(true);
+    setVisibleEditor(editor);
   };
   const saveEdit = (updatedHunt: Hunt) => {
     if (!replaceHunt(editedHunt!, updatedHunt)) {
@@ -35,7 +38,7 @@ export const App: React.FC<AppProps> = ({ bosses }) => {
     }
     stopEditing();
   };
-  const startCreating = (boss: Boss) => startEditing(new Hunt(boss));
+  const startCreating = (boss: Boss) => startEditing(new Hunt(boss), "time");
   const theme = createAppTheme(prefersDarkTheme ? "dark" : "light");
   return (
     <MuiThemeProvider theme={theme}>
@@ -52,15 +55,24 @@ export const App: React.FC<AppProps> = ({ bosses }) => {
             <HuntTimeline
               hunts={hunts}
               onDelete={removeHunt}
-              onEdit={startEditing}
+              onEditKillTime={(hunt) => startEditing(hunt, "time")}
+              onEditTombstoneLocation={(hunt) => startEditing(hunt, "location")}
             />
             {editedHunt && (
-              <HuntEditor
-                value={editedHunt}
-                open={isEditing}
-                onClose={stopEditing}
-                onChange={saveEdit}
-              />
+              <>
+                <HuntTimeEditor
+                  value={editedHunt}
+                  open={visibleEditor === "time"}
+                  onClose={stopEditing}
+                  onChange={saveEdit}
+                />
+                <HuntLocationEditor
+                  value={editedHunt}
+                  open={visibleEditor === "location"}
+                  onClose={stopEditing}
+                  onChange={saveEdit}
+                />
+              </>
             )}
           </Container>
         </MuiPickersUtilsProvider>

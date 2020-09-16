@@ -1,7 +1,7 @@
 import React from "react";
 import MuiTimeline from "@material-ui/lab/Timeline";
 import styled from "styled-components";
-import { HuntTimelineItem } from "./HuntTimelineItem";
+import { HuntTimelineItem, HuntTimelineItemProps } from "./HuntTimelineItem";
 import { Hunt } from "./Hunt";
 
 const Container = styled(MuiTimeline)`
@@ -9,26 +9,25 @@ const Container = styled(MuiTimeline)`
   padding: 0;
 `;
 
-export type HuntTimelineProps = {
+export type HuntTimelineProps = Pick<
+  HuntTimelineItemProps,
+  "onEditTombstoneLocation" | "onEditKillTime" | "onDelete"
+> & {
   hunts: Hunt[];
-  onEdit: (hunt: Hunt) => void;
-  onDelete: (hunt: Hunt) => void;
 };
 
 export const HuntTimeline: React.FC<HuntTimelineProps> = ({
   hunts,
-  onDelete,
-  onEdit,
+  ...itemProps
 }) => (
   <Container align="alternate">
     {ordered(hunts).map((hunt, index) => (
       <HuntTimelineItem
         key={`hunt${index}`}
-        onEdit={onEdit}
-        onDelete={onDelete}
         hunt={hunt}
         alignActions={index % 2 !== 0 ? "right" : "left"}
         connector={index < hunts.length - 1}
+        {...itemProps}
       />
     ))}
   </Container>

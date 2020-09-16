@@ -10,12 +10,13 @@ import styled from "styled-components";
 import Paper from "@material-ui/core/Paper";
 import { Hunt } from "./Hunt";
 import { Avatar, IconButton, Tooltip } from "@material-ui/core";
-import { AccessTime, Delete } from "@material-ui/icons";
+import { AccessTime, Delete, Room } from "@material-ui/icons";
 import { HuntInfo } from "./HuntInfo";
 
 export type HuntTimelineItemProps = {
   hunt: Hunt;
-  onEdit: (hunt: Hunt) => void;
+  onEditKillTime: (hunt: Hunt) => void;
+  onEditTombstoneLocation: (hunt: Hunt) => void;
   onDelete: (hunt: Hunt) => void;
   alignActions: "right" | "left";
   connector: boolean;
@@ -23,7 +24,8 @@ export type HuntTimelineItemProps = {
 
 export const HuntTimelineItem: React.FC<HuntTimelineItemProps> = ({
   hunt,
-  onEdit,
+  onEditKillTime,
+  onEditTombstoneLocation,
   onDelete,
   alignActions,
   connector,
@@ -44,8 +46,13 @@ export const HuntTimelineItem: React.FC<HuntTimelineItemProps> = ({
       </PaddedPaper>
       <Actions align={alignActions}>
         <Tooltip title="Set kill time">
-          <IconButton onClick={() => onEdit(hunt)}>
+          <IconButton onClick={() => onEditKillTime(hunt)}>
             <AccessTime />
+          </IconButton>
+        </Tooltip>
+        <Tooltip title="Tombstone location">
+          <IconButton onClick={() => onEditTombstoneLocation(hunt)}>
+            <Room />
           </IconButton>
         </Tooltip>
         <Tooltip title="Stop hunting">
