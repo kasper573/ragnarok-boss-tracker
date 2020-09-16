@@ -8,7 +8,7 @@ import {
 import { Hunt } from "../state/Hunt";
 import { MaterialUiPickersDate } from "@material-ui/pickers/typings/date";
 import React, { useState } from "react";
-import { TimePicker } from "@material-ui/pickers";
+import { DateTimePicker } from "@material-ui/pickers";
 
 export type HuntTimeEditorProps = Pick<DialogProps, "open" | "onClose"> & {
   value: Hunt;
@@ -28,7 +28,7 @@ export const HuntTimeEditor: React.FC<HuntTimeEditorProps> = ({
   return (
     <Dialog open={open} onClose={onClose}>
       <DialogTitle>Set kill time</DialogTitle>
-      <TimePicker
+      <DateTimePicker
         variant="static"
         openTo="hours"
         value={time}
@@ -36,6 +36,7 @@ export const HuntTimeEditor: React.FC<HuntTimeEditorProps> = ({
         ampm
       />
       <DialogActions>
+        <Button onClick={() => setTime(new Date())}>Now</Button>
         <Button onClick={submit} autoFocus>
           Save
         </Button>
