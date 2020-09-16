@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { ThemeProvider as SCThemeProvider } from "styled-components";
+import styled, { ThemeProvider as SCThemeProvider } from "styled-components";
 import { HuntTimeline } from "./HuntTimeline";
 import {
   Theme,
   ThemeProvider as MuiThemeProvider,
 } from "@material-ui/core/styles";
 import { CssBaseline } from "@material-ui/core";
-import { Background } from "./Background";
+import { Container } from "./Container";
 import { BossSelector } from "./BossSelector";
 import { useListState } from "./useListState";
 import { Hunt } from "./Hunt";
@@ -44,11 +44,13 @@ export const App: React.FC<AppProps> = ({ theme, bosses }) => {
       <SCThemeProvider theme={theme}>
         <MuiPickersUtilsProvider utils={MomentUtils}>
           <CssBaseline />
-          <Background>
-            <BossSelector
-              bosses={notHuntedBosses(bosses, hunts)}
-              onSelect={startCreating}
-            />
+          <Container>
+            <BossSelectorPadding>
+              <BossSelector
+                bosses={notHuntedBosses(bosses, hunts)}
+                onSelect={startCreating}
+              />
+            </BossSelectorPadding>
             {hunts.length > 0 ? (
               <HuntTimeline
                 hunts={hunts}
@@ -66,7 +68,7 @@ export const App: React.FC<AppProps> = ({ theme, bosses }) => {
                 onChange={saveEdit}
               />
             )}
-          </Background>
+          </Container>
         </MuiPickersUtilsProvider>
       </SCThemeProvider>
     </MuiThemeProvider>
@@ -75,3 +77,7 @@ export const App: React.FC<AppProps> = ({ theme, bosses }) => {
 
 const notHuntedBosses = (bosses: Boss[], hunts: Hunt[]) =>
   bosses.filter((boss) => !hunts.find((hunt) => hunt.boss === boss));
+
+const BossSelectorPadding = styled.div`
+  padding: 0 16px;
+`;

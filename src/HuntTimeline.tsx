@@ -6,6 +6,7 @@ import { Hunt } from "./Hunt";
 
 const Container = styled(MuiTimeline)`
   margin: 0;
+  padding: 0;
 `;
 
 export type HuntTimelineProps = {
