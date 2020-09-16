@@ -41,7 +41,7 @@ export const App: React.FC<AppProps> = ({ bosses }) => {
       stopEditing();
     }
   };
-  const startCreating = (boss: Boss) => startEditing(new Hunt(boss), "time");
+  const startCreating = (boss: Boss) => addHunt(new Hunt(boss));
   const theme = createAppTheme(prefersDarkTheme ? "dark" : "light");
   return (
     <MuiThemeProvider theme={theme}>
