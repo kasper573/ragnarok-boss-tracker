@@ -13,6 +13,7 @@ import { MuiPickersUtilsProvider } from "@material-ui/pickers";
 import { HuntTimeEditor } from "./HuntTimeEditor";
 import { createAppTheme } from "./theme";
 import { HuntLocationEditor } from "./HuntLocationEditor";
+import { loadFromLocalStorage, saveToLocalStorage } from "./storage";
 
 export type AppProps = {
   bosses: Boss[];
@@ -22,7 +23,10 @@ type Editor = "time" | "location";
 
 export const App: React.FC<AppProps> = ({ bosses }) => {
   const prefersDarkTheme = useMediaQuery("(prefers-color-scheme: dark)");
-  const [hunts, addHunt, removeHunt, replaceHunt] = useListState<Hunt>();
+  const [hunts, addHunt, removeHunt, replaceHunt] = useListState<Hunt>(
+    () => loadFromLocalStorage(bosses),
+    saveToLocalStorage
+  );
   const [editedHunt, setEditedHunt] = useState<Hunt>();
   const [visibleEditor, setVisibleEditor] = useState<Editor>();
   const stopEditing = () => setVisibleEditor(undefined);

@@ -210,7 +210,7 @@ export const bosses: Boss[] = [
     spawnLocation: undefined,
   },
   {
-    id: -1,
+    id: -2,
     name: "Bio4 MVP",
     tombstone: true,
     map: {
