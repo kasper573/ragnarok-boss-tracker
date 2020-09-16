@@ -17,14 +17,14 @@ export type HuntTimelineItemProps = {
   hunt: Hunt;
   onEdit: (hunt: Hunt) => void;
   onDelete: (hunt: Hunt) => void;
-  reverse?: boolean;
+  alignActions: 'right' | 'left';
 };
 
 export const HuntTimelineItem: React.FC<HuntTimelineItemProps> = ({
   hunt,
   onEdit,
   onDelete,
-  reverse,
+  alignActions,
 }) => (
   <MuiTimelineItem>
     <TimelineOppositeContent>
@@ -40,7 +40,7 @@ export const HuntTimelineItem: React.FC<HuntTimelineItemProps> = ({
       <PaddedPaper>
         <HuntInfo hunt={hunt} />
       </PaddedPaper>
-      <Actions align={reverse ? "right" : "left"}>
+      <Actions align={alignActions}>
         <Tooltip title="Set kill time">
           <IconButton onClick={() => onEdit(hunt)}>
             <Edit />
