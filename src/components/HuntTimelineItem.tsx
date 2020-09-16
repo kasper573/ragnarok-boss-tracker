@@ -8,7 +8,7 @@ import MuiTimelineItem from "@material-ui/lab/TimelineItem";
 import { SpawnTime } from "./SpawnTime";
 import styled from "styled-components";
 import Paper from "@material-ui/core/Paper";
-import { Hunt } from "./Hunt";
+import { Hunt } from "../state/Hunt";
 import { Avatar, IconButton, Tooltip } from "@material-ui/core";
 import { AccessTime, Delete, Room } from "@material-ui/icons";
 import { HuntInfo } from "./HuntInfo";

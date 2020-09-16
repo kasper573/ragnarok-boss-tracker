@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Autocomplete } from "@material-ui/lab";
 import { TextField, Typography } from "@material-ui/core";
-import { Boss } from "./Boss";
+import { Boss } from "../state/Boss";
 
 export type BossSelectorProps = {
   bosses: Boss[];

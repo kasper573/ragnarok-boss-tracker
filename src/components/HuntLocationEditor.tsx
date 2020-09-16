@@ -1,7 +1,7 @@
 import React from "react";
 import { Dialog, DialogProps, DialogTitle } from "@material-ui/core";
-import { Hunt } from "./Hunt";
-import { MapLocation } from "./MapLocation";
+import { Hunt } from "../state/Hunt";
+import { MapLocation } from "../state/MapLocation";
 import { MapView, Pin } from "./MapView";
 
 export type HuntLocationEditorProps = Pick<DialogProps, "open" | "onClose"> & {

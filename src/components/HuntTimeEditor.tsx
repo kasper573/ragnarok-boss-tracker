@@ -5,7 +5,7 @@ import {
   DialogActions,
   Button,
 } from "@material-ui/core";
-import { Hunt } from "./Hunt";
+import { Hunt } from "../state/Hunt";
 import { MaterialUiPickersDate } from "@material-ui/pickers/typings/date";
 import React, { useState } from "react";
 import { TimePicker } from "@material-ui/pickers";

@@ -2,7 +2,7 @@ import React from "react";
 import MuiTimeline from "@material-ui/lab/Timeline";
 import styled from "styled-components";
 import { HuntTimelineItem, HuntTimelineItemProps } from "./HuntTimelineItem";
-import { Hunt } from "./Hunt";
+import { Hunt } from "../state/Hunt";
 
 const Container = styled(MuiTimeline)`
   margin: 0;

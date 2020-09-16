@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useEffect } from "react";
-import { timeEffect } from "./timeEffect";
+import { timeEffect } from "../effects/timeEffect";
 
 export const useTimer = (interval?: number) => {
   const [time, setTime] = React.useState(new Date());

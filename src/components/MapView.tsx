@@ -15,7 +15,7 @@ export const MapView = styled(Square)(({ theme }) => ({
 export const Pin = styled.div<{ x: number; y: number }>`
   width: 32px;
   height: 32px;
-  background-image: url(${require("./assets/tombstone.png")});
+  background-image: url(${require("../assets/tombstone.png")});
   background-size: contain;
   background-position: 50% 50%;
   position: absolute;

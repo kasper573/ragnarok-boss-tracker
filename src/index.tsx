@@ -1,9 +1,9 @@
 //import {} from 'styled-components/cssprop'
 import React from "react";
 import ReactDOM from "react-dom";
-import { App } from "./App";
+import { App } from "./components/App";
 import * as serviceWorker from "./serviceWorker";
-import { bosses } from "./bossesFixture";
+import { bosses } from "./fixtures/bosses";
 
 ReactDOM.render(
   <React.StrictMode>

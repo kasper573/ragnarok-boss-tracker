@@ -1,7 +1,7 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
-import { useTimer } from "./useTimer";
-import { Hunt } from "./Hunt";
+import { useTimer } from "../hooks/useTimer";
+import { Hunt } from "../state/Hunt";
 import { TimeText } from "./TimeText";
 
 export type SpawnTimeProps = {

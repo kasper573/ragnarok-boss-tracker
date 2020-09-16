@@ -1,6 +1,6 @@
 import Typography from "@material-ui/core/Typography";
 import React from "react";
-import { Hunt } from "./Hunt";
+import { Hunt } from "../state/Hunt";
 import { Tooltip, useMediaQuery, useTheme } from "@material-ui/core";
 
 export type HuntInfoProps = { hunt: Hunt };

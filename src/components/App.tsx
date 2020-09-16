@@ -5,15 +5,15 @@ import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
 import { CssBaseline, useMediaQuery } from "@material-ui/core";
 import { Container } from "./Container";
 import { BossSelector } from "./BossSelector";
-import { useListState } from "./useListState";
-import { Hunt } from "./Hunt";
-import { Boss } from "./Boss";
+import { useListState } from "../hooks/useListState";
+import { Hunt } from "../state/Hunt";
+import { Boss } from "../state/Boss";
 import MomentUtils from "@date-io/moment";
 import { MuiPickersUtilsProvider } from "@material-ui/pickers";
 import { HuntTimeEditor } from "./HuntTimeEditor";
-import { createAppTheme } from "./theme";
+import { createAppTheme } from "../fixtures/theme";
 import { HuntLocationEditor } from "./HuntLocationEditor";
-import { loadFromLocalStorage, saveToLocalStorage } from "./storage";
+import { loadFromLocalStorage, saveToLocalStorage } from "../state/storage";
 
 export type AppProps = {
   bosses: Boss[];
