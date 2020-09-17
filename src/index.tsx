@@ -4,10 +4,11 @@ import ReactDOM from "react-dom";
 import { App } from "./components/App";
 import * as serviceWorker from "./serviceWorker";
 import { bosses } from "./fixtures/bosses";
+import { createAppTheme } from "./fixtures/theme";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App bosses={bosses} />
+    <App theme={createAppTheme()} bosses={bosses} />
   </React.StrictMode>,
   document.getElementById("root")
 );

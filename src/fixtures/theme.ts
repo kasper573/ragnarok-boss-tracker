@@ -1,6 +1,6 @@
 import { createMuiTheme } from "@material-ui/core/styles";
 
-export const createAppTheme = (type: "dark" | "light") =>
+export const createAppTheme = () =>
   createMuiTheme({
     overrides: {
       MuiCssBaseline: {
@@ -15,6 +15,6 @@ export const createAppTheme = (type: "dark" | "light") =>
       },
     },
     palette: {
-      type,
+      type: "dark",
     },
   });

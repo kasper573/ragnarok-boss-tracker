@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import styled, { ThemeProvider as SCThemeProvider } from "styled-components";
 import { HuntTimeline } from "./HuntTimeline";
-import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
-import { CssBaseline, useMediaQuery } from "@material-ui/core";
+import {
+  Theme,
+  ThemeProvider as MuiThemeProvider,
+} from "@material-ui/core/styles";
+import { CssBaseline } from "@material-ui/core";
 import { Container } from "./Container";
 import { BossSelector } from "./BossSelector";
 import { useListState } from "../hooks/useListState";
@@ -11,18 +14,17 @@ import { Boss } from "../state/Boss";
 import MomentUtils from "@date-io/moment";
 import { MuiPickersUtilsProvider } from "@material-ui/pickers";
 import { HuntTimeEditor } from "./HuntTimeEditor";
-import { createAppTheme } from "../fixtures/theme";
 import { HuntLocationEditor } from "./HuntLocationEditor";
 import { loadFromLocalStorage, saveToLocalStorage } from "../state/storage";
 
 export type AppProps = {
+  theme: Theme;
   bosses: Boss[];
 };
 
 type Editor = "time" | "location";
 
-export const App: React.FC<AppProps> = ({ bosses }) => {
-  const prefersDarkTheme = useMediaQuery("(prefers-color-scheme: dark)");
+export const App: React.FC<AppProps> = ({ theme, bosses }) => {
   const [hunts, addHunt, removeHunt, replaceHunt] = useListState<Hunt>(
     () => loadFromLocalStorage(bosses),
     saveToLocalStorage
@@ -46,7 +48,6 @@ export const App: React.FC<AppProps> = ({ bosses }) => {
   const startCreating = (boss: Boss) => addHunt(new Hunt(boss));
   const killNow = (hunt: Hunt) =>
     replaceHunt(hunt, hunt.update({ killTime: new Date() }));
-  const theme = createAppTheme(prefersDarkTheme ? "dark" : "light");
   return (
     <MuiThemeProvider theme={theme}>
       <SCThemeProvider theme={theme}>
