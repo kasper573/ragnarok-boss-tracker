@@ -36,6 +36,7 @@ export const BossSelector: React.FC<BossSelectorProps> = ({
           {children}
         </div>
       )}
+      value={null}
       freeSolo={false}
       multiple={false}
       options={visibleOptions}
