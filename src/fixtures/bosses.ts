@@ -14,6 +14,7 @@ export const bosses: Boss[] = [
     spawnCooldown: 60 as Minutes,
     spawnWindow: 10 as Minutes,
     spawnLocation: [0.5, 0.6226],
+    tier: 1,
   },
   {
     id: 1852,
@@ -26,7 +27,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 60 as Minutes,
     spawnWindow: 30 as Minutes,
-    spawnLocation: undefined,
+    tier: 0,
   },
   {
     id: 1852,
@@ -39,7 +40,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 60 as Minutes,
     spawnWindow: 30 as Minutes,
-    spawnLocation: undefined,
+    tier: 0,
   },
   {
     id: 1852,
@@ -52,20 +53,17 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 60 as Minutes,
     spawnWindow: 30 as Minutes,
-    spawnLocation: undefined,
+    tier: 0,
   },
   {
     id: 2249,
     icon: require("../assets/mobs/2249.gif"),
     name: "Angry Student Pyuriel",
     tombstone: true,
-    map: {
-      name: "gld2_prt",
-      imageUrl: require("../assets/maps/gld2_prt.jpg"),
-    },
+    map: { name: "gld2_prt", imageUrl: require("../assets/maps/gld2_prt.jpg") },
     spawnCooldown: 480 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 3,
   },
   {
     id: 1388,
@@ -78,7 +76,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 60 as Minutes,
     spawnWindow: 3 as Minutes,
-    spawnLocation: undefined,
+    tier: 0,
   },
   {
     id: 1785,
@@ -91,7 +89,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 480 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 1,
   },
   {
     id: 1785,
@@ -104,7 +102,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 180 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 1,
   },
   {
     id: 1785,
@@ -117,7 +115,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 300 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 1,
   },
   {
     id: 1785,
@@ -130,7 +128,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 180 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 1,
   },
   {
     id: 1785,
@@ -143,7 +141,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 360 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 1,
   },
   {
     id: 1630,
@@ -156,7 +154,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 117 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 2,
   },
   {
     id: 1399,
@@ -169,7 +167,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 480 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 2,
   },
   {
     id: 1399,
@@ -182,20 +180,17 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 2,
   },
   {
     id: 1874,
     icon: require("../assets/mobs/1874.gif"),
     name: "Beelzebub",
     tombstone: true,
-    map: {
-      name: "abbey03",
-      imageUrl: require("../assets/maps/abbey03.jpg"),
-    },
+    map: { name: "abbey03", imageUrl: require("../assets/maps/abbey03.jpg") },
     spawnCooldown: 720 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 3,
   },
   {
     id: -1,
@@ -207,7 +202,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 100 as Minutes,
     spawnWindow: 30 as Minutes,
-    spawnLocation: undefined,
+    tier: 0,
   },
   {
     id: -2,
@@ -219,7 +214,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 100 as Minutes,
     spawnWindow: 30 as Minutes,
-    spawnLocation: undefined,
+    tier: 0,
   },
   {
     id: 2068,
@@ -232,20 +227,17 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 2,
   },
   {
     id: 2255,
     icon: require("../assets/mobs/2255.gif"),
     name: "Dark Guardian Kades",
     tombstone: true,
-    map: {
-      name: "gld2_gef",
-      imageUrl: require("../assets/maps/gld2_gef.jpg"),
-    },
+    map: { name: "gld2_gef", imageUrl: require("../assets/maps/gld2_gef.jpg") },
     spawnCooldown: 480 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 3,
   },
   {
     id: 1272,
@@ -258,7 +250,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 480 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 2,
   },
   {
     id: 1272,
@@ -271,20 +263,17 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 60 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 2,
   },
   {
     id: 1817,
     icon: require("../assets/mobs/1817.gif"),
     name: "Detale",
     tombstone: true,
-    map: {
-      name: "abyss_03",
-      imageUrl: require("../assets/maps/abyss_03.jpg"),
-    },
+    map: { name: "abyss_03", imageUrl: require("../assets/maps/abyss_03.jpg") },
     spawnCooldown: 180 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 2,
   },
   {
     id: 1767,
@@ -297,7 +286,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 60 as Minutes,
-    spawnLocation: undefined,
+    tier: 0,
   },
   {
     id: 1767,
@@ -310,7 +299,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 60 as Minutes,
     spawnWindow: 30 as Minutes,
-    spawnLocation: undefined,
+    tier: 0,
   },
   {
     id: 1731,
@@ -323,7 +312,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 1,
   },
   {
     id: 1731,
@@ -336,7 +325,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 480 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 1,
   },
   {
     id: 1530,
@@ -349,7 +338,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 60 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 1,
   },
   {
     id: 1112,
@@ -362,7 +351,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 1,
   },
   {
     id: 1115,
@@ -375,7 +364,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 480 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 1,
   },
   {
     id: 1115,
@@ -388,7 +377,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 1,
   },
   {
     id: 1967,
@@ -401,7 +390,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 2,
   },
   {
     id: 1529,
@@ -414,20 +403,17 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 94 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 2,
   },
   {
     id: 1871,
     icon: require("../assets/mobs/1871.gif"),
     name: "Fallen Bishop Hibram",
     tombstone: true,
-    map: {
-      name: "abbey02",
-      imageUrl: require("../assets/maps/abbey02.jpg"),
-    },
+    map: { name: "abbey02", imageUrl: require("../assets/maps/abbey02.jpg") },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 3,
   },
   {
     id: 1252,
@@ -440,20 +426,17 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 2,
   },
   {
     id: 2253,
     icon: require("../assets/mobs/2253.gif"),
     name: "General Daehyun",
     tombstone: true,
-    map: {
-      name: "gld2_pay",
-      imageUrl: require("../assets/maps/gld2_pay.jpg"),
-    },
+    map: { name: "gld2_pay", imageUrl: require("../assets/maps/gld2_pay.jpg") },
     spawnCooldown: 480 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 0,
   },
   {
     id: 1576,
@@ -466,7 +449,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 240 as Minutes,
     spawnWindow: 120 as Minutes,
-    spawnLocation: undefined,
+    tier: 0,
   },
   {
     id: 1576,
@@ -479,7 +462,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 60 as Minutes,
     spawnWindow: 30 as Minutes,
-    spawnLocation: undefined,
+    tier: 0,
   },
   {
     id: 1576,
@@ -492,7 +475,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 113 as Minutes,
     spawnWindow: 57 as Minutes,
-    spawnLocation: undefined,
+    tier: 0,
   },
   {
     id: 1576,
@@ -505,33 +488,27 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 33 as Minutes,
     spawnWindow: 20 as Minutes,
-    spawnLocation: undefined,
+    tier: 0,
   },
   {
     id: 2251,
     icon: require("../assets/mobs/2251.gif"),
     name: "Gioia",
     tombstone: true,
-    map: {
-      name: "gld2_ald",
-      imageUrl: require("../assets/maps/gld2_ald.jpg"),
-    },
+    map: { name: "gld2_ald", imageUrl: require("../assets/maps/gld2_ald.jpg") },
     spawnCooldown: 480 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 2,
   },
   {
     id: 1768,
     icon: require("../assets/mobs/1768.gif"),
     name: "Gloom Under Night",
     tombstone: true,
-    map: {
-      name: "ra_san05",
-      imageUrl: require("../assets/maps/ra_san05.jpg"),
-    },
+    map: { name: "ra_san05", imageUrl: require("../assets/maps/ra_san05.jpg") },
     spawnCooldown: 300 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 3,
   },
   {
     id: 1086,
@@ -544,7 +521,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 60 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 1,
   },
   {
     id: 1885,
@@ -557,7 +534,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 1,
   },
   {
     id: 1990,
@@ -570,20 +547,17 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 240 as Minutes,
     spawnWindow: 1 as Minutes,
-    spawnLocation: undefined,
+    tier: 0,
   },
   {
     id: 1832,
     icon: require("../assets/mobs/1832.gif"),
     name: "Ifrit",
     tombstone: true,
-    map: {
-      name: "thor_v03",
-      imageUrl: require("../assets/maps/thor_v03.jpg"),
-    },
+    map: { name: "thor_v03", imageUrl: require("../assets/maps/thor_v03.jpg") },
     spawnCooldown: 660 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 3,
   },
   {
     id: 1542,
@@ -596,33 +570,27 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 91 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 0,
   },
   {
     id: 1734,
     icon: require("../assets/mobs/1734.gif"),
     name: "Kiel D-01",
     tombstone: true,
-    map: {
-      name: "kh_dun02",
-      imageUrl: require("../assets/maps/kh_dun02.jpg"),
-    },
+    map: { name: "kh_dun02", imageUrl: require("../assets/maps/kh_dun02.jpg") },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 60 as Minutes,
-    spawnLocation: undefined,
+    tier: 2,
   },
   {
     id: 2202,
     icon: require("../assets/mobs/2202.gif"),
     name: "Kraken",
     tombstone: true,
-    map: {
-      name: "iz_dun05",
-      imageUrl: require("../assets/maps/iz_dun05.jpg"),
-    },
+    map: { name: "iz_dun05", imageUrl: require("../assets/maps/iz_dun05.jpg") },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 30 as Minutes,
-    spawnLocation: undefined,
+    tier: 3,
   },
   {
     id: 1779,
@@ -635,7 +603,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 1 as Minutes,
-    spawnLocation: undefined,
+    tier: 3,
   },
   {
     id: 1688,
@@ -648,7 +616,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 420 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 2,
   },
   {
     id: 2156,
@@ -661,20 +629,17 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 2,
   },
   {
     id: 1373,
     icon: require("../assets/mobs/1373.gif"),
     name: "Lord of Death",
     tombstone: true,
-    map: {
-      name: "niflheim",
-      imageUrl: require("../assets/maps/niflheim.jpg"),
-    },
+    map: { name: "niflheim", imageUrl: require("../assets/maps/niflheim.jpg") },
     spawnCooldown: 133 as Minutes,
     spawnWindow: 1 as Minutes,
-    spawnLocation: undefined,
+    tier: 0,
   },
   {
     id: 1147,
@@ -687,7 +652,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 1,
   },
   {
     id: 1147,
@@ -700,20 +665,17 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 480 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 1,
   },
   {
     id: 1289,
     icon: require("../assets/mobs/1289.gif"),
     name: "Maya Purple",
     tombstone: true,
-    map: {
-      name: "gld2_ald",
-      imageUrl: require("../assets/maps/gld2_ald.jpg"),
-    },
+    map: { name: "gld2_ald", imageUrl: require("../assets/maps/gld2_ald.jpg") },
     spawnCooldown: 20 as Minutes,
     spawnWindow: 1 as Minutes,
-    spawnLocation: undefined,
+    tier: 0,
   },
   {
     id: 1289,
@@ -726,7 +688,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 20 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 0,
   },
   {
     id: 1059,
@@ -739,7 +701,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 480 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 1,
   },
   {
     id: 1059,
@@ -752,7 +714,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 1,
   },
   {
     id: 1814,
@@ -765,7 +727,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 480 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 1,
   },
   {
     id: 1814,
@@ -778,7 +740,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 60 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 1,
   },
   {
     id: 2362,
@@ -792,6 +754,7 @@ export const bosses: Boss[] = [
     spawnCooldown: 60 as Minutes,
     spawnWindow: 10 as Minutes,
     spawnLocation: [0.5, 0.6226],
+    tier: 2,
   },
   {
     id: 1087,
@@ -804,7 +767,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 60 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 1,
   },
   {
     id: 1190,
@@ -817,7 +780,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 1,
   },
   {
     id: 1038,
@@ -830,7 +793,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 60 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 1,
   },
   {
     id: 1157,
@@ -843,7 +806,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 60 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 1,
   },
   {
     id: 1159,
@@ -856,7 +819,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 1,
   },
   {
     id: 2165,
@@ -869,7 +832,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 1 as Minutes,
-    spawnLocation: undefined,
+    tier: 0,
   },
   {
     id: 1623,
@@ -882,7 +845,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 125 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 2,
   },
   {
     id: 1251,
@@ -895,7 +858,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 60 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 1,
   },
   {
     id: 1583,
@@ -908,7 +871,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 300 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 2,
   },
   {
     id: 1991,
@@ -921,7 +884,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 60 as Minutes,
     spawnWindow: 1 as Minutes,
-    spawnLocation: undefined,
+    tier: 0,
   },
   {
     id: 1708,
@@ -934,7 +897,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 1 as Minutes,
-    spawnLocation: undefined,
+    tier: 3,
   },
   {
     id: 1312,
@@ -948,6 +911,7 @@ export const bosses: Boss[] = [
     spawnCooldown: 60 as Minutes,
     spawnWindow: 10 as Minutes,
     spawnLocation: [0.5, 0.55],
+    tier: 2,
   },
   {
     id: 1751,
@@ -960,7 +924,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 480 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 3,
   },
   {
     id: 1685,
@@ -973,7 +937,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 10 as Minutes,
-    spawnLocation: undefined,
+    tier: 3,
   },
   {
     id: 1917,
@@ -986,6 +950,6 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 720 as Minutes,
     spawnWindow: 60 as Minutes,
-    spawnLocation: undefined,
+    tier: 0,
   },
 ];

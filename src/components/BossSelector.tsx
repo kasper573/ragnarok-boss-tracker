@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Autocomplete } from "@material-ui/lab";
 import { TextField, Typography } from "@material-ui/core";
 import { Boss } from "../state/Boss";
+import { getTierColor } from "../functions/getTierColor";
 
 export type BossSelectorProps = {
   bosses: Boss[];
@@ -37,7 +38,9 @@ export const BossSelector: React.FC<BossSelectorProps> = ({
         }
       }}
       renderOption={(boss) => (
-        <Typography noWrap>{getBossLabel(boss)}</Typography>
+        <Typography noWrap style={{ color: getTierColor(boss.tier) }}>
+          {getBossLabel(boss)}
+        </Typography>
       )}
       getOptionLabel={getBossLabel}
       renderInput={(params) => (
