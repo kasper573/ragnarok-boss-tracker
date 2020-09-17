@@ -832,7 +832,7 @@ export const bosses: Boss[] = [
     },
     spawnCooldown: 120 as Minutes,
     spawnWindow: 1 as Minutes,
-    tier: 0,
+    tier: 2,
   },
   {
     id: 1623,
