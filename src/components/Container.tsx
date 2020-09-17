@@ -18,7 +18,7 @@ const padding = 30;
 
 const AlignAndPadding = styled.div(({ theme }) => ({
   width: "100%",
-  height: "100%",
+  minHeight: "100%",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",

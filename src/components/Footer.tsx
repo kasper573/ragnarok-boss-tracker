@@ -24,7 +24,7 @@ export const Footer = () => (
 
 const FooterContainer = styled(Container)`
   background: ${({ theme }) => theme.palette.common.black};
-  height: auto;
+  min-height: auto;
 `;
 
 const FooterItems = styled.div(({ theme }) => ({
