@@ -5,8 +5,11 @@ import styled from "styled-components";
  * The primary content container for everything shown on the web page.
  * Centers content horizontally and maintains a responsive content size.
  */
-export const Container: React.FC = ({ children }) => (
-  <AlignAndPadding>
+export const Container: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
+  children,
+  ...props
+}) => (
+  <AlignAndPadding {...props}>
     <FixedSize>{children}</FixedSize>
   </AlignAndPadding>
 );

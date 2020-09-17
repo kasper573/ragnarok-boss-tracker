@@ -16,6 +16,7 @@ import { MuiPickersUtilsProvider } from "@material-ui/pickers";
 import { HuntTimeEditor } from "./HuntTimeEditor";
 import { HuntLocationEditor } from "./HuntLocationEditor";
 import { loadFromLocalStorage, saveToLocalStorage } from "../state/storage";
+import { Footer } from "./Footer";
 
 export type AppProps = {
   theme: Theme;
@@ -81,6 +82,7 @@ export const App: React.FC<AppProps> = ({ theme, bosses }) => {
               </>
             )}
           </Container>
+          <Footer />
         </MuiPickersUtilsProvider>
       </SCThemeProvider>
     </MuiThemeProvider>
