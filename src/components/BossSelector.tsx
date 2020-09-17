@@ -3,6 +3,12 @@ import { Autocomplete } from "@material-ui/lab";
 import { TextField, Typography } from "@material-ui/core";
 import { Boss } from "../state/Boss";
 import { getTierColor } from "../functions/getTierColor";
+import {
+  bossFilters,
+  BossFilterSelector,
+  filterBosses,
+} from "./BossFilterSelector";
+import styled from "styled-components";
 
 export type BossSelectorProps = {
   bosses: Boss[];
@@ -18,11 +24,21 @@ export const BossSelector: React.FC<BossSelectorProps> = ({
   onSelect,
 }) => {
   const [inputValue, setInputValue] = useState("");
+  const [filters, setFilters] = useState(bossFilters);
+  const visibleOptions = filterBosses(bosses, filters);
   return (
     <Autocomplete<Boss, false, boolean, false>
+      ListboxComponent={({ children, ...props }) => (
+        <div {...props}>
+          <BossFilterDock>
+            <BossFilterSelector value={filters} onChange={setFilters} />
+          </BossFilterDock>
+          {children}
+        </div>
+      )}
       freeSolo={false}
       multiple={false}
-      options={bosses}
+      options={visibleOptions}
       inputValue={inputValue}
       noOptionsText="No bosses available"
       onChange={(e, newValue) => {
@@ -54,5 +70,14 @@ export const BossSelector: React.FC<BossSelectorProps> = ({
     />
   );
 };
+
+const BossFilterDock = styled.div(({ theme }) => ({
+  padding: "0 16px",
+  [theme.breakpoints.up("sm")]: {
+    position: "absolute",
+    top: 8,
+    right: 0,
+  },
+}));
 
 const getBossLabel = (boss: Boss) => `${boss.name} (${boss.map.name})`;
