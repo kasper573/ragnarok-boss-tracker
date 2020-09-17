@@ -17,7 +17,7 @@ export const SpawnTime: React.FC<SpawnTimeProps> = ({
   if (now < start) {
     return (
       <Typography variant="body2" color="textSecondary">
-        Could spawn <TimeText time={end} color="success" />
+        Can spawn <TimeText time={start} color="success" />
       </Typography>
     );
   }
