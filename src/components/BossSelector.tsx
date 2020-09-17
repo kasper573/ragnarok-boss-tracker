@@ -16,26 +16,26 @@ export const BossSelector: React.FC<BossSelectorProps> = ({
   bosses,
   onSelect,
 }) => {
-  const [value, setValue] = useState<Boss | null>(null);
   const [inputValue, setInputValue] = useState("");
   return (
     <Autocomplete<Boss, false, boolean, false>
       freeSolo={false}
       multiple={false}
       options={bosses}
-      value={value}
       inputValue={inputValue}
       noOptionsText="No bosses available"
       onChange={(e, newValue) => {
         if (newValue) {
-          // Reset autocomplete input field whenever a boss gets selected
-          setValue(null);
-          setInputValue("");
           // Emit selected boss
           onSelect(newValue);
         }
       }}
-      onInputChange={(e, newInputValue) => setInputValue(newInputValue)}
+      onInputChange={(e, newInputValue, reason) => {
+        // Ignore resets to not clear the input field when deselecting the control
+        if (reason !== "reset") {
+          setInputValue(newInputValue);
+        }
+      }}
       renderOption={(boss) => (
         <Typography noWrap>{getBossLabel(boss)}</Typography>
       )}
