@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled, { ThemeProvider as SCThemeProvider } from "styled-components";
-import { HuntTimeline } from "./HuntTimeline";
 import {
   Theme,
   ThemeProvider as MuiThemeProvider,
@@ -17,6 +16,8 @@ import { HuntTimeEditor } from "./HuntTimeEditor";
 import { HuntLocationEditor } from "./HuntLocationEditor";
 import { loadFromLocalStorage, saveToLocalStorage } from "../state/storage";
 import { Footer } from "./Footer";
+import { HuntList } from "./HuntList";
+import { orderedHunts } from "../functions/orderedHunts";
 
 export type AppProps = {
   theme: Theme;
@@ -58,8 +59,8 @@ export const App: React.FC<AppProps> = ({ theme, bosses }) => {
             <BossSelectorPadding>
               <BossSelector bosses={bosses} onSelect={startCreating} />
             </BossSelectorPadding>
-            <HuntTimeline
-              hunts={hunts}
+            <HuntList
+              hunts={orderedHunts(hunts)}
               onDelete={removeHunt}
               onKillNow={killNow}
               onEditKillTime={(hunt) => startEditing(hunt, "time")}
