@@ -48,8 +48,13 @@ export const App: React.FC<AppProps> = ({ theme, bosses }) => {
     }
   };
   const startCreating = (boss: Boss) => addHunt(new Hunt(boss));
-  const killNow = (hunt: Hunt) =>
-    replaceHunt(hunt, hunt.update({ killTime: new Date() }));
+  const killNow = (hunt: Hunt) => {
+    // Set kill time to now
+    const killedHunt = hunt.update({ killTime: new Date() });
+    replaceHunt(hunt, killedHunt);
+    // Let user pick where they killed it
+    startEditing(killedHunt, "location");
+  };
   return (
     <MuiThemeProvider theme={theme}>
       <SCThemeProvider theme={theme}>

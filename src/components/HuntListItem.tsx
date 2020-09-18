@@ -6,16 +6,21 @@ import {
   IconButton,
   ListItem,
   ListItemAvatar,
+  ListItemIcon,
   ListItemSecondaryAction,
   ListItemText,
+  Menu,
+  MenuItem,
   Tooltip,
+  Typography,
   useMediaQuery,
   useTheme,
 } from "@material-ui/core";
-import { AlarmOn, Delete, Info, Room, Update } from "@material-ui/icons";
+import { AlarmOn, Delete, MoreVert, Room, Update } from "@material-ui/icons";
 import { HuntInfo } from "./HuntInfo";
 import styled from "styled-components";
 import { getTierColor } from "../functions/getTierColor";
+import PopupState, { bindMenu, bindTrigger } from "material-ui-popup-state";
 
 export type HuntListItemProps = {
   hunt: Hunt;
@@ -39,7 +44,9 @@ export const HuntListItem: React.FC<HuntListItemProps> = ({
   return (
     <ListItem>
       <ListItemAvatar>
-        {hunt.boss.icon ? <BossIcon src={hunt.boss.icon} /> : <Avatar />}
+        <Tooltip title={<HuntInfo hunt={hunt} />}>
+          {hunt.boss.icon ? <BossIcon src={hunt.boss.icon} /> : <Avatar />}
+        </Tooltip>
       </ListItemAvatar>
       <ListItemText
         primary={hunt.boss.name}
@@ -50,44 +57,65 @@ export const HuntListItem: React.FC<HuntListItemProps> = ({
         secondaryTypographyProps={{ component: "span" }}
       />
       <ListItemSecondaryAction>
-        <Tooltip title={<HuntInfo hunt={hunt} />}>
-          <IconButton>
-            <Info />
-          </IconButton>
-        </Tooltip>
-        <Tooltip title="Set kill time">
-          <IconButton size={buttonSize} onClick={() => onEditKillTime(hunt)}>
-            <Update />
-          </IconButton>
-        </Tooltip>
         <Tooltip title="Kill now">
           <IconButton size={buttonSize} onClick={() => onKillNow(hunt)}>
             <AlarmOn />
           </IconButton>
         </Tooltip>
-        {hunt.boss.tombstone ? (
-          <Tooltip title="Tombstone location">
+        <Tooltip
+          title={
+            hunt.boss.tombstone
+              ? "Tombstone location"
+              : "Does not leave a tombstone"
+          }
+        >
+          <span>
             <IconButton
               size={buttonSize}
               onClick={() => onEditTombstoneLocation(hunt)}
+              disabled={!hunt.boss.tombstone}
             >
               <Room />
             </IconButton>
-          </Tooltip>
-        ) : (
-          <Tooltip title="Does not leave a tombstone">
-            <span>
-              <IconButton size={buttonSize} disabled>
-                <Room />
-              </IconButton>
-            </span>
-          </Tooltip>
-        )}
-        <Tooltip title="Stop hunting">
-          <IconButton size={buttonSize} onClick={() => onDelete(hunt)}>
-            <Delete />
-          </IconButton>
+          </span>
         </Tooltip>
+        <PopupState variant="popover">
+          {(popupState) => (
+            <>
+              <IconButton
+                edge="end"
+                size={buttonSize}
+                {...bindTrigger(popupState)}
+              >
+                <MoreVert />
+              </IconButton>
+              <Menu {...bindMenu(popupState)}>
+                <MenuItem
+                  onClick={() => {
+                    onEditKillTime(hunt);
+                    popupState.close();
+                  }}
+                >
+                  <ListItemIcon>
+                    <Update fontSize="small" />
+                  </ListItemIcon>
+                  <Typography variant="inherit">Edit kill time</Typography>
+                </MenuItem>
+                <MenuItem
+                  onClick={() => {
+                    onDelete(hunt);
+                    popupState.close();
+                  }}
+                >
+                  <ListItemIcon>
+                    <Delete fontSize="small" />
+                  </ListItemIcon>
+                  <Typography variant="inherit">Stop hunting</Typography>
+                </MenuItem>
+              </Menu>
+            </>
+          )}
+        </PopupState>
       </ListItemSecondaryAction>
     </ListItem>
   );
