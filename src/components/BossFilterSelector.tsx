@@ -6,6 +6,7 @@ import {
   FormGroup,
   FormGroupProps,
 } from "@material-ui/core";
+import { getTierColor } from "../functions/getTierColor";
 
 export type BossFilterSelectorProps = Omit<FormGroupProps, "onChange"> & {
   value: BossFilter[];
@@ -27,9 +28,14 @@ export const BossFilterSelector: React.FC<BossFilterSelectorProps> = ({
         return (
           <FormControlLabel
             key={filter}
-            label={filter}
+            label={bossFilterLabelFns[filter]()}
             control={
-              <Checkbox checked={checked} onChange={toggle} name={filter} />
+              <Checkbox
+                color="default"
+                checked={checked}
+                onChange={toggle}
+                name={filter}
+              />
             }
           />
         );
@@ -39,10 +45,17 @@ export const BossFilterSelector: React.FC<BossFilterSelectorProps> = ({
 };
 
 export const bossFilterFns = {
-  Miniboss: (boss: Boss) => boss.tier === 0,
-  "Tier 1": (boss: Boss) => boss.tier === 1,
-  "Tier 2": (boss: Boss) => boss.tier === 2,
-  "Tier 3": (boss: Boss) => boss.tier === 3,
+  miniboss: (boss: Boss) => boss.tier === 0,
+  tier1: (boss: Boss) => boss.tier === 1,
+  tier2: (boss: Boss) => boss.tier === 2,
+  tier3: (boss: Boss) => boss.tier === 3,
+};
+
+export const bossFilterLabelFns = {
+  miniboss: () => <span style={{ color: getTierColor(0) }}>Miniboss</span>,
+  tier1: () => <span style={{ color: getTierColor(1) }}>Tier 1</span>,
+  tier2: () => <span style={{ color: getTierColor(2) }}>Tier 2</span>,
+  tier3: () => <span style={{ color: getTierColor(3) }}>Tier 3</span>,
 };
 
 export type BossFilter = keyof typeof bossFilterFns;
