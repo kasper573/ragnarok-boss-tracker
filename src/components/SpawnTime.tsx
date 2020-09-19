@@ -35,8 +35,7 @@ export const SpawnTime: React.FC<SpawnTimeProps> = ({
     return (
       <>
         <Typography variant="body2" color="textSecondary">
-          Spawn{" "}
-          <TimeText time={start} color="error" /> or{" "}
+          Spawn <TimeText time={start} color="error" /> or{" "}
           <TimeText time={end} color="success" />
         </Typography>
       </>
