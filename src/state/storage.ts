@@ -1,14 +1,16 @@
 import { Hunt } from "./Hunt";
 import { MapLocation } from "./MapLocation";
 import { Boss } from "./Boss";
-import { Map } from "./Map";
+import { MapId } from "./MapId";
+import { maps } from "../fixtures/maps";
+import { BossId } from "./BossId";
 
 const storageId = "hunts";
 
 export const saveToLocalStorage = (hunts: Hunt[]) => {
   const serialized: SerializedHunt[] = hunts.map((hunt) => ({
     bossId: hunt.boss.id,
-    map: hunt.map,
+    mapId: hunt.map.id,
     killTime: hunt.killTime.toUTCString(),
     tombstoneLocation: hunt.tombstoneLocation,
   }));
@@ -23,8 +25,11 @@ export const loadFromLocalStorage = (bosses: Boss[]): Hunt[] => {
   try {
     const serialized: SerializedHunt[] = JSON.parse(json);
     const hunts: Hunt[] = [];
-    for (const { bossId, map, killTime, tombstoneLocation } of serialized) {
-      const boss = bosses.find((candidate) => candidate.id === bossId);
+    for (const { bossId, mapId, killTime, tombstoneLocation } of serialized) {
+      const boss = bosses.find(
+        (candidate) => candidate.id === bossId && candidate.map.id === mapId
+      );
+      const map = maps[mapId as keyof typeof maps];
       if (boss) {
         hunts.push(new Hunt(boss, map, new Date(killTime), tombstoneLocation));
       }
@@ -35,8 +40,8 @@ export const loadFromLocalStorage = (bosses: Boss[]): Hunt[] => {
 };
 
 type SerializedHunt = {
-  bossId: number;
+  bossId: BossId;
   killTime: string;
-  map: Map;
+  mapId: MapId;
   tombstoneLocation: MapLocation | undefined;
 };

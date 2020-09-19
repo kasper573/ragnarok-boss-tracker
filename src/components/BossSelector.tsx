@@ -81,4 +81,4 @@ const BossFilterDock = styled.div(({ theme }) => ({
   },
 }));
 
-const getBossLabel = (boss: Boss) => `${boss.name} (${boss.map.name})`;
+const getBossLabel = (boss: Boss) => `${boss.name} (${boss.map.id})`;

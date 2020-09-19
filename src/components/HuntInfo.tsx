@@ -45,7 +45,7 @@ export const HuntInfo: React.FC<HuntInfoProps> = ({
       </Typography>
       <Typography noWrap>
         {compact ? "" : "Map: "}
-        {map.name}
+        {map.id}
       </Typography>
     </>
   );

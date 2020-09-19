@@ -1,4 +1,6 @@
+import { MapId } from "./MapId";
+
 export type Map = {
-  name: string;
+  id: MapId;
   imageUrl: string;
 };
