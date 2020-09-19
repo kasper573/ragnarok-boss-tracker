@@ -12,9 +12,8 @@ export const SpawnTime: React.FC<SpawnTimeProps> = ({
   hunt: { start, end },
 }) => {
   const now = useTimer();
-
   // Spawn time is in the future
-  if (now < start) {
+  if (start && now < start) {
     return (
       <Typography variant="body2" color="textSecondary">
         <TimeText time={start} color="success" />
@@ -23,7 +22,7 @@ export const SpawnTime: React.FC<SpawnTimeProps> = ({
   }
 
   // Spawn time is in the past
-  if (now > end) {
+  if (end && now > end) {
     return (
       <Typography variant="body2" color="textSecondary">
         <TimeText time={end} color="error" />
@@ -32,12 +31,21 @@ export const SpawnTime: React.FC<SpawnTimeProps> = ({
   }
 
   // Spawn timing window is still open
+  if (start && end) {
+    return (
+      <>
+        <Typography variant="body2" color="textSecondary">
+          <TimeText time={start} color="error" /> or{" "}
+          <TimeText time={end} color="success" />
+        </Typography>
+      </>
+    );
+  }
+
+  // Kill time not set
   return (
-    <>
-      <Typography variant="body2" color="textSecondary">
-        <TimeText time={start} color="error" /> or{" "}
-        <TimeText time={end} color="success" />
-      </Typography>
-    </>
+    <Typography variant="body2" color="textSecondary">
+      Kill time not set
+    </Typography>
   );
 };

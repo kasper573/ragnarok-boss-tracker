@@ -11,7 +11,7 @@ export const saveToLocalStorage = (hunts: Hunt[]) => {
   const serialized: SerializedHunt[] = hunts.map((hunt) => ({
     bossId: hunt.boss.id,
     mapId: hunt.map.id,
-    killTime: hunt.killTime.toUTCString(),
+    killTime: hunt.killTime ? hunt.killTime.toUTCString() : undefined,
     tombstoneLocation: hunt.tombstoneLocation,
   }));
   localStorage.setItem(storageId, JSON.stringify(serialized));
@@ -31,7 +31,14 @@ export const loadFromLocalStorage = (bosses: Boss[]): Hunt[] => {
       );
       const map = mapList.find((map) => map.id === mapId);
       if (boss) {
-        hunts.push(new Hunt(boss, map, new Date(killTime), tombstoneLocation));
+        hunts.push(
+          new Hunt(
+            boss,
+            map,
+            killTime ? new Date(killTime) : undefined,
+            tombstoneLocation
+          )
+        );
       }
     }
     return hunts;
@@ -41,7 +48,7 @@ export const loadFromLocalStorage = (bosses: Boss[]): Hunt[] => {
 
 type SerializedHunt = {
   bossId: BossId;
-  killTime: string;
+  killTime?: string;
   mapId: MapId;
   tombstoneLocation: MapLocation | undefined;
 };

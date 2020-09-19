@@ -21,7 +21,7 @@ export const HuntTimeEditor: React.FC<HuntTimeEditorProps> = ({
   onChange,
   onClose,
 }) => {
-  const [time, setTime] = useState<Date>(value.killTime);
+  const [time, setTime] = useState<Date>(value.killTime || new Date());
   const submit = () => onChange(value.update({ killTime: time }));
   const handleTimeChange = (newTime: MaterialUiPickersDate) =>
     setTime(newTime ? newTime.toDate() : new Date(0));
