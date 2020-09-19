@@ -16,7 +16,7 @@ export const SpawnTime: React.FC<SpawnTimeProps> = ({
   if (start && now < start) {
     return (
       <Typography variant="body2" color="textSecondary">
-        <TimeText time={start} color="success" />
+        Spawn <TimeText time={start} color="success" />
       </Typography>
     );
   }
@@ -25,7 +25,7 @@ export const SpawnTime: React.FC<SpawnTimeProps> = ({
   if (end && now > end) {
     return (
       <Typography variant="body2" color="textSecondary">
-        <TimeText time={end} color="error" />
+        Spawn <TimeText time={end} color="error" />
       </Typography>
     );
   }
@@ -35,6 +35,7 @@ export const SpawnTime: React.FC<SpawnTimeProps> = ({
     return (
       <>
         <Typography variant="body2" color="textSecondary">
+          Spawn{" "}
           <TimeText time={start} color="error" /> or{" "}
           <TimeText time={end} color="success" />
         </Typography>
