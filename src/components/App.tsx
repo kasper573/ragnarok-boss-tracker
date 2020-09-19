@@ -4,7 +4,12 @@ import {
   Theme,
   ThemeProvider as MuiThemeProvider,
 } from "@material-ui/core/styles";
-import { CssBaseline } from "@material-ui/core";
+import {
+  Checkbox,
+  CssBaseline,
+  FormControlLabel,
+  Tooltip,
+} from "@material-ui/core";
 import { Container } from "./Container";
 import { BossSelector } from "./BossSelector";
 import { useListState } from "../hooks/useListState";
@@ -18,6 +23,7 @@ import { loadFromLocalStorage, saveToLocalStorage } from "../state/storage";
 import { Footer } from "./Footer";
 import { HuntList } from "./HuntList";
 import { orderedHunts } from "../functions/orderedHunts";
+import { useToggleState } from "../hooks/useToggleState";
 
 export type AppProps = {
   theme: Theme;
@@ -27,6 +33,7 @@ export type AppProps = {
 type Editor = "time" | "location";
 
 export const App: React.FC<AppProps> = ({ theme, bosses }) => {
+  const [multiSpawn, toggleMultiSpawn] = useToggleState(false, true);
   const [hunts, addHunt, removeHunt, replaceHunt] = useListState<Hunt>(
     () => loadFromLocalStorage(bosses),
     saveToLocalStorage
@@ -55,15 +62,30 @@ export const App: React.FC<AppProps> = ({ theme, bosses }) => {
     // Let user pick where they killed it
     startEditing(killedHunt, "location");
   };
+  const selectableBosses = multiSpawn ? bosses : nonHuntedBosses(bosses, hunts);
   return (
     <MuiThemeProvider theme={theme}>
       <SCThemeProvider theme={theme}>
         <MuiPickersUtilsProvider utils={MomentUtils}>
           <CssBaseline />
           <Container>
-            <BossSelectorPadding>
-              <BossSelector bosses={bosses} onSelect={startCreating} />
-            </BossSelectorPadding>
+            <Controls>
+              <BossSelector
+                bosses={selectableBosses}
+                onSelect={startCreating}
+              />
+              <Tooltip title="Enable multi to allow multiple hunts per boss spawn for ie. double spawn events.">
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={multiSpawn}
+                      onChange={toggleMultiSpawn}
+                    />
+                  }
+                  label="Multi"
+                />
+              </Tooltip>
+            </Controls>
             <HuntList
               hunts={orderedHunts(hunts)}
               onDelete={removeHunt}
@@ -95,6 +117,19 @@ export const App: React.FC<AppProps> = ({ theme, bosses }) => {
   );
 };
 
-const BossSelectorPadding = styled.div`
+const Controls = styled.div`
   padding: 0 16px;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 8px;
+  & > :first-child {
+    flex: 1;
+    margin-right: 24px;
+    & > :first-child {
+      margin: 0;
+    }
+  }
 `;
+
+const nonHuntedBosses = (bosses: Boss[], hunts: Hunt[]) =>
+  bosses.filter((boss) => !hunts.find((hunt) => hunt.boss === boss));

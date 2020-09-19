@@ -29,14 +29,14 @@ export const BossSelector: React.FC<BossSelectorProps> = ({
   const visibleOptions = filterBosses(bosses, filters);
   return (
     <Autocomplete<Boss, false, boolean, false>
-      ListboxComponent={({ children, ...props }) => (
+      ListboxComponent={React.forwardRef(({ children, ...props }, ref) => (
         <div {...props}>
           <BossFilterDock>
             <BossFilterSelector value={filters} onChange={setFilters} />
           </BossFilterDock>
           {children}
         </div>
-      )}
+      ))}
       value={null}
       freeSolo={false}
       multiple={false}
