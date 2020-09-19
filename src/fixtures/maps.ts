@@ -1,4 +1,5 @@
 import { MapId } from "../state/MapId";
+import { Map } from "../state/Map";
 
 export const maps = {
   moc_pryd06: {
@@ -274,3 +275,20 @@ export const maps = {
     imageUrl: require("../assets/maps/moc_fild22.jpg"),
   },
 };
+
+export const mapList: Map[] = Object.values(maps);
+
+export const guildMaps = [
+  maps.gld2_ald,
+  maps.gld2_gef,
+  maps.gld2_pay,
+  maps.gld2_prt,
+  maps.gld_dun01,
+  maps.gld_dun01_2,
+  maps.gld_dun02,
+  maps.gld_dun02_2,
+  maps.gld_dun03,
+  maps.gld_dun03_2,
+  maps.gld_dun04,
+  maps.gld_dun04_2,
+];

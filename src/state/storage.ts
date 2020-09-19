@@ -2,7 +2,7 @@ import { Hunt } from "./Hunt";
 import { MapLocation } from "./MapLocation";
 import { Boss } from "./Boss";
 import { MapId } from "./MapId";
-import { maps } from "../fixtures/maps";
+import { mapList } from "../fixtures/maps";
 import { BossId } from "./BossId";
 
 const storageId = "hunts";
@@ -29,7 +29,7 @@ export const loadFromLocalStorage = (bosses: Boss[]): Hunt[] => {
       const boss = bosses.find(
         (candidate) => candidate.id === bossId && candidate.map.id === mapId
       );
-      const map = maps[mapId as keyof typeof maps];
+      const map = mapList.find((map) => map.id === mapId);
       if (boss) {
         hunts.push(new Hunt(boss, map, new Date(killTime), tombstoneLocation));
       }

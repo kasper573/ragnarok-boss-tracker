@@ -3,12 +3,9 @@ import { Autocomplete } from "@material-ui/lab";
 import { TextField, Typography } from "@material-ui/core";
 import { Boss } from "../state/Boss";
 import { getTierColor } from "../functions/getTierColor";
-import {
-  bossFilters,
-  BossFilterSelector,
-  filterBosses,
-} from "./BossFilterSelector";
+import { BossFilterSelector } from "./BossFilterSelector";
 import styled from "styled-components";
+import { BossFilter, filterBosses } from "./bossFilters";
 
 export type BossSelectorProps = {
   bosses: Boss[];
@@ -24,7 +21,11 @@ export const BossSelector: React.FC<BossSelectorProps> = ({
   onSelect,
 }) => {
   const [inputValue, setInputValue] = useState("");
-  const [filters, setFilters] = useState(bossFilters);
+  const [filters, setFilters] = useState<BossFilter[]>([
+    "tier1",
+    "tier2",
+    "tier3",
+  ]);
   const visibleOptions = filterBosses(bosses, filters);
   return (
     <Autocomplete<Boss, false, boolean, false>
