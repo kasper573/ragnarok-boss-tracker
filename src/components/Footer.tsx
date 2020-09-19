@@ -22,10 +22,13 @@ export const Footer = () => (
   </FooterContainer>
 );
 
-const FooterContainer = styled(Container)`
-  background: ${({ theme }) => theme.palette.common.black};
-  min-height: auto;
-`;
+const FooterContainer = styled(Container)(({ theme }) => ({
+  background: theme.palette.common.black,
+  minHeight: "auto",
+  [theme.breakpoints.down("xs")]: {
+    padding: 0,
+  },
+}));
 
 const FooterItems = styled.div(({ theme }) => ({
   [theme.breakpoints.down("xs")]: {

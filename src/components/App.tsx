@@ -74,7 +74,7 @@ export const App: React.FC<AppProps> = ({ theme, bosses }) => {
                 bosses={selectableBosses}
                 onSelect={startCreating}
               />
-              <Tooltip title="Enable multi to allow multiple hunts per boss spawn for ie. double spawn events.">
+              <Tooltip title="Enable to allow multiple hunts per boss spawn for ie. double spawn events.">
                 <FormControlLabel
                   control={
                     <Checkbox

@@ -24,7 +24,7 @@ const AlignAndPadding = styled.div(({ theme }) => ({
   alignItems: "center",
   padding: padding,
   [theme.breakpoints.down("xs")]: {
-    padding: 0,
+    padding: "16px 0",
   },
 }));
 
