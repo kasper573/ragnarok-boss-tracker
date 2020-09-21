@@ -289,6 +289,7 @@ export const bosses: Boss[] = [
     map: maps.treasure02,
     spawnCooldown: 120 as Minutes,
     spawnWindow: 10 as Minutes,
+    spawnLocation: [0.512, 0.235],
     tier: 1,
   },
   {
@@ -599,6 +600,7 @@ export const bosses: Boss[] = [
     map: maps.gld_dun01,
     spawnCooldown: 480 as Minutes,
     spawnWindow: 10 as Minutes,
+    spawnLocation: [0.5, 0.5],
     tier: 1,
   },
   {
