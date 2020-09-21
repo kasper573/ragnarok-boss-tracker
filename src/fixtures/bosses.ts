@@ -529,7 +529,7 @@ export const bosses: Boss[] = [
     map: maps.niflheim,
     spawnCooldown: 133 as Minutes,
     spawnWindow: 1 as Minutes,
-    tier: 0,
+    tier: 2,
   },
   {
     id: 1147 as BossId,
@@ -771,6 +771,6 @@ export const bosses: Boss[] = [
     map: maps.moc_fild22,
     spawnCooldown: 720 as Minutes,
     spawnWindow: 60 as Minutes,
-    tier: 0,
+    tier: 3,
   },
 ];
