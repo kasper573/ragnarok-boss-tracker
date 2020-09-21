@@ -70,6 +70,10 @@ export const maps = {
     id: "lhz_dun04" as MapId,
     imageUrl: require("../assets/maps/lhz_dun04.jpg"),
   },
+  lhz_dun05: {
+    id: "lhz_dun05" as MapId,
+    imageUrl: require("../assets/maps/lhz_dun05.jpg"),
+  },
   bra_dun02: {
     id: "bra_dun02" as MapId,
     imageUrl: require("../assets/maps/bra_dun02.jpg"),
