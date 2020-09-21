@@ -479,7 +479,7 @@ export const bosses: Boss[] = [
     tombstone: true,
     map: maps.kh_dun02,
     spawnCooldown: 120 as Minutes,
-    spawnWindow: 60 as Minutes,
+    spawnWindow: 10 as Minutes,
     tier: 2,
   },
   {
