@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { DropListItem, spaceBetweenRows } from "./DropListItem";
 import { Drop } from "../state/Drop";
-import { totalDropChance } from "../functions/totalDropChance";
+import { totalChance } from "../functions/totalChance";
 import { Typography } from "@material-ui/core";
 
 export type DropListGroupProps = {
@@ -10,6 +10,7 @@ export type DropListGroupProps = {
 };
 
 export const DropListGroup: React.FC<DropListGroupProps> = ({ drops }) => {
+  const dropChances = drops.map((drop) => drop.chance);
   return (
     <Container>
       <div>
@@ -18,7 +19,7 @@ export const DropListGroup: React.FC<DropListGroupProps> = ({ drops }) => {
         ))}
       </div>
       {drops.length > 1 && (
-        <Percentage>~{Math.round(totalDropChance(drops) * 100)}%</Percentage>
+        <Percentage>~{Math.round(totalChance(dropChances) * 100)}%</Percentage>
       )}
     </Container>
   );
