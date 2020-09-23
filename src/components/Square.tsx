@@ -12,6 +12,7 @@ export const Square = React.forwardRef<HTMLDivElement, SquareProps>(
 );
 
 export const SquareBounds = styled.div`
+  position: relative;
   &:after {
     padding-top: 100%;
     content: "";
