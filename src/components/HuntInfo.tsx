@@ -48,7 +48,12 @@ export const HuntInfo: React.FC<HuntInfoProps> = ({
         {compact ? "" : "Map: "}
         {map.id}
       </Typography>
-      {mvpDrops && <DropList drops={mvpDrops} />}
+      {mvpDrops && (
+        <>
+          <Typography variant="h6">MVP Drops</Typography>
+          <DropList drops={mvpDrops} />
+        </>
+      )}
     </>
   );
 };
