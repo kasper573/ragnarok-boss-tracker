@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { DropListItem } from "./DropListItem";
 import { Drop } from "../state/Drop";
-import { dropGroupPercentage } from "../functions/dropGroupPercentage";
+import { totalDropChance } from "../functions/totalDropChance";
 import { Typography } from "@material-ui/core";
 
 export type DropListGroupProps = {
@@ -17,7 +17,7 @@ export const DropListGroup: React.FC<DropListGroupProps> = ({ drops }) => {
           <DropListItem key={`drop${dropIndex}`} drop={drop} />
         ))}
       </Items>
-      <Percentage>~{Math.round(dropGroupPercentage(drops) * 100)}%</Percentage>
+      <Percentage>~{Math.round(totalDropChance(drops) * 100)}%</Percentage>
     </Container>
   );
 };
