@@ -4,13 +4,14 @@ import { Hunt } from "../state/Hunt";
 import { Tooltip, useMediaQuery, useTheme } from "@material-ui/core";
 import { abbreviate } from "../functions/abbreviate";
 import { getTierColor } from "../functions/getTierColor";
+import { DropList } from "./DropList";
 
 export type HuntInfoProps = { hunt: Hunt };
 
 export const HuntInfo: React.FC<HuntInfoProps> = ({
   hunt: {
     map,
-    boss: { name, spawnCooldown, spawnWindow, tier },
+    boss: { name, spawnCooldown, spawnWindow, tier, mvpDrops },
   },
 }) => {
   const theme = useTheme();
@@ -47,6 +48,7 @@ export const HuntInfo: React.FC<HuntInfoProps> = ({
         {compact ? "" : "Map: "}
         {map.id}
       </Typography>
+      {mvpDrops && <DropList drops={mvpDrops} />}
     </>
   );
 };
