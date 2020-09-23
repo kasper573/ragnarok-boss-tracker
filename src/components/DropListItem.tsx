@@ -16,10 +16,12 @@ export const DropListItem: React.FC<DropListItemProps> = ({ drop }) => {
   );
 };
 
+export const spaceBetweenRows = '8px';
+
 const DropListItemRow = styled.div`
   display: flex;
   & + & {
-    margin-top: 8px;
+    margin-top: ${spaceBetweenRows};
   }
 `;
 

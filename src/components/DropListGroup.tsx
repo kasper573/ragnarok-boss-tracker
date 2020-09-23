@@ -12,12 +12,14 @@ export type DropListGroupProps = {
 export const DropListGroup: React.FC<DropListGroupProps> = ({ drops }) => {
   return (
     <Container>
-      <Items>
+      <div>
         {drops.map((drop, dropIndex) => (
           <DropListItem key={`drop${dropIndex}`} drop={drop} />
         ))}
-      </Items>
-      <Percentage>~{Math.round(totalDropChance(drops) * 100)}%</Percentage>
+      </div>
+      {drops.length > 1 && (
+        <Percentage>~{Math.round(totalDropChance(drops) * 100)}%</Percentage>
+      )}
     </Container>
   );
 };
@@ -30,14 +32,11 @@ const Container = styled.div`
   }
 `;
 
-const Items = styled.div`
-  padding-right: 12px;
-  margin-right: 12px;
-  border-right: 3px solid white;
-`;
-
 const Percentage = styled(Typography)`
   display: flex;
   flex: 1;
   align-items: center;
+  padding-left: 12px;
+  margin-left: 12px;
+  border-left: 3px solid white;
 `;
