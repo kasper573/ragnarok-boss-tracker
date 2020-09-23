@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { DropListItem } from "./DropListItem";
 import { Drop } from "../state/Drop";
 import { dropGroupPercentage } from "../functions/dropGroupPercentage";
+import { Typography } from "@material-ui/core";
 
 export type DropListGroupProps = {
   drops: Drop[];
@@ -35,7 +36,7 @@ const Items = styled.div`
   border-right: 3px solid white;
 `;
 
-const Percentage = styled.div`
+const Percentage = styled(Typography)`
   display: flex;
   flex: 1;
   align-items: center;
