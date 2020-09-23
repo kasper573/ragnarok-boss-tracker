@@ -3,6 +3,7 @@ import { Minutes } from "./Minutes";
 import { MapLocation } from "./MapLocation";
 import { Tier } from "./Tier";
 import { BossId } from "./BossId";
+import { Drop } from "./Drop";
 
 export type Boss = {
   id: BossId;
@@ -14,4 +15,5 @@ export type Boss = {
   spawnWindow: Minutes;
   tombstone: boolean;
   spawnLocation?: MapLocation;
+  mvpDrops?: Drop[];
 };
