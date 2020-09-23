@@ -684,6 +684,11 @@ export const bosses: Boss[] = [
     spawnCooldown: 120 as Minutes,
     spawnWindow: 1 as Minutes,
     tier: 2,
+    mvpDrops: [
+      { item: items[616], chance: 0.55 },
+      { item: items[616], chance: 0.5 },
+      { item: items[616], chance: 0.2 },
+    ],
   },
   {
     id: 1623 as BossId,
@@ -775,10 +780,5 @@ export const bosses: Boss[] = [
     spawnCooldown: 720 as Minutes,
     spawnWindow: 60 as Minutes,
     tier: 3,
-    mvpDrops: [
-      { item: items[616], chance: 0.55 },
-      { item: items[616], chance: 0.5 },
-      { item: items[616], chance: 0.2 },
-    ],
   },
 ];
