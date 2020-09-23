@@ -19,7 +19,7 @@ export const DropListItem: React.FC<DropListItemProps> = ({ drop }) => {
 const DropListItemRow = styled.div`
   display: flex;
   & + & {
-    margin-top: 8px;    
+    margin-top: 8px;
   }
 `;
 
