@@ -16,7 +16,7 @@ export const DropListItem: React.FC<DropListItemProps> = ({ drop }) => {
   );
 };
 
-export const spaceBetweenRows = '8px';
+export const spaceBetweenRows = "8px";
 
 const DropListItemRow = styled.div`
   display: flex;
