@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { DropListItem } from "./DropListItem";
+import { DropListItem, spaceBetweenRows } from "./DropListItem";
 import { Drop } from "../state/Drop";
 import { totalDropChance } from "../functions/totalDropChance";
 import { Typography } from "@material-ui/core";
@@ -28,7 +28,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   & + & {
-    margin-top: 12px;
+    margin-top: ${spaceBetweenRows};
   }
 `;
 
