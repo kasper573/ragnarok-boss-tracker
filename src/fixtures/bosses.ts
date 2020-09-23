@@ -2,6 +2,7 @@ import { Boss } from "../state/Boss";
 import { BossId } from "../state/BossId";
 import { Minutes } from "../state/Minutes";
 import { maps } from "./maps";
+import { items } from "./items";
 export const bosses: Boss[] = [
   {
     id: 1511 as BossId,
@@ -177,7 +178,7 @@ export const bosses: Boss[] = [
     name: "Bio5 boss",
     tombstone: false,
     map: maps.lhz_dun05,
-    spawnCooldown: 11 * 60 as Minutes,
+    spawnCooldown: (11 * 60) as Minutes,
     spawnWindow: 60 as Minutes,
     tier: 3,
   },
@@ -774,5 +775,10 @@ export const bosses: Boss[] = [
     spawnCooldown: 720 as Minutes,
     spawnWindow: 60 as Minutes,
     tier: 3,
+    mvpDrops: [
+      { item: items[616], chance: 0.55 },
+      { item: items[616], chance: 0.5 },
+      { item: items[616], chance: 0.2 },
+    ],
   },
 ];
