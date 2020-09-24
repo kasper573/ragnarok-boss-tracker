@@ -26,11 +26,11 @@ const DropListItemRow = styled.div`
   }
 `;
 
-const DropListItemIcon = styled.div<{ src: string }>`
+const DropListItemIcon = styled.div<{ src?: string }>`
   width: 24px;
   height: 24px;
   margin-right: 12px;
-  background-image: url(${({ src }) => src});
+  background-image: ${({ src }) => (src ? `url(${src})` : undefined)};
   background-size: contain;
   background-repeat: no-repeat;
   background-position: 50% 50%;
