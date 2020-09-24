@@ -11,12 +11,14 @@ export type HuntInfoProps = { hunt: Hunt };
 export const HuntInfo: React.FC<HuntInfoProps> = ({
   hunt: {
     map,
-    boss: { name, spawnCooldown, spawnWindow, tier, mvpDrops },
+    boss: { name, spawnCooldown, spawnWindow, tier, drops },
   },
 }) => {
   const theme = useTheme();
   const compact = useMediaQuery(theme.breakpoints.down("xs"));
   const titleColor = getTierColor(tier);
+  const mvpDrops = drops ? drops.filter(({mvp}) => mvp) : [];
+  const regularDrops = drops ? drops.filter(({mvp}) => !mvp) : [];
   return (
     <>
       {compact ? (
@@ -48,7 +50,13 @@ export const HuntInfo: React.FC<HuntInfoProps> = ({
         {compact ? "" : "Map: "}
         {map.id}
       </Typography>
-      {mvpDrops && (
+      {regularDrops.length > 0 && (
+        <>
+          <Typography variant="h6">Drops</Typography>
+          <DropList drops={regularDrops} />
+        </>
+      )}
+      {mvpDrops.length > 0 && (
         <>
           <Typography variant="h6">MVP Drops</Typography>
           <DropList drops={mvpDrops} />

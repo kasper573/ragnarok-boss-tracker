@@ -15,5 +15,5 @@ export type Boss = {
   spawnWindow: Minutes;
   tombstone: boolean;
   spawnLocation?: MapLocation;
-  mvpDrops?: Drop[];
+  drops?: Drop[];
 };

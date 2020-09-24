@@ -2,7 +2,8 @@ import { Boss } from "../state/Boss";
 import { BossId } from "../state/BossId";
 import { Minutes } from "../state/Minutes";
 import { maps } from "./maps";
-import { items } from "./items";
+import { drops } from "./generated/drops";
+
 export const bosses: Boss[] = [
   {
     id: 1511 as BossId,
@@ -676,7 +677,7 @@ export const bosses: Boss[] = [
     tier: 1,
   },
   {
-    id: 2165 as BossId,
+    id: 2087 as BossId,
     icon: require("../assets/mobs/2165.gif"),
     name: "Queen Scaraba",
     tombstone: true,
@@ -684,11 +685,6 @@ export const bosses: Boss[] = [
     spawnCooldown: 120 as Minutes,
     spawnWindow: 1 as Minutes,
     tier: 2,
-    mvpDrops: [
-      { item: items[616], chance: 0.55 },
-      { item: items[616], chance: 0.5 },
-      { item: items[616], chance: 0.2 },
-    ],
   },
   {
     id: 1623 as BossId,
@@ -782,3 +778,7 @@ export const bosses: Boss[] = [
     tier: 3,
   },
 ];
+
+for (const boss of bosses) {
+  boss.drops = drops[boss.id];
+}
