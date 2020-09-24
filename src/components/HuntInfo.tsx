@@ -17,8 +17,8 @@ export const HuntInfo: React.FC<HuntInfoProps> = ({
   const theme = useTheme();
   const compact = useMediaQuery(theme.breakpoints.down("xs"));
   const titleColor = getTierColor(tier);
-  const mvpDrops = drops ? drops.filter(({mvp}) => mvp) : [];
-  const regularDrops = drops ? drops.filter(({mvp}) => !mvp) : [];
+  const mvpDrops = drops ? drops.filter(({ mvp }) => mvp) : [];
+  const regularDrops = drops ? drops.filter(({ mvp }) => !mvp) : [];
   return (
     <>
       {compact ? (
