@@ -1,30 +1,30 @@
-import { Boss } from "./Boss";
+import { Mob } from "./Mob";
 import { Map } from "./Map";
 
 export class Hunt {
   public get start() {
     if (this.killTime) {
       return new Date(
-        this.killTime.getTime() + this.boss.spawnCooldown * 60 * 1000
+        this.killTime.getTime() + this.mob.spawnCooldown * 60 * 1000
       );
     }
     return undefined;
   }
   public get end() {
     if (this.start) {
-      return new Date(this.start.getTime() + this.boss.spawnWindow * 60 * 1000);
+      return new Date(this.start.getTime() + this.mob.spawnWindow * 60 * 1000);
     }
     return undefined;
   }
   public constructor(
-    public readonly boss: Boss,
-    public readonly map: Map = boss.map,
+    public readonly mob: Mob,
+    public readonly map: Map = mob.map,
     public readonly killTime?: Date,
-    public readonly tombstoneLocation = boss.spawnLocation
+    public readonly tombstoneLocation = mob.spawnLocation
   ) {}
 
   update(changes: Partial<Hunt>) {
-    const { boss, map, killTime, tombstoneLocation } = { ...this, ...changes };
-    return new Hunt(boss, map, killTime, tombstoneLocation);
+    const { mob, map, killTime, tombstoneLocation } = { ...this, ...changes };
+    return new Hunt(mob, map, killTime, tombstoneLocation);
   }
 }

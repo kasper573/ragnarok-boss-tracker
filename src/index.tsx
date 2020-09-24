@@ -3,12 +3,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { App } from "./components/App";
 import * as serviceWorker from "./serviceWorker";
-import { bosses } from "./fixtures/bosses";
+import { mobs } from "./fixtures/mobs";
 import { createAppTheme } from "./fixtures/theme";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App theme={createAppTheme()} bosses={bosses} />
+    <App theme={createAppTheme()} mobs={mobs} />
   </React.StrictMode>,
   document.getElementById("root")
 );

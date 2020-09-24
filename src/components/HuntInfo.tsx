@@ -11,7 +11,7 @@ export type HuntInfoProps = { hunt: Hunt };
 export const HuntInfo: React.FC<HuntInfoProps> = ({
   hunt: {
     map,
-    boss: { name, spawnCooldown, spawnWindow, tier, drops },
+    mob: { name, spawnCooldown, spawnWindow, tier, drops },
   },
 }) => {
   const theme = useTheme();

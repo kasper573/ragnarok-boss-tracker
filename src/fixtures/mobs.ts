@@ -1,12 +1,12 @@
-import { Boss } from "../state/Boss";
-import { BossId } from "../state/BossId";
+import { Mob } from "../state/Mob";
+import { MobId } from "../state/MobId";
 import { Minutes } from "../state/Minutes";
 import { maps } from "./maps";
 import { drops } from "./generated/drops";
 
-export const bosses: Boss[] = [
+export const mobs: Mob[] = [
   {
-    id: 1511 as BossId,
+    id: 1511 as MobId,
     icon: require("../assets/mobs/1511.gif"),
     name: "Amon Ra",
     tombstone: true,
@@ -17,7 +17,7 @@ export const bosses: Boss[] = [
     tier: 1,
   },
   {
-    id: 1852 as BossId,
+    id: 1852 as MobId,
     icon: require("../assets/mobs/1852.gif"),
     name: "Angeling",
     tombstone: false,
@@ -27,7 +27,7 @@ export const bosses: Boss[] = [
     tier: 0,
   },
   {
-    id: 1852 as BossId,
+    id: 1852 as MobId,
     icon: require("../assets/mobs/1852.gif"),
     name: "Angeling",
     tombstone: false,
@@ -37,7 +37,7 @@ export const bosses: Boss[] = [
     tier: 0,
   },
   {
-    id: 1852 as BossId,
+    id: 1852 as MobId,
     icon: require("../assets/mobs/1852.gif"),
     name: "Angeling",
     tombstone: false,
@@ -47,7 +47,7 @@ export const bosses: Boss[] = [
     tier: 0,
   },
   {
-    id: 2249 as BossId,
+    id: 2249 as MobId,
     icon: require("../assets/mobs/2249.gif"),
     name: "Angry Student Pyuriel",
     tombstone: true,
@@ -57,7 +57,7 @@ export const bosses: Boss[] = [
     tier: 3,
   },
   {
-    id: 1388 as BossId,
+    id: 1388 as MobId,
     icon: require("../assets/mobs/1388.gif"),
     name: "Archangeling",
     tombstone: false,
@@ -67,7 +67,7 @@ export const bosses: Boss[] = [
     tier: 0,
   },
   {
-    id: 1785 as BossId,
+    id: 1785 as MobId,
     icon: require("../assets/mobs/1785.gif"),
     name: "Atroce",
     tombstone: true,
@@ -77,7 +77,7 @@ export const bosses: Boss[] = [
     tier: 1,
   },
   {
-    id: 1785 as BossId,
+    id: 1785 as MobId,
     icon: require("../assets/mobs/1785.gif"),
     name: "Atroce",
     tombstone: true,
@@ -87,7 +87,7 @@ export const bosses: Boss[] = [
     tier: 1,
   },
   {
-    id: 1785 as BossId,
+    id: 1785 as MobId,
     icon: require("../assets/mobs/1785.gif"),
     name: "Atroce",
     tombstone: true,
@@ -97,7 +97,7 @@ export const bosses: Boss[] = [
     tier: 1,
   },
   {
-    id: 1785 as BossId,
+    id: 1785 as MobId,
     icon: require("../assets/mobs/1785.gif"),
     name: "Atroce",
     tombstone: true,
@@ -107,7 +107,7 @@ export const bosses: Boss[] = [
     tier: 1,
   },
   {
-    id: 1785 as BossId,
+    id: 1785 as MobId,
     icon: require("../assets/mobs/1785.gif"),
     name: "Atroce",
     tombstone: true,
@@ -117,7 +117,7 @@ export const bosses: Boss[] = [
     tier: 1,
   },
   {
-    id: 1630 as BossId,
+    id: 1630 as MobId,
     icon: require("../assets/mobs/1630.gif"),
     name: "Bacsojin",
     tombstone: true,
@@ -127,7 +127,7 @@ export const bosses: Boss[] = [
     tier: 2,
   },
   {
-    id: 1399 as BossId,
+    id: 1399 as MobId,
     icon: require("../assets/mobs/1399.gif"),
     name: "Baphomet",
     tombstone: true,
@@ -137,7 +137,7 @@ export const bosses: Boss[] = [
     tier: 2,
   },
   {
-    id: 1399 as BossId,
+    id: 1399 as MobId,
     icon: require("../assets/mobs/1399.gif"),
     name: "Baphomet",
     tombstone: true,
@@ -147,7 +147,7 @@ export const bosses: Boss[] = [
     tier: 2,
   },
   {
-    id: 1874 as BossId,
+    id: 1874 as MobId,
     icon: require("../assets/mobs/1874.gif"),
     name: "Beelzebub",
     tombstone: true,
@@ -157,8 +157,8 @@ export const bosses: Boss[] = [
     tier: 3,
   },
   {
-    id: -1 as BossId,
-    name: "Bio3 boss",
+    id: -1 as MobId,
+    name: "Bio3 mob",
     tombstone: false,
     map: maps.lhz_dun03,
     spawnCooldown: 95 as Minutes,
@@ -166,8 +166,8 @@ export const bosses: Boss[] = [
     tier: 3,
   },
   {
-    id: -2 as BossId,
-    name: "Bio4 boss",
+    id: -2 as MobId,
+    name: "Bio4 mob",
     tombstone: false,
     map: maps.lhz_dun04,
     spawnCooldown: 95 as Minutes,
@@ -175,8 +175,8 @@ export const bosses: Boss[] = [
     tier: 3,
   },
   {
-    id: -2 as BossId,
-    name: "Bio5 boss",
+    id: -2 as MobId,
+    name: "Bio5 mob",
     tombstone: false,
     map: maps.lhz_dun05,
     spawnCooldown: (11 * 60) as Minutes,
@@ -184,7 +184,7 @@ export const bosses: Boss[] = [
     tier: 3,
   },
   {
-    id: 2068 as BossId,
+    id: 2068 as MobId,
     icon: require("../assets/mobs/2068.gif"),
     name: "Boitata",
     tombstone: true,
@@ -194,7 +194,7 @@ export const bosses: Boss[] = [
     tier: 2,
   },
   {
-    id: 2255 as BossId,
+    id: 2255 as MobId,
     icon: require("../assets/mobs/2255.gif"),
     name: "Dark Guardian Kades",
     tombstone: true,
@@ -204,7 +204,7 @@ export const bosses: Boss[] = [
     tier: 3,
   },
   {
-    id: 1272 as BossId,
+    id: 1272 as MobId,
     icon: require("../assets/mobs/1272.gif"),
     name: "Dark Lord",
     tombstone: true,
@@ -214,7 +214,7 @@ export const bosses: Boss[] = [
     tier: 2,
   },
   {
-    id: 1272 as BossId,
+    id: 1272 as MobId,
     icon: require("../assets/mobs/1272.gif"),
     name: "Dark Lord",
     tombstone: true,
@@ -224,7 +224,7 @@ export const bosses: Boss[] = [
     tier: 2,
   },
   {
-    id: 1817 as BossId,
+    id: 1817 as MobId,
     icon: require("../assets/mobs/1817.gif"),
     name: "Detale",
     tombstone: true,
@@ -234,7 +234,7 @@ export const bosses: Boss[] = [
     tier: 2,
   },
   {
-    id: 1767 as BossId,
+    id: 1767 as MobId,
     icon: require("../assets/mobs/1767.gif"),
     name: "Deviling",
     tombstone: false,
@@ -244,7 +244,7 @@ export const bosses: Boss[] = [
     tier: 0,
   },
   {
-    id: 1767 as BossId,
+    id: 1767 as MobId,
     icon: require("../assets/mobs/1767.gif"),
     name: "Deviling",
     tombstone: false,
@@ -254,7 +254,7 @@ export const bosses: Boss[] = [
     tier: 0,
   },
   {
-    id: 1731 as BossId,
+    id: 1731 as MobId,
     icon: require("../assets/mobs/1731.gif"),
     name: "Doppelganger",
     tombstone: true,
@@ -264,7 +264,7 @@ export const bosses: Boss[] = [
     tier: 1,
   },
   {
-    id: 1731 as BossId,
+    id: 1731 as MobId,
     icon: require("../assets/mobs/1731.gif"),
     name: "Doppelganger",
     tombstone: true,
@@ -274,7 +274,7 @@ export const bosses: Boss[] = [
     tier: 1,
   },
   {
-    id: 1530 as BossId,
+    id: 1530 as MobId,
     icon: require("../assets/mobs/1530.gif"),
     name: "Dracula",
     tombstone: true,
@@ -284,7 +284,7 @@ export const bosses: Boss[] = [
     tier: 1,
   },
   {
-    id: 1112 as BossId,
+    id: 1112 as MobId,
     icon: require("../assets/mobs/1112.gif"),
     name: "Drake",
     tombstone: true,
@@ -295,7 +295,7 @@ export const bosses: Boss[] = [
     tier: 1,
   },
   {
-    id: 1115 as BossId,
+    id: 1115 as MobId,
     icon: require("../assets/mobs/1115.gif"),
     name: "Eddga",
     tombstone: true,
@@ -305,7 +305,7 @@ export const bosses: Boss[] = [
     tier: 1,
   },
   {
-    id: 1115 as BossId,
+    id: 1115 as MobId,
     icon: require("../assets/mobs/1115.gif"),
     name: "Eddga",
     tombstone: true,
@@ -315,7 +315,7 @@ export const bosses: Boss[] = [
     tier: 1,
   },
   {
-    id: 1967 as BossId,
+    id: 1967 as MobId,
     icon: require("../assets/mobs/1967.gif"),
     name: "Egnigem Cenia",
     tombstone: true,
@@ -325,7 +325,7 @@ export const bosses: Boss[] = [
     tier: 2,
   },
   {
-    id: 1529 as BossId,
+    id: 1529 as MobId,
     icon: require("../assets/mobs/1529.gif"),
     name: "Evil Snake Lord",
     tombstone: true,
@@ -335,7 +335,7 @@ export const bosses: Boss[] = [
     tier: 2,
   },
   {
-    id: 1871 as BossId,
+    id: 1871 as MobId,
     icon: require("../assets/mobs/1871.gif"),
     name: "Fallen Bishop Hibram",
     tombstone: true,
@@ -345,7 +345,7 @@ export const bosses: Boss[] = [
     tier: 3,
   },
   {
-    id: 1252 as BossId,
+    id: 1252 as MobId,
     icon: require("../assets/mobs/1252.gif"),
     name: "Garm",
     tombstone: true,
@@ -355,7 +355,7 @@ export const bosses: Boss[] = [
     tier: 2,
   },
   {
-    id: 2253 as BossId,
+    id: 2253 as MobId,
     icon: require("../assets/mobs/2253.gif"),
     name: "General Daehyun",
     tombstone: true,
@@ -365,7 +365,7 @@ export const bosses: Boss[] = [
     tier: 0,
   },
   {
-    id: 1576 as BossId,
+    id: 1576 as MobId,
     icon: require("../assets/mobs/1576.gif"),
     name: "Ghostring",
     tombstone: false,
@@ -375,7 +375,7 @@ export const bosses: Boss[] = [
     tier: 0,
   },
   {
-    id: 1576 as BossId,
+    id: 1576 as MobId,
     icon: require("../assets/mobs/1576.gif"),
     name: "Ghostring",
     tombstone: false,
@@ -385,7 +385,7 @@ export const bosses: Boss[] = [
     tier: 0,
   },
   {
-    id: 1576 as BossId,
+    id: 1576 as MobId,
     icon: require("../assets/mobs/1576.gif"),
     name: "Ghostring",
     tombstone: false,
@@ -395,7 +395,7 @@ export const bosses: Boss[] = [
     tier: 0,
   },
   {
-    id: 1576 as BossId,
+    id: 1576 as MobId,
     icon: require("../assets/mobs/1576.gif"),
     name: "Ghostring",
     tombstone: false,
@@ -405,7 +405,7 @@ export const bosses: Boss[] = [
     tier: 0,
   },
   {
-    id: 2251 as BossId,
+    id: 2251 as MobId,
     icon: require("../assets/mobs/2251.gif"),
     name: "Gioia",
     tombstone: true,
@@ -415,7 +415,7 @@ export const bosses: Boss[] = [
     tier: 2,
   },
   {
-    id: 1768 as BossId,
+    id: 1768 as MobId,
     icon: require("../assets/mobs/1768.gif"),
     name: "Gloom Under Night",
     tombstone: true,
@@ -425,7 +425,7 @@ export const bosses: Boss[] = [
     tier: 3,
   },
   {
-    id: 1086 as BossId,
+    id: 1086 as MobId,
     icon: require("../assets/mobs/1086.gif"),
     name: "Golden Thief Bug",
     tombstone: true,
@@ -435,7 +435,7 @@ export const bosses: Boss[] = [
     tier: 1,
   },
   {
-    id: 1885 as BossId,
+    id: 1885 as MobId,
     icon: require("../assets/mobs/1885.gif"),
     name: "Gopinich",
     tombstone: true,
@@ -445,7 +445,7 @@ export const bosses: Boss[] = [
     tier: 1,
   },
   {
-    id: 1990 as BossId,
+    id: 1990 as MobId,
     icon: require("../assets/mobs/1990.gif"),
     name: "Hardrock Mammoth",
     tombstone: true,
@@ -455,7 +455,7 @@ export const bosses: Boss[] = [
     tier: 0,
   },
   {
-    id: 1832 as BossId,
+    id: 1832 as MobId,
     icon: require("../assets/mobs/1832.gif"),
     name: "Ifrit",
     tombstone: true,
@@ -465,7 +465,7 @@ export const bosses: Boss[] = [
     tier: 3,
   },
   {
-    id: 1542 as BossId,
+    id: 1542 as MobId,
     icon: require("../assets/mobs/1542.gif"),
     name: "Incantation Samurai",
     tombstone: true,
@@ -475,7 +475,7 @@ export const bosses: Boss[] = [
     tier: 2,
   },
   {
-    id: 1734 as BossId,
+    id: 1734 as MobId,
     icon: require("../assets/mobs/1734.gif"),
     name: "Kiel D-01",
     tombstone: true,
@@ -485,7 +485,7 @@ export const bosses: Boss[] = [
     tier: 2,
   },
   {
-    id: 2202 as BossId,
+    id: 2202 as MobId,
     icon: require("../assets/mobs/2202.gif"),
     name: "Kraken",
     tombstone: true,
@@ -495,7 +495,7 @@ export const bosses: Boss[] = [
     tier: 3,
   },
   {
-    id: 1779 as BossId,
+    id: 1779 as MobId,
     icon: require("../assets/mobs/1779.gif"),
     name: "Ktullanux",
     tombstone: true,
@@ -505,7 +505,7 @@ export const bosses: Boss[] = [
     tier: 3,
   },
   {
-    id: 1688 as BossId,
+    id: 1688 as MobId,
     icon: require("../assets/mobs/1688.gif"),
     name: "Lady Tanee",
     tombstone: true,
@@ -515,7 +515,7 @@ export const bosses: Boss[] = [
     tier: 2,
   },
   {
-    id: 2156 as BossId,
+    id: 2156 as MobId,
     icon: require("../assets/mobs/2156.gif"),
     name: "Leak",
     tombstone: true,
@@ -525,7 +525,7 @@ export const bosses: Boss[] = [
     tier: 2,
   },
   {
-    id: 1373 as BossId,
+    id: 1373 as MobId,
     icon: require("../assets/mobs/1373.gif"),
     name: "Lord of Death",
     tombstone: true,
@@ -535,7 +535,7 @@ export const bosses: Boss[] = [
     tier: 2,
   },
   {
-    id: 1147 as BossId,
+    id: 1147 as MobId,
     icon: require("../assets/mobs/1147.gif"),
     name: "Maya",
     tombstone: true,
@@ -545,7 +545,7 @@ export const bosses: Boss[] = [
     tier: 1,
   },
   {
-    id: 1147 as BossId,
+    id: 1147 as MobId,
     icon: require("../assets/mobs/1147.gif"),
     name: "Maya",
     tombstone: true,
@@ -555,7 +555,7 @@ export const bosses: Boss[] = [
     tier: 1,
   },
   {
-    id: 1289 as BossId,
+    id: 1289 as MobId,
     icon: require("../assets/mobs/1289.gif"),
     name: "Maya Purple",
     tombstone: true,
@@ -565,7 +565,7 @@ export const bosses: Boss[] = [
     tier: 0,
   },
   {
-    id: 1289 as BossId,
+    id: 1289 as MobId,
     icon: require("../assets/mobs/1289.gif"),
     name: "Maya Purple",
     tombstone: true,
@@ -575,7 +575,7 @@ export const bosses: Boss[] = [
     tier: 0,
   },
   {
-    id: 1059 as BossId,
+    id: 1059 as MobId,
     icon: require("../assets/mobs/1059.gif"),
     name: "Mistress",
     tombstone: true,
@@ -585,7 +585,7 @@ export const bosses: Boss[] = [
     tier: 1,
   },
   {
-    id: 1059 as BossId,
+    id: 1059 as MobId,
     icon: require("../assets/mobs/1059.gif"),
     name: "Mistress",
     tombstone: true,
@@ -595,7 +595,7 @@ export const bosses: Boss[] = [
     tier: 1,
   },
   {
-    id: 1814 as BossId,
+    id: 1814 as MobId,
     icon: require("../assets/mobs/1814.gif"),
     name: "Moonlight Flower",
     tombstone: true,
@@ -606,7 +606,7 @@ export const bosses: Boss[] = [
     tier: 1,
   },
   {
-    id: 1814 as BossId,
+    id: 1814 as MobId,
     icon: require("../assets/mobs/1814.gif"),
     name: "Moonlight Flower",
     tombstone: true,
@@ -616,7 +616,7 @@ export const bosses: Boss[] = [
     tier: 1,
   },
   {
-    id: 2362 as BossId,
+    id: 2362 as MobId,
     icon: require("../assets/mobs/2362.gif"),
     name: "Nightmare Amon Ra",
     tombstone: true,
@@ -627,7 +627,7 @@ export const bosses: Boss[] = [
     tier: 2,
   },
   {
-    id: 1087 as BossId,
+    id: 1087 as MobId,
     icon: require("../assets/mobs/1087.gif"),
     name: "Orc Hero",
     tombstone: true,
@@ -637,7 +637,7 @@ export const bosses: Boss[] = [
     tier: 1,
   },
   {
-    id: 1190 as BossId,
+    id: 1190 as MobId,
     icon: require("../assets/mobs/1190.gif"),
     name: "Orc Lord",
     tombstone: true,
@@ -647,7 +647,7 @@ export const bosses: Boss[] = [
     tier: 1,
   },
   {
-    id: 1038 as BossId,
+    id: 1038 as MobId,
     icon: require("../assets/mobs/1038.gif"),
     name: "Osiris",
     tombstone: true,
@@ -657,7 +657,7 @@ export const bosses: Boss[] = [
     tier: 1,
   },
   {
-    id: 1157 as BossId,
+    id: 1157 as MobId,
     icon: require("../assets/mobs/1157.gif"),
     name: "Pharaoh",
     tombstone: true,
@@ -667,7 +667,7 @@ export const bosses: Boss[] = [
     tier: 1,
   },
   {
-    id: 1159 as BossId,
+    id: 1159 as MobId,
     icon: require("../assets/mobs/1159.gif"),
     name: "Phreeoni",
     tombstone: true,
@@ -677,7 +677,7 @@ export const bosses: Boss[] = [
     tier: 1,
   },
   {
-    id: 2087 as BossId,
+    id: 2087 as MobId,
     icon: require("../assets/mobs/2165.gif"),
     name: "Queen Scaraba",
     tombstone: true,
@@ -687,7 +687,7 @@ export const bosses: Boss[] = [
     tier: 2,
   },
   {
-    id: 1623 as BossId,
+    id: 1623 as MobId,
     icon: require("../assets/mobs/1623.gif"),
     name: "RSX-0806",
     tombstone: true,
@@ -697,7 +697,7 @@ export const bosses: Boss[] = [
     tier: 2,
   },
   {
-    id: 1251 as BossId,
+    id: 1251 as MobId,
     icon: require("../assets/mobs/1251.gif"),
     name: "Stormy Knight",
     tombstone: true,
@@ -707,7 +707,7 @@ export const bosses: Boss[] = [
     tier: 1,
   },
   {
-    id: 1583 as BossId,
+    id: 1583 as MobId,
     icon: require("../assets/mobs/1583.gif"),
     name: "Tao Gunka",
     tombstone: true,
@@ -717,7 +717,7 @@ export const bosses: Boss[] = [
     tier: 2,
   },
   {
-    id: 1991 as BossId,
+    id: 1991 as MobId,
     icon: require("../assets/mobs/1991.gif"),
     name: "Tendrillion",
     tombstone: true,
@@ -727,7 +727,7 @@ export const bosses: Boss[] = [
     tier: 0,
   },
   {
-    id: 1708 as BossId,
+    id: 1708 as MobId,
     icon: require("../assets/mobs/1708.gif"),
     name: "Thanatos",
     tombstone: true,
@@ -737,7 +737,7 @@ export const bosses: Boss[] = [
     tier: 3,
   },
   {
-    id: 1312 as BossId,
+    id: 1312 as MobId,
     icon: require("../assets/mobs/1312.gif"),
     name: "Turtle General",
     tombstone: true,
@@ -748,7 +748,7 @@ export const bosses: Boss[] = [
     tier: 2,
   },
   {
-    id: 1751 as BossId,
+    id: 1751 as MobId,
     icon: require("../assets/mobs/1751.gif"),
     name: "Valkyrie Randgris",
     tombstone: true,
@@ -758,7 +758,7 @@ export const bosses: Boss[] = [
     tier: 3,
   },
   {
-    id: 1685 as BossId,
+    id: 1685 as MobId,
     icon: require("../assets/mobs/1685.gif"),
     name: "Vesper",
     tombstone: true,
@@ -768,7 +768,7 @@ export const bosses: Boss[] = [
     tier: 3,
   },
   {
-    id: 1917 as BossId,
+    id: 1917 as MobId,
     icon: require("../assets/mobs/1917.gif"),
     name: "Wounded Morroc",
     tombstone: true,
@@ -779,6 +779,6 @@ export const bosses: Boss[] = [
   },
 ];
 
-for (const boss of bosses) {
-  boss.drops = drops[boss.id];
+for (const mob of mobs) {
+  mob.drops = drops[mob.id];
 }
