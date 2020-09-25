@@ -11,7 +11,7 @@ export const generateDrops = (
 ) => {
   fs.writeFileSync(
     outputFile,
-    itemReferences(format(dropsTemplate(drops), { parser: "babel" }))
+    itemReferences(format(dropsTemplate(drops), { parser: "babel-ts" }))
   );
 };
 
@@ -20,7 +20,7 @@ import { items } from "./items";
 import { Drop } from "../../state/Drop";
 
 export const drops: Record<string, Drop[]> =
-${JSON.stringify(Object.fromEntries(drops.entries()))};
+${JSON.stringify(Object.fromEntries(drops.entries()), null, 2)};
 `;
 
 const itemIdProp: keyof ParsedDrop = "itemId";
