@@ -1,7 +1,7 @@
 import { ParsedItem } from "../types/ParsedItem";
-import { generatedWarning } from "./generatedWarning";
+import { warning } from "./warning";
 
-export const itemsTemplate = (items: ParsedItem[]) => `// ${generatedWarning}.
+export const itemsTemplate = (items: ParsedItem[]) => `// ${warning}.
 import { ItemId } from "../../state/ItemId";
 
 export const items = ${addAsItemId(JSON.stringify(groupById(items), null, 2))};

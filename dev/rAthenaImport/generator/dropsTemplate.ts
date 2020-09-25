@@ -1,10 +1,10 @@
 import { ParsedDrop } from "../types/ParsedDrop";
 import { MobId } from "../../../src/state/MobId";
-import { generatedWarning } from "./generatedWarning";
+import { warning } from "./warning";
 
 export const dropsTemplate = (
   drops: Map<MobId, ParsedDrop[]>
-) => `// ${generatedWarning}.
+) => `// ${warning}.
 import { items } from "./items";
 import { Drop } from "../../state/Drop";
 
