@@ -16,7 +16,6 @@ export const parseDropsFromMobDB = (mobTableData: RAthenaMob[]) =>
       parseDrop(mob.MVP1id, mob.MVP1per, true),
       parseDrop(mob.MVP2id, mob.MVP2per, true),
       parseDrop(mob.MVP3id, mob.MVP3per, true),
-      parseDrop(mob.MVP3id, mob.MVP3per, true),
       parseDrop(mob.Drop1id, mob.Drop1per),
       parseDrop(mob.Drop2id, mob.Drop2per),
       parseDrop(mob.Drop3id, mob.Drop3per),
