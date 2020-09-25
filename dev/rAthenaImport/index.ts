@@ -14,7 +14,7 @@ const outputFolder = path.resolve(__dirname, "../../src/fixtures/generated");
 const inputFolder = process.argv[2];
 
 if (!inputFolder) {
-  console.error("Usage: npm run import [path to server export folder]");
+  console.error("Usage: npm run import [path to data folder]");
   process.exit();
 }
 
