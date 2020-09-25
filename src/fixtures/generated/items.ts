@@ -356,11 +356,6 @@ export const items = {
     name: "Katar of Raging Blaze",
     iconUrl: require("../../assets/items/1258.gif"),
   },
-  "1265": {
-    id: 1265 as ItemId,
-    name: "Bloody Roar",
-    iconUrl: require("../../assets/items/1265.gif"),
-  },
   "1285": {
     id: 1285 as ItemId,
     name: "Chakram",
@@ -426,11 +421,6 @@ export const items = {
     name: "Hellfire",
     iconUrl: require("../../assets/items/1471.gif"),
   },
-  "1473": {
-    id: 1473 as ItemId,
-    name: "Wizardry Staff",
-    iconUrl: require("../../assets/items/1473.gif"),
-  },
   "1483": {
     id: 1483 as ItemId,
     name: "Ivory Lance",
@@ -490,11 +480,6 @@ export const items = {
     id: 1716 as ItemId,
     name: "Gakkung",
     iconUrl: require("../../assets/items/1716.gif"),
-  },
-  "1724": {
-    id: 1724 as ItemId,
-    name: "Dragon Wing",
-    iconUrl: require("../../assets/items/1724.gif"),
   },
   "1737": {
     id: 1737 as ItemId,
@@ -741,6 +726,16 @@ export const items = {
     name: "Ring",
     iconUrl: require("../../assets/items/2621.gif"),
   },
+  "2648": {
+    id: 2648 as ItemId,
+    name: "Morpheus's Ring",
+    iconUrl: require("../../assets/items/2648.gif"),
+  },
+  "2649": {
+    id: 2649 as ItemId,
+    name: "Morpheus's Bracelet",
+    iconUrl: require("../../assets/items/2649.gif"),
+  },
   "2650": {
     id: 2650 as ItemId,
     name: "Morrigan's Belt",
@@ -919,6 +914,11 @@ export const items = {
   "4376": {
     id: 4376 as ItemId,
     name: "Lady Tanee Card",
+    iconUrl: require("../../assets/items/card.gif"),
+  },
+  "4386": {
+    id: 4386 as ItemId,
+    name: "Detardeurus Card",
     iconUrl: require("../../assets/items/card.gif"),
   },
   "4399": {
@@ -1226,6 +1226,11 @@ export const items = {
     name: "Skeletal Armor Piece",
     iconUrl: require("../../assets/items/7450.gif"),
   },
+  "7451": {
+    id: 7451 as ItemId,
+    name: "Fire Dragon Scale",
+    iconUrl: require("../../assets/items/7451.gif"),
+  },
   "7480": {
     id: 7480 as ItemId,
     name: "Level 9 Cookbook",
@@ -1265,11 +1270,6 @@ export const items = {
     id: 7566 as ItemId,
     name: "Will of Red Darkness",
     iconUrl: require("../../assets/items/7566.gif"),
-  },
-  "7701": {
-    id: 7701 as ItemId,
-    name: "Dragon Soul",
-    iconUrl: require("../../assets/items/7701.gif"),
   },
   "7754": {
     id: 7754 as ItemId,
@@ -1320,11 +1320,6 @@ export const items = {
     id: 12095 as ItemId,
     name: "Hwergelmir's Tonic",
     iconUrl: require("../../assets/items/12095.gif"),
-  },
-  "12100": {
-    id: 12100 as ItemId,
-    name: "Cooked Nine Tail's Tails",
-    iconUrl: require("../../assets/items/12100.gif"),
   },
   "12129": {
     id: 12129 as ItemId,

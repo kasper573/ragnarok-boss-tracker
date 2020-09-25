@@ -224,8 +224,8 @@ export const mobs: Mob[] = [
     tier: 2,
   },
   {
-    id: 1817 as MobId,
-    icon: require("../assets/mobs/1817.gif"),
+    id: 1719 as MobId,
+    icon: require("../assets/mobs/1719.gif"),
     name: "Detale",
     tombstone: true,
     map: maps.abyss_03,

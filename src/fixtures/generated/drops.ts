@@ -1612,6 +1612,73 @@ export const drops: Record<string, Drop[]> = {
       mvp: false,
     },
   ],
+  "1719": [
+    {
+      item: items[617],
+      chance: 0.55,
+      mvp: true,
+    },
+    {
+      item: items[603],
+      chance: 0.5,
+      mvp: true,
+    },
+    {
+      item: items[732],
+      chance: 0.2,
+      mvp: true,
+    },
+    {
+      item: items[2649],
+      chance: 0.05,
+      mvp: false,
+    },
+    {
+      item: items[2648],
+      chance: 0.05,
+      mvp: false,
+    },
+    {
+      item: items[7444],
+      chance: 0.25,
+      mvp: false,
+    },
+    {
+      item: items[7451],
+      chance: 0.1795,
+      mvp: false,
+    },
+    {
+      item: items[12080],
+      chance: 0.05,
+      mvp: false,
+    },
+    {
+      item: items[1417],
+      chance: 0.005,
+      mvp: false,
+    },
+    {
+      item: items[5002],
+      chance: 0.025,
+      mvp: false,
+    },
+    {
+      item: items[4386],
+      chance: 0.0001,
+      mvp: false,
+    },
+    {
+      item: items[50004],
+      chance: 0.1,
+      mvp: false,
+    },
+    {
+      item: items[25375],
+      chance: 0.02,
+      mvp: false,
+    },
+  ],
   "1731": [
     {
       item: items[7484],
@@ -1962,48 +2029,6 @@ export const drops: Record<string, Drop[]> = {
     },
   ],
   "1814": [],
-  "1817": [
-    {
-      item: items[617],
-      chance: 0.5,
-      mvp: true,
-    },
-    {
-      item: items[617],
-      chance: 0.55,
-      mvp: true,
-    },
-    {
-      item: items[7701],
-      chance: 1,
-      mvp: false,
-    },
-    {
-      item: items[1724],
-      chance: 0.05,
-      mvp: false,
-    },
-    {
-      item: items[1473],
-      chance: 0.05,
-      mvp: false,
-    },
-    {
-      item: items[1265],
-      chance: 0.05,
-      mvp: false,
-    },
-    {
-      item: items[12080],
-      chance: 0.15,
-      mvp: false,
-    },
-    {
-      item: items[12100],
-      chance: 0.15,
-      mvp: false,
-    },
-  ],
   "1832": [
     {
       item: items[617],
