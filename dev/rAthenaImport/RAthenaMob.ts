@@ -1,3 +1,6 @@
+/**
+ * The data structure of the rAthena database table "mob_db"
+ */
 export type RAthenaMob = {
   ID: string;
   MVP1id: string;
