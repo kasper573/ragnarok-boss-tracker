@@ -1,4 +1,4 @@
-import { stripEmptyLines } from "./stripEmptyLines";
+import { stripEmptyLines } from "../util/stripEmptyLines";
 const stripComments = require("strip-comments");
 
 /**

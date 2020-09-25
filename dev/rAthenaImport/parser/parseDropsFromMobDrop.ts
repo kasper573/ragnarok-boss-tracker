@@ -1,8 +1,8 @@
-import { MobId } from "../../src/state/MobId";
-import { ParsedDrop } from "./ParsedDrop";
-import { ItemId } from "../../src/state/ItemId";
+import { MobId } from "../../../src/state/MobId";
+import { ParsedDrop } from "../types/ParsedDrop";
+import { ItemId } from "../../../src/state/ItemId";
 import { parseChance } from "./parseChance";
-import { pull } from "./pull";
+import { pull } from "../util/pull";
 
 /**
  * Parses the data structure in rAthena data file mob_drop.txt

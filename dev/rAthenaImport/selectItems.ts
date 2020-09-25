@@ -1,6 +1,6 @@
 import { MobId } from "../../src/state/MobId";
-import { ParsedDrop } from "./ParsedDrop";
-import { ParsedItem } from "./ParsedItem";
+import { ParsedDrop } from "./types/ParsedDrop";
+import { ParsedItem } from "./types/ParsedItem";
 
 export const selectItems = (
   availableItems: ParsedItem[],

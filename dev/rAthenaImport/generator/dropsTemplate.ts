@@ -1,5 +1,5 @@
-import { ParsedDrop } from "./ParsedDrop";
-import { MobId } from "../../src/state/MobId";
+import { ParsedDrop } from "../types/ParsedDrop";
+import { MobId } from "../../../src/state/MobId";
 import { generatedWarning } from "./generatedWarning";
 
 export const dropsTemplate = (

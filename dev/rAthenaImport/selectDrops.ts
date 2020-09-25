@@ -1,5 +1,5 @@
 import { MobId } from "../../src/state/MobId";
-import { ParsedDrop } from "./ParsedDrop";
+import { ParsedDrop } from "./types/ParsedDrop";
 
 export const selectDrops = (
   availableDrops: Map<MobId, ParsedDrop[]>,

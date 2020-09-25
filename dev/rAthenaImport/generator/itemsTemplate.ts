@@ -1,4 +1,4 @@
-import { ParsedItem } from "./ParsedItem";
+import { ParsedItem } from "../types/ParsedItem";
 import { generatedWarning } from "./generatedWarning";
 
 export const itemsTemplate = (items: ParsedItem[]) => `// ${generatedWarning}.
