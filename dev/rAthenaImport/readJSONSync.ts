@@ -1,4 +1,4 @@
 const fs = require("fs");
 
-exports.readJSONSync = (filePath) =>
+export const readJSONSync = (filePath: string) =>
   JSON.parse(fs.readFileSync(filePath, "utf8"));

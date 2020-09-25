@@ -1,17 +1,23 @@
-const path = require("path");
-const { selectItems } = require("./selectItems");
-const { selectDrops } = require("./selectDrops");
-const { getMobIdsToImport } = require("./getMobIdsToImport");
-const { concatLists } = require("./concatLists");
-const { generateItems } = require("./generateItems");
-const { generateDrops } = require("./generateDrops");
-const { readJSONSync } = require("./readJSONSync");
-const { parseDrops } = require("./parseDrops");
-const { parseItems } = require("./parseItems");
-const { getTableData } = require("./getTableData");
+import * as path from "path";
+import { concatLists } from "./concatLists";
+import { parseItems } from "./parseItems";
+import { readJSONSync } from "./readJSONSync";
+import { getTableData } from "./getTableData";
+import { parseDrops } from "./parseDrops";
+import { getMobIdsToImport } from "./getMobIdsToImport";
+import { selectDrops } from "./selectDrops";
+import { selectItems } from "./selectItems";
+import { generateItems } from "./generateItems";
+import { generateDrops } from "./generateDrops";
 
 const outputFolder = path.resolve(__dirname, "../../src/fixtures/generated");
 const inputFolder = process.argv[2];
+
+if (!inputFolder) {
+  console.error("Usage: npm run import [path to server export folder]");
+  process.exit();
+}
+
 const itemInputFiles = [
   path.resolve(inputFolder, "item_db_re.json"),
   path.resolve(inputFolder, "item_db2_re.json"),
@@ -20,13 +26,6 @@ const dropsInputFiles = [
   path.resolve(inputFolder, "mob_db_re.json"),
   path.resolve(inputFolder, "mob_db2_re.json"),
 ];
-
-if (!inputFolder) {
-  console.error(
-    "Usage: node ./rAthenaImport/index.js [path to server export folder]"
-  );
-  process.exit();
-}
 
 const allItems = concatLists(
   itemInputFiles.map((file) => parseItems(getTableData(readJSONSync(file))))
