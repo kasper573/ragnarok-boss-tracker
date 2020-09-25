@@ -9,7 +9,7 @@ export type DropListItemProps = { drop: Drop };
 export const DropListItem: React.FC<DropListItemProps> = ({ drop }) => {
   return (
     <DropListItemRow>
-      <DropListItemIcon src={drop.item.icon} />
+      {drop.item.icon && <DropListItemIcon src={drop.item.icon} />}
       <Typography>
         {drop.item.name} ({formatDropChance(drop.chance * 100)})
       </Typography>
@@ -26,11 +26,11 @@ const DropListItemRow = styled.div`
   }
 `;
 
-const DropListItemIcon = styled.div<{ src?: string }>`
+const DropListItemIcon = styled.div<{ src: string }>`
   width: 24px;
   height: 24px;
   margin-right: 12px;
-  background-image: ${({ src }) => (src ? `url(${src})` : undefined)};
+  background-image: url(${({ src }) => src});
   background-size: contain;
   background-repeat: no-repeat;
   background-position: 50% 50%;
