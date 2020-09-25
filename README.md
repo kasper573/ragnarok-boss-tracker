@@ -21,8 +21,9 @@ Here's how:
 
 1. Make sure you have followed the steps in `Getting started` above.
 2. Export the following tables as json from the rAthena database: `mob_db`, `mob_db2`, `item_db`, `item_db2`
-3. Place these files in a folder of your choice
-4. Run `npm run import [path to the folder of your choice]`
+3. Find and copy the rAthena data file `mob_drop.txt`
+4. Place these files in a folder of your choice
+5. Run `npm run import [path to the folder of your choice]`
 
 The import script will now have updated the files under `src/fixtures/generated/` and your tracker will be using the data you extracted from your server. 
  

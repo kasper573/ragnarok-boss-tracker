@@ -1,9 +1,12 @@
+import * as fs from "fs";
 import * as path from "path";
 import { concatLists } from "./concatLists";
-import { parseItems } from "./parseItems";
 import { readJSONSync } from "./readJSONSync";
 import { getTableData } from "./getTableData";
-import { parseDrops } from "./parseDrops";
+import { parseDataFile } from "./parseDataFile";
+import { parseItemsFromItemDB } from "./parseItemsFromItemDB";
+import { parseDropsFromMobDB } from "./parseDropsFromMobDB";
+import { parseDropsFromMobDrop } from "./parseDropsFromMobDrop";
 import { getMobIdsToImport } from "./getMobIdsToImport";
 import { selectDrops } from "./selectDrops";
 import { selectItems } from "./selectItems";
@@ -18,21 +21,27 @@ if (!inputFolder) {
   process.exit();
 }
 
-const itemInputFiles = [
-  path.resolve(inputFolder, "item_db_re.json"),
-  path.resolve(inputFolder, "item_db2_re.json"),
-];
-const dropsInputFiles = [
-  path.resolve(inputFolder, "mob_db_re.json"),
-  path.resolve(inputFolder, "mob_db2_re.json"),
-];
-
 const allItems = concatLists(
-  itemInputFiles.map((file) => parseItems(getTableData(readJSONSync(file))))
+  [
+    path.resolve(inputFolder, "item_db_re.json"),
+    path.resolve(inputFolder, "item_db2_re.json"),
+  ].map((file) => parseItemsFromItemDB(getTableData(readJSONSync(file))))
 );
 
-const allDrops = parseDrops(
-  concatLists(dropsInputFiles.map((file) => getTableData(readJSONSync(file))))
+const allDrops = parseDropsFromMobDB(
+  concatLists(
+    [
+      path.resolve(inputFolder, "mob_db_re.json"),
+      path.resolve(inputFolder, "mob_db2_re.json"),
+    ].map((file) => getTableData(readJSONSync(file)))
+  )
+);
+
+parseDropsFromMobDrop(
+  allDrops,
+  parseDataFile(
+    fs.readFileSync(path.resolve(inputFolder, "mob_drop.txt"), "utf8")
+  )
 );
 
 const mobIds = getMobIdsToImport();

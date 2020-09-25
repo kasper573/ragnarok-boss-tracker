@@ -2,17 +2,17 @@ import { RAthenaMob } from "./RAthenaMob";
 import { MobId } from "../../src/state/MobId";
 import { ParsedDrop } from "./ParsedDrop";
 import { ItemId } from "../../src/state/ItemId";
+import { parseChance } from "./parseChance";
+import { pull } from "./pull";
 
-export const parseDrops = (mobTableData: RAthenaMob[]) =>
+/**
+ * Parses the data structure in rAthena database table mob_db
+ */
+export const parseDropsFromMobDB = (mobTableData: RAthenaMob[]) =>
   mobTableData.reduce((allDrops, mob) => {
     const mobId = parseInt(mob.ID, 10) as MobId;
-    let mobDrops = allDrops.get(mobId);
-    if (!mobDrops) {
-      mobDrops = [];
-      allDrops.set(mobId, mobDrops);
-    }
     pushDrops(
-      mobDrops,
+      pull(allDrops, mobId, []),
       parseDrop(mob.MVP1id, mob.MVP1per, true),
       parseDrop(mob.MVP2id, mob.MVP2per, true),
       parseDrop(mob.MVP3id, mob.MVP3per, true),
@@ -37,6 +37,6 @@ const pushDrops = (existingDrops: ParsedDrop[], ...newDrops: ParsedDrop[]) =>
 
 const parseDrop = (id: string, chance: string, mvp = false): ParsedDrop => ({
   item: parseInt(id, 10) as ItemId,
-  chance: parseFloat(chance) / 100 / 100,
+  chance: parseChance(chance),
   mvp,
 });
