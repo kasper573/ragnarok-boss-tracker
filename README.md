@@ -23,4 +23,4 @@ Here's how:
 2. Export the following tables as json from the rAthena database: `mob_db`, `mob_db2`, `item_db`, `item_db2`
 3. Find and copy the rAthena data file `mob_drop.txt`
 4. Place these files in a folder of your choice
-5. Run `npm run import [path to the folder of your choice]`
+5. Run `npm run import <path-to-data-folder> [<http://url.to/item/icon/server/@ITEM_ID.gif>]`

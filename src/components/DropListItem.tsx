@@ -9,7 +9,7 @@ export type DropListItemProps = { drop: Drop };
 export const DropListItem: React.FC<DropListItemProps> = ({ drop }) => {
   return (
     <DropListItemRow>
-      {drop.item.icon && <DropListItemIcon src={drop.item.icon} />}
+      {drop.item.iconUrl && <DropListItemIcon src={drop.item.iconUrl} />}
       <Typography>
         {drop.item.name} ({formatDropChance(drop.chance * 100)})
       </Typography>

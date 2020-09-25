@@ -2,6 +2,6 @@ import { ItemId } from "./ItemId";
 
 export type Item = {
   id: ItemId;
-  icon?: string;
+  iconUrl?: string;
   name: string;
 };

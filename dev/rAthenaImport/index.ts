@@ -12,13 +12,22 @@ import { selectDrops } from "./selectDrops";
 import { selectItems } from "./selectItems";
 import { generateItems } from "./generator/generateItems";
 import { generateDrops } from "./generator/generateDrops";
+import { populateItemIcons } from "./generator/populateItemIcons";
+import { ItemId } from "../../src/state/ItemId";
 
 const mobsFile = path.resolve(__dirname, "../../src/fixtures/mobs.ts");
-const outputFolder = path.resolve(__dirname, "../../src/fixtures/generated");
+const generateFolder = path.resolve(__dirname, "../../src/fixtures/generated");
+const itemIconsFolder = path.resolve(__dirname, "../../src/assets/items");
 const inputFolder = process.argv[2];
+const itemIconUrl = process.argv[3];
+const getItemIconUrl = itemIconUrl
+  ? (id: ItemId) => itemIconUrl.replace("@ITEM_ID", id.toString())
+  : () => undefined;
 
 if (!inputFolder) {
-  console.error("Usage: npm run import [path to data folder]");
+  console.error(
+    "Usage: npm run import <path-to-data-folder> [<http://url.to/item/icon/server/@ITEM_ID.gif>]"
+  );
   process.exit();
 }
 
@@ -49,5 +58,8 @@ const mobIds = getMobIdsToImport(mobsFile);
 const referencedDrops = selectDrops(allDrops, mobIds);
 const referencedItems = selectItems(allItems, referencedDrops);
 
-generateItems(path.join(outputFolder, "items.ts"), referencedItems);
-generateDrops(path.join(outputFolder, "drops.ts"), referencedDrops);
+(async () => {
+  await populateItemIcons(referencedItems, itemIconsFolder, getItemIconUrl);
+  generateItems(path.join(generateFolder, "items.ts"), referencedItems);
+  generateDrops(path.join(generateFolder, "drops.ts"), referencedDrops);
+})();

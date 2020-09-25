@@ -49,6 +49,7 @@
   },
   "devDependencies": {
     "@types/prettier": "2.1.1",
+    "image-downloader": "^4.0.1",
     "prettier": "2.1.1",
     "strip-comments": "^2.0.1",
     "ts-node": "^9.0.0"
