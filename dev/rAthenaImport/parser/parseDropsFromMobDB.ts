@@ -1,9 +1,9 @@
 import { RAthenaMob } from "../types/RAthenaMob";
 import { MobId } from "../../../src/state/MobId";
 import { ParsedDrop } from "../types/ParsedDrop";
-import { ItemId } from "../../../src/state/ItemId";
-import { parseChance } from "./parseChance";
 import { pull } from "../util/pull";
+import { pushDrops } from "./pushDrops";
+import { parseDrop } from "./parseDrop";
 
 /**
  * Parses the data structure in rAthena database table mob_db
@@ -30,13 +30,3 @@ export const parseDropsFromMobDB = (mobTableData: RAthenaMob[]) =>
     );
     return allDrops;
   }, new Map<MobId, ParsedDrop[]>());
-
-const pushDrops = (existingDrops: ParsedDrop[], ...newDrops: ParsedDrop[]) =>
-  // Omit null item drops
-  existingDrops.push(...newDrops.filter((drop) => drop.item !== 0));
-
-const parseDrop = (id: string, chance: string, mvp = false): ParsedDrop => ({
-  item: parseInt(id, 10) as ItemId,
-  chance: parseChance(chance),
-  mvp,
-});

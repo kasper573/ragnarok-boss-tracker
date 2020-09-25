@@ -1,8 +1,8 @@
 import { MobId } from "../../../src/state/MobId";
 import { ParsedDrop } from "../types/ParsedDrop";
-import { ItemId } from "../../../src/state/ItemId";
-import { parseChance } from "./parseChance";
 import { pull } from "../util/pull";
+import { parseDrop } from "./parseDrop";
+import { pushDrops } from "./pushDrops";
 
 /**
  * Parses the data structure in rAthena data file mob_drop.txt
@@ -13,9 +13,7 @@ export const parseDropsFromMobDrop = (
 ) => {
   for (const [mobIdStr, itemIdStr, chanceStr, randOpt, flag] of values) {
     const mobId = parseInt(mobIdStr, 10) as MobId;
-    const itemId = parseInt(itemIdStr, 10) as ItemId;
-    const mvp = flag === "2";
     const mobDrops = pull(allDrops, mobId, []);
-    mobDrops.push({ mvp, item: itemId, chance: parseChance(chanceStr) });
+    pushDrops(mobDrops, parseDrop(itemIdStr, chanceStr, flag === "2"));
   }
 };
