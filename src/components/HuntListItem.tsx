@@ -45,13 +45,13 @@ export const HuntListItem: React.FC<HuntListItemProps> = ({
     <ListItem>
       <ListItemAvatar>
         <Tooltip title={<HuntInfo hunt={hunt} />}>
-          {hunt.boss.icon ? <BossIcon src={hunt.boss.icon} /> : <Avatar />}
+          {hunt.mob.icon ? <MobIcon src={hunt.mob.icon} /> : <Avatar />}
         </Tooltip>
       </ListItemAvatar>
       <ListItemText
-        primary={hunt.boss.name}
+        primary={hunt.mob.name}
         primaryTypographyProps={{
-          style: { color: getTierColor(hunt.boss.tier) },
+          style: { color: getTierColor(hunt.mob.tier) },
         }}
         secondary={<SpawnTime hunt={hunt} />}
         secondaryTypographyProps={{ component: "span" }}
@@ -64,7 +64,7 @@ export const HuntListItem: React.FC<HuntListItemProps> = ({
         </Tooltip>
         <Tooltip
           title={
-            hunt.boss.tombstone
+            hunt.mob.tombstone
               ? "Tombstone location"
               : "Does not leave a tombstone"
           }
@@ -73,7 +73,7 @@ export const HuntListItem: React.FC<HuntListItemProps> = ({
             <IconButton
               size={buttonSize}
               onClick={() => onEditTombstoneLocation(hunt)}
-              disabled={!hunt.boss.tombstone}
+              disabled={!hunt.mob.tombstone}
             >
               <Room />
             </IconButton>
@@ -121,7 +121,7 @@ export const HuntListItem: React.FC<HuntListItemProps> = ({
   );
 };
 
-const BossIcon = styled.div<{ src: string }>`
+const MobIcon = styled.div<{ src: string }>`
   background-image: url(${({ src }) => src});
   background-size: contain;
   background-position: 50% 50%;

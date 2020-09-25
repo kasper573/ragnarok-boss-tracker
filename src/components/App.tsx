@@ -11,10 +11,10 @@ import {
   Tooltip,
 } from "@material-ui/core";
 import { Container } from "./Container";
-import { BossSelector } from "./BossSelector";
+import { MobSelector } from "./MobSelector";
 import { useListState } from "../hooks/useListState";
 import { Hunt } from "../state/Hunt";
-import { Boss } from "../state/Boss";
+import { Mob } from "../state/Mob";
 import MomentUtils from "@date-io/moment";
 import { MuiPickersUtilsProvider } from "@material-ui/pickers";
 import { HuntTimeEditor } from "./HuntTimeEditor";
@@ -27,15 +27,15 @@ import { useToggleState } from "../hooks/useToggleState";
 
 export type AppProps = {
   theme: Theme;
-  bosses: Boss[];
+  mobs: Mob[];
 };
 
 type Editor = "time" | "location";
 
-export const App: React.FC<AppProps> = ({ theme, bosses }) => {
+export const App: React.FC<AppProps> = ({ theme, mobs }) => {
   const [multiSpawn, toggleMultiSpawn] = useToggleState(false, true);
   const [hunts, addHunt, removeHunt, replaceHunt] = useListState<Hunt>(
-    () => loadFromLocalStorage(bosses),
+    () => loadFromLocalStorage(mobs),
     saveToLocalStorage
   );
   const [editedHunt, setEditedHunt] = useState<Hunt>();
@@ -54,7 +54,7 @@ export const App: React.FC<AppProps> = ({ theme, bosses }) => {
       stopEditing();
     }
   };
-  const startCreating = (boss: Boss) => addHunt(new Hunt(boss));
+  const startCreating = (mob: Mob) => addHunt(new Hunt(mob));
   const killNow = (hunt: Hunt) => {
     // Set kill time to now
     const killedHunt = hunt.update({ killTime: new Date() });
@@ -62,7 +62,7 @@ export const App: React.FC<AppProps> = ({ theme, bosses }) => {
     // Let user pick where they killed it
     startEditing(killedHunt, "location");
   };
-  const selectableBosses = multiSpawn ? bosses : nonHuntedBosses(bosses, hunts);
+  const selectableMobs = multiSpawn ? mobs : nonHuntedMobs(mobs, hunts);
   return (
     <MuiThemeProvider theme={theme}>
       <SCThemeProvider theme={theme}>
@@ -70,10 +70,7 @@ export const App: React.FC<AppProps> = ({ theme, bosses }) => {
           <CssBaseline />
           <Container>
             <Controls>
-              <BossSelector
-                bosses={selectableBosses}
-                onSelect={startCreating}
-              />
+              <MobSelector mobs={selectableMobs} onSelect={startCreating} />
               <Tooltip title="Enable to allow multiple hunts per boss spawn (Useful for double spawn events)">
                 <FormControlLabel
                   control={
@@ -131,5 +128,5 @@ const Controls = styled.div`
   }
 `;
 
-const nonHuntedBosses = (bosses: Boss[], hunts: Hunt[]) =>
-  bosses.filter((boss) => !hunts.find((hunt) => hunt.boss === boss));
+const nonHuntedMobs = (mobs: Mob[], hunts: Hunt[]) =>
+  mobs.filter((mob) => !hunts.find((hunt) => hunt.mob === mob));

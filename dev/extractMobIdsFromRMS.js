@@ -1,20 +1,23 @@
 // Inject JQuery into ratemyserver then paste this into console after enabling renewal
 
-async function downloadBossId (name) {
-  const html = await $.get(`https://ratemyserver.net/index.php?mob_name=${encodeURIComponent(name)}&page=mob_db&f=1&mob_search=Search`);
+async function downloadMobId(name) {
+  const html = await $.get(
+    `https://ratemyserver.net/index.php?mob_name=${encodeURIComponent(
+      name
+    )}&page=mob_db&f=1&mob_search=Search`
+  );
   const match = /Mob-ID#(\d+)/.exec(html);
   return match && match[1];
 }
 
-async function downloadBossIds (names) {
+async function downloadMobIds(names) {
   const map = {};
   for (const name of names) {
-    map[name] = await downloadBossId(name);
+    map[name] = await downloadMobId(name);
   }
   return map;
 }
 
-downloadBossIds(
+downloadMobIds(
   [] // Add mob names here
 ).then(console.log);
-

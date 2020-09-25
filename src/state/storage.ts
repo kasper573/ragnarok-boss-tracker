@@ -1,15 +1,15 @@
 import { Hunt } from "./Hunt";
 import { MapLocation } from "./MapLocation";
-import { Boss } from "./Boss";
+import { Mob } from "./Mob";
 import { MapId } from "./MapId";
 import { mapList } from "../fixtures/maps";
-import { BossId } from "./BossId";
+import { MobId } from "./MobId";
 
 const storageId = "hunts";
 
 export const saveToLocalStorage = (hunts: Hunt[]) => {
   const serialized: SerializedHunt[] = hunts.map((hunt) => ({
-    bossId: hunt.boss.id,
+    mobId: hunt.mob.id,
     mapId: hunt.map.id,
     killTime: hunt.killTime ? hunt.killTime.toUTCString() : undefined,
     tombstoneLocation: hunt.tombstoneLocation,
@@ -17,7 +17,7 @@ export const saveToLocalStorage = (hunts: Hunt[]) => {
   localStorage.setItem(storageId, JSON.stringify(serialized));
 };
 
-export const loadFromLocalStorage = (bosses: Boss[]): Hunt[] => {
+export const loadFromLocalStorage = (mobs: Mob[]): Hunt[] => {
   const json = localStorage.getItem(storageId);
   if (!json) {
     return [];
@@ -25,15 +25,15 @@ export const loadFromLocalStorage = (bosses: Boss[]): Hunt[] => {
   try {
     const serialized: SerializedHunt[] = JSON.parse(json);
     const hunts: Hunt[] = [];
-    for (const { bossId, mapId, killTime, tombstoneLocation } of serialized) {
-      const boss = bosses.find(
-        (candidate) => candidate.id === bossId && candidate.map.id === mapId
+    for (const { mobId, mapId, killTime, tombstoneLocation } of serialized) {
+      const mob = mobs.find(
+        (candidate) => candidate.id === mobId && candidate.map.id === mapId
       );
       const map = mapList.find((map) => map.id === mapId);
-      if (boss) {
+      if (mob) {
         hunts.push(
           new Hunt(
-            boss,
+            mob,
             map,
             killTime ? new Date(killTime) : undefined,
             tombstoneLocation
@@ -47,7 +47,7 @@ export const loadFromLocalStorage = (bosses: Boss[]): Hunt[] => {
 };
 
 type SerializedHunt = {
-  bossId: BossId;
+  mobId: MobId;
   killTime?: string;
   mapId: MapId;
   tombstoneLocation: MapLocation | undefined;

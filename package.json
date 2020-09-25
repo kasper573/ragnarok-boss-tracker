@@ -29,7 +29,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "import": "ts-node --project ./dev/tsconfig.json ./dev/rAthenaImport/index.ts"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -47,6 +48,10 @@
     ]
   },
   "devDependencies": {
-    "prettier": "2.1.1"
+    "@types/prettier": "2.1.1",
+    "image-downloader": "^4.0.1",
+    "prettier": "2.1.1",
+    "strip-comments": "^2.0.1",
+    "ts-node": "^9.0.0"
   }
 }

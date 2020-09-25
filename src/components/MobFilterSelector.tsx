@@ -5,21 +5,21 @@ import {
   FormGroup,
   FormGroupProps,
 } from "@material-ui/core";
-import { BossFilter, bossFilterLabelFns, bossFilters } from "./bossFilters";
+import { MobFilter, mobFilterLabelFns, mobFilters } from "./mobFilters";
 
-export type BossFilterSelectorProps = Omit<FormGroupProps, "onChange"> & {
-  value: BossFilter[];
-  onChange: (filters: BossFilter[]) => void;
+export type MobFilterSelectorProps = Omit<FormGroupProps, "onChange"> & {
+  value: MobFilter[];
+  onChange: (filters: MobFilter[]) => void;
 };
 
-export const BossFilterSelector: React.FC<BossFilterSelectorProps> = ({
+export const MobFilterSelector: React.FC<MobFilterSelectorProps> = ({
   value,
   onChange,
   ...props
 }) => {
   return (
     <FormGroup row {...props}>
-      {bossFilters.map((filter) => {
+      {mobFilters.map((filter) => {
         const checked = value.includes(filter);
         const toggle = checked
           ? () => onChange(value.filter((other) => other !== filter)) // Remove
@@ -27,7 +27,7 @@ export const BossFilterSelector: React.FC<BossFilterSelectorProps> = ({
         return (
           <FormControlLabel
             key={filter}
-            label={bossFilterLabelFns[filter]()}
+            label={mobFilterLabelFns[filter]()}
             control={
               <Checkbox
                 color="default"

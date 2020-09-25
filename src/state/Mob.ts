@@ -2,11 +2,11 @@ import { Map } from "./Map";
 import { Minutes } from "./Minutes";
 import { MapLocation } from "./MapLocation";
 import { Tier } from "./Tier";
-import { BossId } from "./BossId";
+import { MobId } from "./MobId";
 import { Drop } from "./Drop";
 
-export type Boss = {
-  id: BossId;
+export type Mob = {
+  id: MobId;
   icon?: string;
   name: string;
   map: Map;
@@ -15,5 +15,5 @@ export type Boss = {
   spawnWindow: Minutes;
   tombstone: boolean;
   spawnLocation?: MapLocation;
-  mvpDrops?: Drop[];
+  drops?: Drop[];
 };

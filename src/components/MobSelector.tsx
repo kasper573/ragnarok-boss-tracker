@@ -1,39 +1,36 @@
 import React, { useState } from "react";
 import { Autocomplete } from "@material-ui/lab";
 import { TextField, Typography } from "@material-ui/core";
-import { Boss } from "../state/Boss";
+import { Mob } from "../state/Mob";
 import { getTierColor } from "../functions/getTierColor";
-import { BossFilterSelector } from "./BossFilterSelector";
+import { MobFilterSelector } from "./MobFilterSelector";
 import styled from "styled-components";
-import { BossFilter, filterBosses } from "./bossFilters";
+import { MobFilter, filterMobs } from "./mobFilters";
 
-export type BossSelectorProps = {
-  bosses: Boss[];
-  onSelect: (boss: Boss) => void;
+export type MobSelectorProps = {
+  mobs: Mob[];
+  onSelect: (mob: Mob) => void;
 };
 
 /**
- * A controlled Autocomplete component that allows the user to search for and select a boss from a list.
- * Once a boss has been selected it is emitted to the onSelect callback and the input field is emptied.
+ * A controlled Autocomplete component that allows the user to search for and select a mob from a list.
+ * Once a mob has been selected it is emitted to the onSelect callback and the input field is emptied.
  */
-export const BossSelector: React.FC<BossSelectorProps> = ({
-  bosses,
-  onSelect,
-}) => {
+export const MobSelector: React.FC<MobSelectorProps> = ({ mobs, onSelect }) => {
   const [inputValue, setInputValue] = useState("");
-  const [filters, setFilters] = useState<BossFilter[]>([
+  const [filters, setFilters] = useState<MobFilter[]>([
     "tier1",
     "tier2",
     "tier3",
   ]);
-  const visibleOptions = filterBosses(bosses, filters);
+  const visibleOptions = filterMobs(mobs, filters);
   return (
-    <Autocomplete<Boss, false, boolean, false>
+    <Autocomplete<Mob, false, boolean, false>
       ListboxComponent={React.forwardRef(({ children, ...props }, ref) => (
         <div {...props}>
-          <BossFilterDock>
-            <BossFilterSelector value={filters} onChange={setFilters} />
-          </BossFilterDock>
+          <MobFilterDock>
+            <MobFilterSelector value={filters} onChange={setFilters} />
+          </MobFilterDock>
           {children}
         </div>
       ))}
@@ -42,10 +39,10 @@ export const BossSelector: React.FC<BossSelectorProps> = ({
       multiple={false}
       options={visibleOptions}
       inputValue={inputValue}
-      noOptionsText="No bosses available"
+      noOptionsText="No mobs available"
       onChange={(e, newValue) => {
         if (newValue) {
-          // Emit selected boss
+          // Emit selected mob
           onSelect(newValue);
         }
       }}
@@ -55,12 +52,12 @@ export const BossSelector: React.FC<BossSelectorProps> = ({
           setInputValue(newInputValue);
         }
       }}
-      renderOption={(boss) => (
-        <Typography noWrap style={{ color: getTierColor(boss.tier) }}>
-          {getBossLabel(boss)}
+      renderOption={(mob) => (
+        <Typography noWrap style={{ color: getTierColor(mob.tier) }}>
+          {getMobLabel(mob)}
         </Typography>
       )}
-      getOptionLabel={getBossLabel}
+      getOptionLabel={getMobLabel}
       renderInput={(params) => (
         <TextField
           {...params}
@@ -73,7 +70,7 @@ export const BossSelector: React.FC<BossSelectorProps> = ({
   );
 };
 
-const BossFilterDock = styled.div(({ theme }) => ({
+const MobFilterDock = styled.div(({ theme }) => ({
   padding: "0 16px",
   [theme.breakpoints.up("sm")]: {
     position: "absolute",
@@ -82,4 +79,4 @@ const BossFilterDock = styled.div(({ theme }) => ({
   },
 }));
 
-const getBossLabel = (boss: Boss) => `${boss.name} (${boss.map.id})`;
+const getMobLabel = (mob: Mob) => `${mob.name} (${mob.map.id})`;
