@@ -7,7 +7,7 @@ export const parseDrop = (
   chance: string,
   mvp = false
 ): ParsedDrop => ({
-  item: parseInt(itemId, 10) as ItemId,
+  itemId: parseInt(itemId, 10) as ItemId,
   chance: parseChance(chance),
   mvp,
 });

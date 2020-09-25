@@ -5,4 +5,4 @@ export const pushDrops = (
   ...newDrops: ParsedDrop[]
 ) =>
   // Omit null item drops
-  existingDrops.push(...newDrops.filter((drop) => drop.item !== 0));
+  existingDrops.push(...newDrops.filter((drop) => drop.itemId !== 0));

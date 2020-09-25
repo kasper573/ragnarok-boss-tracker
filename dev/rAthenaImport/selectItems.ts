@@ -10,8 +10,8 @@ export const selectItems = (
   const dropLists = Array.from(selectForDrops.values());
   for (const drops of dropLists) {
     for (const drop of drops) {
-      const item = availableItems.find((item) => item.id === drop.item);
-      const existing = referencedItems.find((item) => item.id === drop.item);
+      const item = availableItems.find((item) => item.id === drop.itemId);
+      const existing = referencedItems.find((item) => item.id === drop.itemId);
       if (item && !existing) {
         referencedItems.push(item);
       }
