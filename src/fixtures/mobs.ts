@@ -3,11 +3,12 @@ import { MobId } from "../state/MobId";
 import { Minutes } from "../state/Minutes";
 import { maps } from "./maps";
 import { drops } from "./generated/drops";
+import { assetUrl } from "../functions/assetUrl";
 
 export const mobs: Mob[] = [
   {
     id: 1511 as MobId,
-    icon: require("../assets/mobs/1511.gif"),
+    icon: assetUrl("mobs/1511.gif"),
     name: "Amon Ra",
     tombstone: true,
     map: maps.moc_pryd06,
@@ -18,7 +19,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1852 as MobId,
-    icon: require("../assets/mobs/1852.gif"),
+    icon: assetUrl("mobs/1852.gif"),
     name: "Angeling",
     tombstone: false,
     map: maps.pay_fild04,
@@ -28,7 +29,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1852 as MobId,
-    icon: require("../assets/mobs/1852.gif"),
+    icon: assetUrl("mobs/1852.gif"),
     name: "Angeling",
     tombstone: false,
     map: maps.xmas_dun01,
@@ -38,7 +39,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1852 as MobId,
-    icon: require("../assets/mobs/1852.gif"),
+    icon: assetUrl("mobs/1852.gif"),
     name: "Angeling",
     tombstone: false,
     map: maps.yuno_fild03,
@@ -48,7 +49,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 2249 as MobId,
-    icon: require("../assets/mobs/2249.gif"),
+    icon: assetUrl("mobs/2249.gif"),
     name: "Angry Student Pyuriel",
     tombstone: true,
     map: maps.gld2_prt,
@@ -58,7 +59,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1388 as MobId,
-    icon: require("../assets/mobs/1388.gif"),
+    icon: assetUrl("mobs/1388.gif"),
     name: "Archangeling",
     tombstone: false,
     map: maps.yuno_fild04,
@@ -68,7 +69,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1785 as MobId,
-    icon: require("../assets/mobs/1785.gif"),
+    icon: assetUrl("mobs/1785.gif"),
     name: "Atroce",
     tombstone: true,
     map: maps.gld_dun03_2,
@@ -78,7 +79,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1785 as MobId,
-    icon: require("../assets/mobs/1785.gif"),
+    icon: assetUrl("mobs/1785.gif"),
     name: "Atroce",
     tombstone: true,
     map: maps.ra_fild03,
@@ -88,7 +89,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1785 as MobId,
-    icon: require("../assets/mobs/1785.gif"),
+    icon: assetUrl("mobs/1785.gif"),
     name: "Atroce",
     tombstone: true,
     map: maps.ra_fild04,
@@ -98,7 +99,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1785 as MobId,
-    icon: require("../assets/mobs/1785.gif"),
+    icon: assetUrl("mobs/1785.gif"),
     name: "Atroce",
     tombstone: true,
     map: maps.ve_fild01,
@@ -108,7 +109,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1785 as MobId,
-    icon: require("../assets/mobs/1785.gif"),
+    icon: assetUrl("mobs/1785.gif"),
     name: "Atroce",
     tombstone: true,
     map: maps.ve_fild02,
@@ -118,7 +119,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1630 as MobId,
-    icon: require("../assets/mobs/1630.gif"),
+    icon: assetUrl("mobs/1630.gif"),
     name: "Bacsojin",
     tombstone: true,
     map: maps.lou_dun03,
@@ -128,7 +129,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1399 as MobId,
-    icon: require("../assets/mobs/1399.gif"),
+    icon: assetUrl("mobs/1399.gif"),
     name: "Baphomet",
     tombstone: true,
     map: maps.gld_dun03,
@@ -138,7 +139,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1399 as MobId,
-    icon: require("../assets/mobs/1399.gif"),
+    icon: assetUrl("mobs/1399.gif"),
     name: "Baphomet",
     tombstone: true,
     map: maps.prt_maze03,
@@ -148,7 +149,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1874 as MobId,
-    icon: require("../assets/mobs/1874.gif"),
+    icon: assetUrl("mobs/1874.gif"),
     name: "Beelzebub",
     tombstone: true,
     map: maps.abbey03,
@@ -185,7 +186,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 2068 as MobId,
-    icon: require("../assets/mobs/2068.gif"),
+    icon: assetUrl("mobs/2068.gif"),
     name: "Boitata",
     tombstone: true,
     map: maps.bra_dun02,
@@ -195,7 +196,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 2255 as MobId,
-    icon: require("../assets/mobs/2255.gif"),
+    icon: assetUrl("mobs/2255.gif"),
     name: "Dark Guardian Kades",
     tombstone: true,
     map: maps.gld2_gef,
@@ -205,7 +206,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1272 as MobId,
-    icon: require("../assets/mobs/1272.gif"),
+    icon: assetUrl("mobs/1272.gif"),
     name: "Dark Lord",
     tombstone: true,
     map: maps.gld_dun04_2,
@@ -215,7 +216,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1272 as MobId,
-    icon: require("../assets/mobs/1272.gif"),
+    icon: assetUrl("mobs/1272.gif"),
     name: "Dark Lord",
     tombstone: true,
     map: maps.gl_chyard,
@@ -225,7 +226,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1719 as MobId,
-    icon: require("../assets/mobs/1719.gif"),
+    icon: assetUrl("mobs/1719.gif"),
     name: "Detale",
     tombstone: true,
     map: maps.abyss_03,
@@ -235,7 +236,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1767 as MobId,
-    icon: require("../assets/mobs/1767.gif"),
+    icon: assetUrl("mobs/1767.gif"),
     name: "Deviling",
     tombstone: false,
     map: maps.pay_fild04,
@@ -245,7 +246,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1767 as MobId,
-    icon: require("../assets/mobs/1767.gif"),
+    icon: assetUrl("mobs/1767.gif"),
     name: "Deviling",
     tombstone: false,
     map: maps.yuno_fild03,
@@ -255,7 +256,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1731 as MobId,
-    icon: require("../assets/mobs/1731.gif"),
+    icon: assetUrl("mobs/1731.gif"),
     name: "Doppelganger",
     tombstone: true,
     map: maps.gef_dun02,
@@ -265,7 +266,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1731 as MobId,
-    icon: require("../assets/mobs/1731.gif"),
+    icon: assetUrl("mobs/1731.gif"),
     name: "Doppelganger",
     tombstone: true,
     map: maps.gld_dun04,
@@ -275,7 +276,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1530 as MobId,
-    icon: require("../assets/mobs/1530.gif"),
+    icon: assetUrl("mobs/1530.gif"),
     name: "Dracula",
     tombstone: true,
     map: maps.gef_dun01,
@@ -285,7 +286,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1112 as MobId,
-    icon: require("../assets/mobs/1112.gif"),
+    icon: assetUrl("mobs/1112.gif"),
     name: "Drake",
     tombstone: true,
     map: maps.treasure02,
@@ -296,7 +297,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1115 as MobId,
-    icon: require("../assets/mobs/1115.gif"),
+    icon: assetUrl("mobs/1115.gif"),
     name: "Eddga",
     tombstone: true,
     map: maps.gld_dun01_2,
@@ -306,7 +307,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1115 as MobId,
-    icon: require("../assets/mobs/1115.gif"),
+    icon: assetUrl("mobs/1115.gif"),
     name: "Eddga",
     tombstone: true,
     map: maps.pay_fild10,
@@ -316,7 +317,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1967 as MobId,
-    icon: require("../assets/mobs/1967.gif"),
+    icon: assetUrl("mobs/1967.gif"),
     name: "Egnigem Cenia",
     tombstone: true,
     map: maps.lhz_dun02,
@@ -326,7 +327,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1529 as MobId,
-    icon: require("../assets/mobs/1529.gif"),
+    icon: assetUrl("mobs/1529.gif"),
     name: "Evil Snake Lord",
     tombstone: true,
     map: maps.gon_dun03,
@@ -336,7 +337,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1871 as MobId,
-    icon: require("../assets/mobs/1871.gif"),
+    icon: assetUrl("mobs/1871.gif"),
     name: "Fallen Bishop Hibram",
     tombstone: true,
     map: maps.abbey02,
@@ -346,7 +347,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1252 as MobId,
-    icon: require("../assets/mobs/1252.gif"),
+    icon: assetUrl("mobs/1252.gif"),
     name: "Garm",
     tombstone: true,
     map: maps.xmas_fild01,
@@ -356,7 +357,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 2253 as MobId,
-    icon: require("../assets/mobs/2253.gif"),
+    icon: assetUrl("mobs/2253.gif"),
     name: "General Daehyun",
     tombstone: true,
     map: maps.gld2_pay,
@@ -366,7 +367,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1576 as MobId,
-    icon: require("../assets/mobs/1576.gif"),
+    icon: assetUrl("mobs/1576.gif"),
     name: "Ghostring",
     tombstone: false,
     map: maps.gld_dun04,
@@ -376,7 +377,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1576 as MobId,
-    icon: require("../assets/mobs/1576.gif"),
+    icon: assetUrl("mobs/1576.gif"),
     name: "Ghostring",
     tombstone: false,
     map: maps.pay_fild04,
@@ -386,7 +387,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1576 as MobId,
-    icon: require("../assets/mobs/1576.gif"),
+    icon: assetUrl("mobs/1576.gif"),
     name: "Ghostring",
     tombstone: false,
     map: maps.prt_maze03,
@@ -396,7 +397,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1576 as MobId,
-    icon: require("../assets/mobs/1576.gif"),
+    icon: assetUrl("mobs/1576.gif"),
     name: "Ghostring",
     tombstone: false,
     map: maps.treasure02,
@@ -406,7 +407,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 2251 as MobId,
-    icon: require("../assets/mobs/2251.gif"),
+    icon: assetUrl("mobs/2251.gif"),
     name: "Gioia",
     tombstone: true,
     map: maps.gld2_ald,
@@ -416,7 +417,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1768 as MobId,
-    icon: require("../assets/mobs/1768.gif"),
+    icon: assetUrl("mobs/1768.gif"),
     name: "Gloom Under Night",
     tombstone: true,
     map: maps.ra_san05,
@@ -426,7 +427,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1086 as MobId,
-    icon: require("../assets/mobs/1086.gif"),
+    icon: assetUrl("mobs/1086.gif"),
     name: "Golden Thief Bug",
     tombstone: true,
     map: maps.prt_sewb4,
@@ -436,7 +437,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1885 as MobId,
-    icon: require("../assets/mobs/1885.gif"),
+    icon: assetUrl("mobs/1885.gif"),
     name: "Gopinich",
     tombstone: true,
     map: maps.mosk_dun03,
@@ -446,7 +447,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1990 as MobId,
-    icon: require("../assets/mobs/1990.gif"),
+    icon: assetUrl("mobs/1990.gif"),
     name: "Hardrock Mammoth",
     tombstone: true,
     map: maps.man_fild03,
@@ -456,7 +457,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1832 as MobId,
-    icon: require("../assets/mobs/1832.gif"),
+    icon: assetUrl("mobs/1832.gif"),
     name: "Ifrit",
     tombstone: true,
     map: maps.thor_v03,
@@ -466,7 +467,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1542 as MobId,
-    icon: require("../assets/mobs/1542.gif"),
+    icon: assetUrl("mobs/1542.gif"),
     name: "Incantation Samurai",
     tombstone: true,
     map: maps.ama_dun03,
@@ -476,7 +477,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1734 as MobId,
-    icon: require("../assets/mobs/1734.gif"),
+    icon: assetUrl("mobs/1734.gif"),
     name: "Kiel D-01",
     tombstone: true,
     map: maps.kh_dun02,
@@ -486,7 +487,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 2202 as MobId,
-    icon: require("../assets/mobs/2202.gif"),
+    icon: assetUrl("mobs/2202.gif"),
     name: "Kraken",
     tombstone: true,
     map: maps.iz_dun05,
@@ -496,7 +497,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1779 as MobId,
-    icon: require("../assets/mobs/1779.gif"),
+    icon: assetUrl("mobs/1779.gif"),
     name: "Ktullanux",
     tombstone: true,
     map: maps.ice_dun03,
@@ -506,7 +507,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1688 as MobId,
-    icon: require("../assets/mobs/1688.gif"),
+    icon: assetUrl("mobs/1688.gif"),
     name: "Lady Tanee",
     tombstone: true,
     map: maps.ayo_dun02,
@@ -516,7 +517,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 2156 as MobId,
-    icon: require("../assets/mobs/2156.gif"),
+    icon: assetUrl("mobs/2156.gif"),
     name: "Leak",
     tombstone: true,
     map: maps.dew_dun01,
@@ -526,7 +527,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1373 as MobId,
-    icon: require("../assets/mobs/1373.gif"),
+    icon: assetUrl("mobs/1373.gif"),
     name: "Lord of Death",
     tombstone: true,
     map: maps.niflheim,
@@ -536,7 +537,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1147 as MobId,
-    icon: require("../assets/mobs/1147.gif"),
+    icon: assetUrl("mobs/1147.gif"),
     name: "Maya",
     tombstone: true,
     map: maps.anthell02,
@@ -546,7 +547,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1147 as MobId,
-    icon: require("../assets/mobs/1147.gif"),
+    icon: assetUrl("mobs/1147.gif"),
     name: "Maya",
     tombstone: true,
     map: maps.gld_dun02_2,
@@ -556,7 +557,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1289 as MobId,
-    icon: require("../assets/mobs/1289.gif"),
+    icon: assetUrl("mobs/1289.gif"),
     name: "Maya Purple",
     tombstone: true,
     map: maps.gld2_ald,
@@ -566,7 +567,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1289 as MobId,
-    icon: require("../assets/mobs/1289.gif"),
+    icon: assetUrl("mobs/1289.gif"),
     name: "Maya Purple",
     tombstone: true,
     map: maps.gld_dun02_2,
@@ -576,7 +577,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1059 as MobId,
-    icon: require("../assets/mobs/1059.gif"),
+    icon: assetUrl("mobs/1059.gif"),
     name: "Mistress",
     tombstone: true,
     map: maps.gld_dun02,
@@ -586,7 +587,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1059 as MobId,
-    icon: require("../assets/mobs/1059.gif"),
+    icon: assetUrl("mobs/1059.gif"),
     name: "Mistress",
     tombstone: true,
     map: maps.mjolnir_04,
@@ -596,7 +597,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1814 as MobId,
-    icon: require("../assets/mobs/1814.gif"),
+    icon: assetUrl("mobs/1814.gif"),
     name: "Moonlight Flower",
     tombstone: true,
     map: maps.gld_dun01,
@@ -607,7 +608,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1814 as MobId,
-    icon: require("../assets/mobs/1814.gif"),
+    icon: assetUrl("mobs/1814.gif"),
     name: "Moonlight Flower",
     tombstone: true,
     map: maps.pay_dun04,
@@ -617,7 +618,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 2362 as MobId,
-    icon: require("../assets/mobs/2362.gif"),
+    icon: assetUrl("mobs/2362.gif"),
     name: "Nightmare Amon Ra",
     tombstone: true,
     map: maps.moc_prydn2,
@@ -628,7 +629,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1087 as MobId,
-    icon: require("../assets/mobs/1087.gif"),
+    icon: assetUrl("mobs/1087.gif"),
     name: "Orc Hero",
     tombstone: true,
     map: maps.gef_fild03,
@@ -638,7 +639,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1190 as MobId,
-    icon: require("../assets/mobs/1190.gif"),
+    icon: assetUrl("mobs/1190.gif"),
     name: "Orc Lord",
     tombstone: true,
     map: maps.gef_fild10,
@@ -648,7 +649,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1038 as MobId,
-    icon: require("../assets/mobs/1038.gif"),
+    icon: assetUrl("mobs/1038.gif"),
     name: "Osiris",
     tombstone: true,
     map: maps.moc_pryd04,
@@ -658,7 +659,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1157 as MobId,
-    icon: require("../assets/mobs/1157.gif"),
+    icon: assetUrl("mobs/1157.gif"),
     name: "Pharaoh",
     tombstone: true,
     map: maps.in_sphinx5,
@@ -668,7 +669,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1159 as MobId,
-    icon: require("../assets/mobs/1159.gif"),
+    icon: assetUrl("mobs/1159.gif"),
     name: "Phreeoni",
     tombstone: true,
     map: maps.moc_fild17,
@@ -678,7 +679,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 2087 as MobId,
-    icon: require("../assets/mobs/2165.gif"),
+    icon: assetUrl("mobs/2165.gif"),
     name: "Queen Scaraba",
     tombstone: true,
     map: maps.dic_dun02,
@@ -688,7 +689,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1623 as MobId,
-    icon: require("../assets/mobs/1623.gif"),
+    icon: assetUrl("mobs/1623.gif"),
     name: "RSX-0806",
     tombstone: true,
     map: maps.ein_dun02,
@@ -698,7 +699,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1251 as MobId,
-    icon: require("../assets/mobs/1251.gif"),
+    icon: assetUrl("mobs/1251.gif"),
     name: "Stormy Knight",
     tombstone: true,
     map: maps.xmas_dun02,
@@ -708,7 +709,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1583 as MobId,
-    icon: require("../assets/mobs/1583.gif"),
+    icon: assetUrl("mobs/1583.gif"),
     name: "Tao Gunka",
     tombstone: true,
     map: maps.beach_dun,
@@ -718,7 +719,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1991 as MobId,
-    icon: require("../assets/mobs/1991.gif"),
+    icon: assetUrl("mobs/1991.gif"),
     name: "Tendrillion",
     tombstone: true,
     map: maps.spl_fild03,
@@ -728,7 +729,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1708 as MobId,
-    icon: require("../assets/mobs/1708.gif"),
+    icon: assetUrl("mobs/1708.gif"),
     name: "Thanatos",
     tombstone: true,
     map: maps.thana_boss,
@@ -738,7 +739,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1312 as MobId,
-    icon: require("../assets/mobs/1312.gif"),
+    icon: assetUrl("mobs/1312.gif"),
     name: "Turtle General",
     tombstone: true,
     map: maps.tur_dun04,
@@ -749,7 +750,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1751 as MobId,
-    icon: require("../assets/mobs/1751.gif"),
+    icon: assetUrl("mobs/1751.gif"),
     name: "Valkyrie Randgris",
     tombstone: true,
     map: maps.odin_tem03,
@@ -759,7 +760,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1685 as MobId,
-    icon: require("../assets/mobs/1685.gif"),
+    icon: assetUrl("mobs/1685.gif"),
     name: "Vesper",
     tombstone: true,
     map: maps.jupe_core,
@@ -769,7 +770,7 @@ export const mobs: Mob[] = [
   },
   {
     id: 1917 as MobId,
-    icon: require("../assets/mobs/1917.gif"),
+    icon: assetUrl("mobs/1917.gif"),
     name: "Wounded Morroc",
     tombstone: true,
     map: maps.moc_fild22,
