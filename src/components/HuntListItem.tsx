@@ -2,7 +2,6 @@ import React from "react";
 import { SpawnTime } from "./SpawnTime";
 import { Hunt } from "../state/Hunt";
 import {
-  Avatar,
   IconButton,
   ListItem,
   ListItemAvatar,
@@ -21,6 +20,7 @@ import { HuntInfo } from "./HuntInfo";
 import styled from "styled-components";
 import { getTierColor } from "../functions/getTierColor";
 import PopupState, { bindMenu, bindTrigger } from "material-ui-popup-state";
+import { mobIconUrl } from "../functions/mobIconUrl";
 
 export type HuntListItemProps = {
   hunt: Hunt;
@@ -45,7 +45,7 @@ export const HuntListItem: React.FC<HuntListItemProps> = ({
     <ListItem>
       <ListItemAvatar>
         <Tooltip title={<HuntInfo hunt={hunt} />}>
-          {hunt.mob.icon ? <MobIcon src={hunt.mob.icon} /> : <Avatar />}
+          <MobIcon src={mobIconUrl(hunt.mob)} />
         </Tooltip>
       </ListItemAvatar>
       <ListItemText

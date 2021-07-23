@@ -10,7 +10,7 @@ export type HuntInfoProps = { hunt: Hunt };
 
 export const HuntInfo: React.FC<HuntInfoProps> = ({
   hunt: {
-    map,
+    mapId,
     mob: { name, spawnCooldown, spawnWindow, tier, drops },
   },
 }) => {
@@ -48,7 +48,7 @@ export const HuntInfo: React.FC<HuntInfoProps> = ({
       </Typography>
       <Typography noWrap>
         {compact ? "" : "Map: "}
-        {map.id}
+        {mapId}
       </Typography>
       {regularDrops.length > 0 && (
         <>

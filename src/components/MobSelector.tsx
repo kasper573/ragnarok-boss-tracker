@@ -79,4 +79,4 @@ const MobFilterDock = styled.div(({ theme }) => ({
   },
 }));
 
-const getMobLabel = (mob: Mob) => `${mob.name} (${mob.map.id})`;
+const getMobLabel = (mob: Mob) => `${mob.name} (${mob.mapId})`;

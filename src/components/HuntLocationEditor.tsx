@@ -3,6 +3,7 @@ import { Dialog, DialogProps, DialogTitle } from "@material-ui/core";
 import { Hunt } from "../state/Hunt";
 import { MapLocation } from "../state/MapLocation";
 import { MapLocationPicker } from "./MapLocationPicker";
+import { mapImageUrl } from "../functions/mapImageUrl";
 
 export type HuntLocationEditorProps = Pick<DialogProps, "open" | "onClose"> & {
   value: Hunt;
@@ -21,7 +22,7 @@ export const HuntLocationEditor: React.FC<HuntLocationEditorProps> = ({
     <Dialog open={open} onClose={onClose}>
       <DialogTitle>Tombstone location</DialogTitle>
       <MapLocationPicker
-        imageUrl={value.map.imageUrl}
+        imageUrl={mapImageUrl(value.mapId)}
         value={value.tombstoneLocation}
         onChange={setLocation}
       />

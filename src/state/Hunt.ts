@@ -1,5 +1,5 @@
 import { Mob } from "./Mob";
-import { Map } from "./Map";
+import { MapId } from "./MapId";
 
 export class Hunt {
   public get start() {
@@ -18,13 +18,13 @@ export class Hunt {
   }
   public constructor(
     public readonly mob: Mob,
-    public readonly map: Map = mob.map,
+    public readonly mapId: MapId = mob.mapId,
     public readonly killTime?: Date,
     public readonly tombstoneLocation = mob.spawnLocation
   ) {}
 
   update(changes: Partial<Hunt>) {
-    const { mob, map, killTime, tombstoneLocation } = { ...this, ...changes };
-    return new Hunt(mob, map, killTime, tombstoneLocation);
+    const { mob, mapId, killTime, tombstoneLocation } = { ...this, ...changes };
+    return new Hunt(mob, mapId, killTime, tombstoneLocation);
   }
 }

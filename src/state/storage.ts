@@ -10,7 +10,7 @@ const storageId = "hunts";
 export const saveToLocalStorage = (hunts: Hunt[]) => {
   const serialized: SerializedHunt[] = hunts.map((hunt) => ({
     mobId: hunt.mob.id,
-    mapId: hunt.map.id,
+    mapId: hunt.mapId,
     killTime: hunt.killTime ? hunt.killTime.toUTCString() : undefined,
     tombstoneLocation: hunt.tombstoneLocation,
   }));
@@ -27,14 +27,13 @@ export const loadFromLocalStorage = (mobs: Mob[]): Hunt[] => {
     const hunts: Hunt[] = [];
     for (const { mobId, mapId, killTime, tombstoneLocation } of serialized) {
       const mob = mobs.find(
-        (candidate) => candidate.id === mobId && candidate.map.id === mapId
+        (candidate) => candidate.id === mobId && candidate.mapId === mapId
       );
-      const map = mapList.find((map) => map.id === mapId);
       if (mob) {
         hunts.push(
           new Hunt(
             mob,
-            map,
+            mapList.includes(mapId) ? mapId : undefined,
             killTime ? new Date(killTime) : undefined,
             tombstoneLocation
           )

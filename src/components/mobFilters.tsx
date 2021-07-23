@@ -9,7 +9,7 @@ export const mobFilterFns = {
   tier2: (mob: Mob) => mob.tier === 2,
   tier3: (mob: Mob) => mob.tier === 3,
   miniboss: (mob: Mob) => mob.tier === 0,
-  guild: (mob: Mob) => guildMaps.includes(mob.map),
+  guild: (mob: Mob) => guildMaps.includes(mob.mapId),
 };
 
 export const mobFilterLabelFns = {
