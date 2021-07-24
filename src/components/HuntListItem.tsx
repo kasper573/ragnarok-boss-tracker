@@ -15,7 +15,14 @@ import {
   useMediaQuery,
   useTheme,
 } from "@material-ui/core";
-import { AlarmOn, Delete, MoreVert, Room, Update } from "@material-ui/icons";
+import {
+  AlarmOn,
+  Delete,
+  Info,
+  MoreVert,
+  Room,
+  Update,
+} from "@material-ui/icons";
 import { HuntInfo } from "./HuntInfo";
 import styled from "styled-components";
 import { getTierColor } from "../functions/getTierColor";
@@ -25,6 +32,7 @@ import { mobIconUrl } from "../functions/mobIconUrl";
 export type HuntListItemProps = {
   hunt: Hunt;
   onEditKillTime: (hunt: Hunt) => void;
+  onEditMobInfo: (hunt: Hunt) => void;
   onEditTombstoneLocation: (hunt: Hunt) => void;
   onKillNow: (hunt: Hunt) => void;
   onDelete: (hunt: Hunt) => void;
@@ -33,6 +41,7 @@ export type HuntListItemProps = {
 export const HuntListItem: React.FC<HuntListItemProps> = ({
   hunt,
   onEditKillTime,
+  onEditMobInfo,
   onEditTombstoneLocation,
   onKillNow,
   onDelete,
@@ -100,6 +109,17 @@ export const HuntListItem: React.FC<HuntListItemProps> = ({
                     <Update fontSize="small" />
                   </ListItemIcon>
                   <Typography variant="inherit">Edit kill time</Typography>
+                </MenuItem>
+                <MenuItem
+                  onClick={() => {
+                    onEditMobInfo(hunt);
+                    popupState.close();
+                  }}
+                >
+                  <ListItemIcon>
+                    <Info fontSize="small" />
+                  </ListItemIcon>
+                  <Typography variant="inherit">Edit monster info</Typography>
                 </MenuItem>
                 <MenuItem
                   onClick={() => {

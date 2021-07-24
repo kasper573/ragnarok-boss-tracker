@@ -5,7 +5,11 @@ import { HuntListItem, HuntListItemProps } from "./HuntListItem";
 
 export type HuntListProps = Pick<
   HuntListItemProps,
-  "onEditTombstoneLocation" | "onEditKillTime" | "onKillNow" | "onDelete"
+  | "onEditTombstoneLocation"
+  | "onEditKillTime"
+  | "onKillNow"
+  | "onEditMobInfo"
+  | "onDelete"
 > & {
   hunts: Hunt[];
 };

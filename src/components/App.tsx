@@ -24,13 +24,14 @@ import { Footer } from "./Footer";
 import { HuntList } from "./HuntList";
 import { orderedHunts } from "../functions/orderedHunts";
 import { useToggleState } from "../hooks/useToggleState";
+import { MobEditor } from "./MobEditor";
 
 export type AppProps = {
   theme: Theme;
   mobs: Mob[];
 };
 
-type Editor = "time" | "location";
+type Editor = "time" | "location" | "mob";
 
 export const App: React.FC<AppProps> = ({ theme, mobs }) => {
   const [multiSpawn, toggleMultiSpawn] = useToggleState(false, true);
@@ -88,6 +89,7 @@ export const App: React.FC<AppProps> = ({ theme, mobs }) => {
               onDelete={removeHunt}
               onKillNow={killNow}
               onEditKillTime={(hunt) => startEditing(hunt, "time")}
+              onEditMobInfo={(hunt) => startEditing(hunt, "mob")}
               onEditTombstoneLocation={(hunt) => startEditing(hunt, "location")}
             />
             {editedHunt && (
@@ -103,6 +105,14 @@ export const App: React.FC<AppProps> = ({ theme, mobs }) => {
                   open={visibleEditor === "location"}
                   onClose={stopEditing}
                   onChange={(hunt) => saveEdit(hunt, false)}
+                />
+                <MobEditor
+                  value={editedHunt.mob}
+                  open={visibleEditor === "mob"}
+                  onClose={stopEditing}
+                  onChange={(mob) =>
+                    saveEdit(editedHunt.update({ mob }), false)
+                  }
                 />
               </>
             )}
