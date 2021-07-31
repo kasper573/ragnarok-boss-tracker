@@ -2,7 +2,6 @@ import { Hunt } from "./Hunt";
 import { MapLocation } from "./MapLocation";
 import { Mob } from "./Mob";
 import { MapId } from "./MapId";
-import { mapList } from "../fixtures/maps";
 import { MobId } from "./MobId";
 
 const storageId = "hunts";
@@ -17,7 +16,7 @@ export const saveToLocalStorage = (hunts: Hunt[]) => {
   localStorage.setItem(storageId, JSON.stringify(serialized));
 };
 
-export const loadFromLocalStorage = (mobs: Mob[]): Hunt[] => {
+export const loadFromLocalStorage = (mobs: Mob[], maps: MapId[]): Hunt[] => {
   const json = localStorage.getItem(storageId);
   if (!json) {
     return [];
@@ -33,7 +32,7 @@ export const loadFromLocalStorage = (mobs: Mob[]): Hunt[] => {
         hunts.push(
           new Hunt(
             mob,
-            mapList.includes(mapId) ? mapId : undefined,
+            maps.includes(mapId) ? mapId : undefined,
             killTime ? new Date(killTime) : undefined,
             tombstoneLocation
           )

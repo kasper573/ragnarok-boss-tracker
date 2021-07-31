@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import styled, { ThemeProvider as SCThemeProvider } from "styled-components";
-import {
-  Theme,
-  ThemeProvider as MuiThemeProvider,
-} from "@material-ui/core/styles";
+import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
 import {
   Checkbox,
   CssBaseline,
   FormControlLabel,
+  Theme,
   Tooltip,
 } from "@material-ui/core";
 import { Container } from "./Container";
@@ -25,18 +23,17 @@ import { HuntList } from "./HuntList";
 import { orderedHunts } from "../functions/orderedHunts";
 import { useToggleState } from "../hooks/useToggleState";
 import { MobEditor } from "./MobEditor";
-
-export type AppProps = {
-  theme: Theme;
-  mobs: Mob[];
-};
+import { useSelector } from "../state/store";
+import { selectMaps, selectMobs } from "../state/selectors";
 
 type Editor = "time" | "location" | "mob";
 
-export const App: React.FC<AppProps> = ({ theme, mobs }) => {
+export const App = ({ theme }: { theme: Theme }) => {
+  const mobs = useSelector(selectMobs);
+  const maps = useSelector(selectMaps);
   const [multiSpawn, toggleMultiSpawn] = useToggleState(false, true);
   const [hunts, addHunt, removeHunt, replaceHunt] = useListState<Hunt>(
-    () => loadFromLocalStorage(mobs),
+    () => loadFromLocalStorage(mobs, maps),
     saveToLocalStorage
   );
   const [editedHunt, setEditedHunt] = useState<Hunt>();

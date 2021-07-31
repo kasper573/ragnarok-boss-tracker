@@ -1,14 +1,18 @@
-//import {} from 'styled-components/cssprop'
 import React from "react";
 import ReactDOM from "react-dom";
 import { App } from "./components/App";
 import * as serviceWorker from "./serviceWorker";
-import { mobs } from "./fixtures/mobs";
+import { Provider } from "react-redux";
+import { createStore } from "./state/store";
 import { createAppTheme } from "./fixtures/theme";
+
+const store = createStore();
 
 ReactDOM.render(
   <React.StrictMode>
-    <App theme={createAppTheme()} mobs={mobs} />
+    <Provider store={store}>
+      <App theme={createAppTheme()} />
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );

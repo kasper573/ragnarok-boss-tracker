@@ -18,13 +18,13 @@ import { Mob } from "../state/Mob";
 import { MapId } from "../state/MapId";
 import { Tier, tierList } from "../state/Tier";
 import { Minutes } from "../state/Minutes";
-import { mapList } from "../fixtures/maps";
 import styled from "styled-components/macro";
 import { Info, Room, RotateLeft } from "@material-ui/icons";
 import { MapLocationPicker } from "./MapLocationPicker";
 import { mapImageUrl } from "../functions/mapImageUrl";
 import { MapPinSpawn } from "./MapPin";
-import { mobs } from "../fixtures/mobs";
+import { useSelector } from "../state/store";
+import { selectMaps, selectMobs } from "../state/selectors";
 
 export type MobEditorProps = Pick<DialogProps, "open" | "onClose"> & {
   value: Mob;
@@ -37,6 +37,8 @@ export const MobEditor = ({
   onChange,
   onClose,
 }: MobEditorProps) => {
+  const mobs = useSelector(selectMobs);
+  const maps = useSelector(selectMaps);
   const [isEditingSpawnLocation, setEditingSpawnLocation] = useState(false);
   const defaultMob = mobs.find(
     (candidate) => candidate.id === mob.id && candidate.mapId === mob.mapId
@@ -76,7 +78,7 @@ export const MobEditor = ({
                   setPropertyValue("mapId", e.target.value as MapId)
                 }
               >
-                {mapList.map((mapId) => (
+                {maps.map((mapId) => (
                   <MenuItem value={mapId} key={mapId}>
                     {mapId}
                   </MenuItem>

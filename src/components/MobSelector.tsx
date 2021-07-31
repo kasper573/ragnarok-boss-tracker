@@ -5,7 +5,7 @@ import { Mob } from "../state/Mob";
 import { getTierColor } from "../functions/getTierColor";
 import { MobFilterSelector } from "./MobFilterSelector";
 import styled from "styled-components";
-import { MobFilter, filterMobs } from "./mobFilters";
+import { MobFilter, useMobFilters } from "./mobFilters";
 
 export type MobSelectorProps = {
   mobs: Mob[];
@@ -23,7 +23,7 @@ export const MobSelector: React.FC<MobSelectorProps> = ({ mobs, onSelect }) => {
     "tier2",
     "tier3",
   ]);
-  const visibleOptions = filterMobs(mobs, filters);
+  const visibleOptions = useMobFilters(mobs, filters);
   return (
     <Autocomplete<Mob, false, boolean, false>
       ListboxComponent={React.forwardRef(({ children, ...props }, ref) => (
