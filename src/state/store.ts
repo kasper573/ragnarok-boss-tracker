@@ -11,6 +11,7 @@ import { slice } from "./slice";
 export const createStore = (preloadedState?: PreloadedState<AppState>) =>
   configureStore({
     reducer: slice.reducer,
+    preloadedState,
   });
 
 export type AppStore = ReturnType<typeof createStore>;

@@ -5,7 +5,10 @@ import { MobId } from "./MobId";
 import { Drop } from "./Drop";
 import { MapId } from "./MapId";
 
+export type MobInstanceId = NominalString<"MobInstanceId">;
+
 export type Mob = {
+  instanceId: MobInstanceId;
   id: MobId;
   name: string;
   mapId: MapId;

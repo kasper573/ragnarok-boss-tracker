@@ -5,10 +5,9 @@ import { Mob } from "../state/Mob";
 import { getTierColor } from "../functions/getTierColor";
 import { MobFilterSelector } from "./MobFilterSelector";
 import styled from "styled-components";
-import { MobFilter, useMobFilters } from "./mobFilters";
+import { MobFilter, useFilteredMobs } from "./mobFilters";
 
 export type MobSelectorProps = {
-  mobs: Mob[];
   onSelect: (mob: Mob) => void;
 };
 
@@ -16,14 +15,14 @@ export type MobSelectorProps = {
  * A controlled Autocomplete component that allows the user to search for and select a mob from a list.
  * Once a mob has been selected it is emitted to the onSelect callback and the input field is emptied.
  */
-export const MobSelector: React.FC<MobSelectorProps> = ({ mobs, onSelect }) => {
+export const MobSelector: React.FC<MobSelectorProps> = ({ onSelect }) => {
   const [inputValue, setInputValue] = useState("");
   const [filters, setFilters] = useState<MobFilter[]>([
     "tier1",
     "tier2",
     "tier3",
   ]);
-  const visibleOptions = useMobFilters(mobs, filters);
+  const visibleOptions = useFilteredMobs(filters);
   return (
     <Autocomplete<Mob, false, boolean, false>
       ListboxComponent={React.forwardRef(({ children, ...props }, ref) => (

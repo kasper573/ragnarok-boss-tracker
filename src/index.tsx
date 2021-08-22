@@ -5,8 +5,12 @@ import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
 import { createStore } from "./state/store";
 import { createAppTheme } from "./fixtures/theme";
+import { loadFromLocalStorage, saveToLocalStorage } from "./state/storage";
+import { createInitialState } from "./state/slice";
 
-const store = createStore();
+const store = createStore(loadFromLocalStorage() ?? createInitialState());
+
+store.subscribe(() => saveToLocalStorage(store.getState()));
 
 ReactDOM.render(
   <React.StrictMode>

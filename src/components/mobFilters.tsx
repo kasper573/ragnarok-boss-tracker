@@ -3,7 +3,7 @@ import { getTierColor } from "../functions/getTierColor";
 import { Mob } from "../state/Mob";
 import { without } from "../functions/without";
 import { AppState, useSelector } from "../state/store";
-import { selectAll, selectGuildMaps } from "../state/selectors";
+import { selectAll, selectGuildMaps, selectMobs } from "../state/selectors";
 
 export type MobFilter = keyof typeof mobFilterFns;
 
@@ -26,7 +26,8 @@ export const mobFilterLabelFns = {
   guild: () => <span style={{ color: getTierColor(0) }}>Guild</span>,
 };
 
-export const useMobFilters = (mobs: Mob[], filters: MobFilter[]) => {
+export const useFilteredMobs = (filters: MobFilter[]) => {
+  let mobs = useSelector(selectMobs);
   const state = useSelector(selectAll);
   if (!filters.length) {
     return mobs;

@@ -5,33 +5,37 @@ import { MapLocation } from "../state/MapLocation";
 import { MapLocationPicker } from "./MapLocationPicker";
 import { mapImageUrl } from "../functions/mapImageUrl";
 import { MapPinSpawn } from "./MapPin";
+import { useSelector } from "../state/store";
+import { selectMob } from "../state/selectors";
 
 export type HuntLocationEditorProps = Pick<DialogProps, "open" | "onClose"> & {
   value: Hunt;
-  onChange: (value: Hunt) => void;
+  onChange: (newLocation: MapLocation) => void;
 };
 
 export const HuntLocationEditor: React.FC<HuntLocationEditorProps> = ({
-  value,
+  value: hunt,
   open,
   onChange,
   onClose,
 }) => {
-  const setLocation = (location: MapLocation) =>
-    onChange(value.update({ tombstoneLocation: location }));
+  const mob = useSelector(selectMob(hunt.id));
+  if (!mob) {
+    return null;
+  }
   return (
     <Dialog open={open} onClose={onClose}>
       <DialogTitle>Tombstone location</DialogTitle>
       <MapLocationPicker
-        imageUrl={mapImageUrl(value.mapId)}
-        value={value.tombstoneLocation}
-        onChange={setLocation}
+        imageUrl={mapImageUrl(mob.mapId)}
+        value={hunt.tombstoneLocation}
+        onChange={onChange}
       >
-        {value.mob.spawnLocation && (
+        {mob?.spawnLocation && (
           <Tooltip title="Spawn location">
             <MapPinSpawn
-              x={value.mob.spawnLocation[0]}
-              y={value.mob.spawnLocation[1]}
+              x={mob.spawnLocation[0]}
+              y={mob.spawnLocation[1]}
               style={{ pointerEvents: "all" }}
             />
           </Tooltip>

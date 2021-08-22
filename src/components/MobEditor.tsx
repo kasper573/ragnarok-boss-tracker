@@ -24,7 +24,8 @@ import { MapLocationPicker } from "./MapLocationPicker";
 import { mapImageUrl } from "../functions/mapImageUrl";
 import { MapPinSpawn } from "./MapPin";
 import { useSelector } from "../state/store";
-import { selectMaps, selectMobs } from "../state/selectors";
+import { selectMaps } from "../state/selectors";
+import { mobs as defaultMobs } from "../fixtures/mobs";
 
 export type MobEditorProps = Pick<DialogProps, "open" | "onClose"> & {
   value: Mob;
@@ -37,11 +38,10 @@ export const MobEditor = ({
   onChange,
   onClose,
 }: MobEditorProps) => {
-  const mobs = useSelector(selectMobs);
   const maps = useSelector(selectMaps);
   const [isEditingSpawnLocation, setEditingSpawnLocation] = useState(false);
-  const defaultMob = mobs.find(
-    (candidate) => candidate.id === mob.id && candidate.mapId === mob.mapId
+  const defaultMob = defaultMobs.find(
+    (candidate) => candidate.instanceId === mob.instanceId
   );
 
   function setPropertyValue<K extends keyof Mob>(key: K, value: Mob[K]) {

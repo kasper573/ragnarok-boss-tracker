@@ -1,30 +1,32 @@
-import { Mob } from "./Mob";
-import { MapId } from "./MapId";
+import { Mob, MobInstanceId } from "./Mob";
+import { MapLocation } from "./MapLocation";
+import { useSelector } from "./store";
+import { selectMob } from "./selectors";
 
-export class Hunt {
-  public get start() {
-    if (this.killTime) {
-      return new Date(
-        this.killTime.getTime() + this.mob.spawnCooldown * 60 * 1000
-      );
-    }
-    return undefined;
-  }
-  public get end() {
-    if (this.start) {
-      return new Date(this.start.getTime() + this.mob.spawnWindow * 60 * 1000);
-    }
-    return undefined;
-  }
-  public constructor(
-    public readonly mob: Mob,
-    public readonly mapId: MapId = mob.mapId,
-    public readonly killTime?: Date,
-    public readonly tombstoneLocation = mob.spawnLocation
-  ) {}
+export interface Hunt {
+  id: MobInstanceId;
+  killTime?: number;
+  tombstoneLocation?: MapLocation;
+}
 
-  update(changes: Partial<Hunt>) {
-    const { mob, mapId, killTime, tombstoneLocation } = { ...this, ...changes };
-    return new Hunt(mob, mapId, killTime, tombstoneLocation);
+export function huntStart(hunt: Hunt, mob?: Mob) {
+  if (hunt.killTime && mob) {
+    return new Date(hunt.killTime + mob.spawnCooldown * 60 * 1000);
   }
+}
+
+export function huntEnd(hunt: Hunt, mob?: Mob) {
+  const start = huntStart(hunt, mob);
+  if (start && mob) {
+    return new Date(start.getTime() + mob.spawnWindow * 60 * 1000);
+  }
+}
+
+export function huntWindow(hunt: Hunt, mob?: Mob) {
+  return [huntStart(hunt, mob), huntEnd(hunt, mob)] as const;
+}
+
+export function useHuntWindow(hunt: Hunt) {
+  const mob = useSelector(selectMob(hunt.id));
+  return huntWindow(hunt, mob);
 }

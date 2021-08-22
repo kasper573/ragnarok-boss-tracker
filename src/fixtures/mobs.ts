@@ -1,10 +1,10 @@
-import { Mob } from "../state/Mob";
+import { Mob, MobInstanceId } from "../state/Mob";
 import { MobId } from "../state/MobId";
 import { Minutes } from "../state/Minutes";
 import { drops } from "./generated/drops";
 import { MapId } from "../state/MapId";
 
-export const mobs: Mob[] = [
+const mobBases: Array<Omit<Mob, "instanceId" | "drops">> = [
   {
     id: 1511 as MobId,
     name: "Amon Ra",
@@ -704,6 +704,11 @@ export const mobs: Mob[] = [
     tier: 3,
   },
 ];
-for (const mob of mobs) {
-  mob.drops = drops[mob.id];
-}
+
+export const mobs = mobBases.map(
+  (mob, index): Mob => ({
+    ...mob,
+    instanceId: index.toString() as MobInstanceId,
+    drops: drops[mob.id],
+  })
+);
