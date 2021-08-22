@@ -1,6 +1,6 @@
 import { AppState } from "./store";
 
-const storageId = "state";
+const storageId = "rbt-state";
 
 export const saveToLocalStorage = (state: AppState) => {
   localStorage.setItem(storageId, JSON.stringify(state));

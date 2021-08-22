@@ -3,13 +3,16 @@ import styled from "styled-components";
 import { Typography } from "@material-ui/core";
 import { Drop } from "../state/Drop";
 import { formatDropChance } from "../functions/formatDropChance";
+import { assetUrl } from "../functions/assetUrl";
 
 export type DropListItemProps = { drop: Drop };
 
 export const DropListItem: React.FC<DropListItemProps> = ({ drop }) => {
   return (
     <DropListItemRow>
-      {drop.item.iconUrl && <DropListItemIcon src={drop.item.iconUrl} />}
+      {drop.item.iconPath && (
+        <DropListItemIcon src={assetUrl(drop.item.iconPath)} />
+      )}
       <Typography>
         {drop.item.name} ({formatDropChance(drop.chance * 100)})
       </Typography>

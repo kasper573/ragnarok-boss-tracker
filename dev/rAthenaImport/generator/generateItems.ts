@@ -14,7 +14,6 @@ export const generateItems = (outputFile: string, items: ParsedItem[]) =>
 
 const itemsTemplate = (items: ParsedItem[]) => `// ${warning}.
 import { ItemId } from "../../state/ItemId";
-import { assetUrl } from "../../functions/assetUrl";
 export const items = ${JSON.stringify(groupById(items), null, 2)};
 `;
 
@@ -25,11 +24,10 @@ const addAsItemId = (jsonString: string) =>
   jsonString.replace(/"id": (\d+)/g, (match, id) => `"id": ${id} as ItemId`);
 
 const iconNameProp: keyof ParsedItem = "iconName";
-const iconUrlProp: keyof Item = "iconUrl";
+const iconPathProp: keyof Item = "iconPath";
 
 const iconRequires = (jsonString: string) =>
   jsonString.replace(
     new RegExp(`"${iconNameProp}": "(.*?)"`, "g"),
-    (match, filename) =>
-      `"${iconUrlProp}": assetUrl("items/${filename}")`
+    (match, filename) => `"${iconPathProp}": "items/${filename}"`
   );
