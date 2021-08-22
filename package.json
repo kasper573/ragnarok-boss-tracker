@@ -2,7 +2,7 @@
   "name": "ragnarok-mvp-tracker",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "https://ksandin.github.io/ragnarok-boss-tracker/",
+  "homepage" : ".",
   "dependencies": {
     "@date-io/moment": "1.3.13",
     "@material-ui/core": "^4.12.2",
