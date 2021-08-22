@@ -1,1 +1,3 @@
-export type Tier = 0 | 1 | 2 | 3;
+export type Tier = ValueOf<typeof tierList>;
+
+export const tierList = [0, 1, 2, 3] as const;

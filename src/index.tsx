@@ -1,14 +1,22 @@
-//import {} from 'styled-components/cssprop'
 import React from "react";
 import ReactDOM from "react-dom";
 import { App } from "./components/App";
 import * as serviceWorker from "./serviceWorker";
-import { mobs } from "./fixtures/mobs";
+import { Provider } from "react-redux";
+import { createStore } from "./state/store";
 import { createAppTheme } from "./fixtures/theme";
+import { loadFromLocalStorage, saveToLocalStorage } from "./state/storage";
+import { createInitialState } from "./state/slice";
+
+const store = createStore(loadFromLocalStorage() ?? createInitialState());
+
+store.subscribe(() => saveToLocalStorage(store.getState()));
 
 ReactDOM.render(
   <React.StrictMode>
-    <App theme={createAppTheme()} mobs={mobs} />
+    <Provider store={store}>
+      <App theme={createAppTheme()} />
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );

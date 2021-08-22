@@ -2,7 +2,6 @@ import React from "react";
 import { SpawnTime } from "./SpawnTime";
 import { Hunt } from "../state/Hunt";
 import {
-  Avatar,
   IconButton,
   ListItem,
   ListItemAvatar,
@@ -16,15 +15,26 @@ import {
   useMediaQuery,
   useTheme,
 } from "@material-ui/core";
-import { AlarmOn, Delete, MoreVert, Room, Update } from "@material-ui/icons";
+import {
+  AlarmOn,
+  Delete,
+  Info,
+  MoreVert,
+  Room,
+  Update,
+} from "@material-ui/icons";
 import { HuntInfo } from "./HuntInfo";
 import styled from "styled-components";
 import { getTierColor } from "../functions/getTierColor";
 import PopupState, { bindMenu, bindTrigger } from "material-ui-popup-state";
+import { mobIconUrl } from "../functions/mobIconUrl";
+import { useSelector } from "../state/store";
+import { selectMob } from "../state/selectors";
 
 export type HuntListItemProps = {
   hunt: Hunt;
   onEditKillTime: (hunt: Hunt) => void;
+  onEditMobInfo: (hunt: Hunt) => void;
   onEditTombstoneLocation: (hunt: Hunt) => void;
   onKillNow: (hunt: Hunt) => void;
   onDelete: (hunt: Hunt) => void;
@@ -33,6 +43,7 @@ export type HuntListItemProps = {
 export const HuntListItem: React.FC<HuntListItemProps> = ({
   hunt,
   onEditKillTime,
+  onEditMobInfo,
   onEditTombstoneLocation,
   onKillNow,
   onDelete,
@@ -40,18 +51,22 @@ export const HuntListItem: React.FC<HuntListItemProps> = ({
   const theme = useTheme();
   const compact = useMediaQuery(theme.breakpoints.down("xs"));
   const buttonSize = compact ? "small" : "medium";
+  const mob = useSelector(selectMob(hunt.id));
+  if (!mob) {
+    return null;
+  }
 
   return (
     <ListItem>
       <ListItemAvatar>
         <Tooltip title={<HuntInfo hunt={hunt} />}>
-          {hunt.mob.icon ? <MobIcon src={hunt.mob.icon} /> : <Avatar />}
+          <MobIcon src={mobIconUrl(mob)} />
         </Tooltip>
       </ListItemAvatar>
       <ListItemText
-        primary={hunt.mob.name}
+        primary={mob.name}
         primaryTypographyProps={{
-          style: { color: getTierColor(hunt.mob.tier) },
+          style: { color: getTierColor(mob.tier) },
         }}
         secondary={<SpawnTime hunt={hunt} />}
         secondaryTypographyProps={{ component: "span" }}
@@ -64,16 +79,14 @@ export const HuntListItem: React.FC<HuntListItemProps> = ({
         </Tooltip>
         <Tooltip
           title={
-            hunt.mob.tombstone
-              ? "Tombstone location"
-              : "Does not leave a tombstone"
+            mob.tombstone ? "Tombstone location" : "Does not leave a tombstone"
           }
         >
           <span>
             <IconButton
               size={buttonSize}
               onClick={() => onEditTombstoneLocation(hunt)}
-              disabled={!hunt.mob.tombstone}
+              disabled={!mob.tombstone}
             >
               <Room />
             </IconButton>
@@ -100,6 +113,17 @@ export const HuntListItem: React.FC<HuntListItemProps> = ({
                     <Update fontSize="small" />
                   </ListItemIcon>
                   <Typography variant="inherit">Edit kill time</Typography>
+                </MenuItem>
+                <MenuItem
+                  onClick={() => {
+                    onEditMobInfo(hunt);
+                    popupState.close();
+                  }}
+                >
+                  <ListItemIcon>
+                    <Info fontSize="small" />
+                  </ListItemIcon>
+                  <Typography variant="inherit">Edit monster info</Typography>
                 </MenuItem>
                 <MenuItem
                   onClick={() => {

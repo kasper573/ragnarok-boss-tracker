@@ -1,18 +1,21 @@
 import { MapLocation } from "../state/MapLocation";
-import React from "react";
+import React, { ComponentType, PropsWithChildren } from "react";
 import { MapView } from "./MapView";
-import { MapPin } from "./MapPin";
+import { MapPinTombstone } from "./MapPin";
 
-export type MapLocationPickerProps = {
+export type MapLocationPickerProps = PropsWithChildren<{
   imageUrl: string;
   value?: MapLocation;
   onChange: (value: MapLocation) => void;
-};
+  pin?: ComponentType<{ x: number; y: number }>;
+}>;
 
 export const MapLocationPicker: React.FC<MapLocationPickerProps> = ({
   imageUrl,
   value,
   onChange,
+  children,
+  pin: Pin = MapPinTombstone,
 }) => {
   const emitLocation = (e: React.MouseEvent<HTMLDivElement>) => {
     const { x, y, width, height } = e.currentTarget.getBoundingClientRect();
@@ -23,7 +26,8 @@ export const MapLocationPicker: React.FC<MapLocationPickerProps> = ({
       style={{ backgroundImage: `url(${imageUrl})` }}
       onClick={emitLocation}
     >
-      {value && <MapPin x={value[0]} y={value[1]} />}
+      {value && <Pin x={value[0]} y={value[1]} />}
+      {children}
     </MapView>
   );
 };

@@ -5,17 +5,19 @@ import { Tooltip, useMediaQuery, useTheme } from "@material-ui/core";
 import { abbreviate } from "../functions/abbreviate";
 import { getTierColor } from "../functions/getTierColor";
 import { DropList } from "./DropList";
+import { useSelector } from "../state/store";
+import { selectMob } from "../state/selectors";
 
 export type HuntInfoProps = { hunt: Hunt };
 
-export const HuntInfo: React.FC<HuntInfoProps> = ({
-  hunt: {
-    map,
-    mob: { name, spawnCooldown, spawnWindow, tier, drops },
-  },
-}) => {
+export const HuntInfo: React.FC<HuntInfoProps> = ({ hunt }) => {
   const theme = useTheme();
   const compact = useMediaQuery(theme.breakpoints.down("xs"));
+  const mob = useSelector(selectMob(hunt.id));
+  if (!mob) {
+    return null;
+  }
+  const { name, spawnCooldown, spawnWindow, tier, drops } = mob;
   const titleColor = getTierColor(tier);
   const mvpDrops = drops ? drops.filter(({ mvp }) => mvp) : [];
   const regularDrops = drops ? drops.filter(({ mvp }) => !mvp) : [];
@@ -48,7 +50,7 @@ export const HuntInfo: React.FC<HuntInfoProps> = ({
       </Typography>
       <Typography noWrap>
         {compact ? "" : "Map: "}
-        {map.id}
+        {mob.mapId}
       </Typography>
       {regularDrops.length > 0 && (
         <>

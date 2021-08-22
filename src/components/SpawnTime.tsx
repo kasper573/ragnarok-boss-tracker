@@ -1,16 +1,15 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
 import { useTimer } from "../hooks/useTimer";
-import { Hunt } from "../state/Hunt";
+import { Hunt, useHuntWindow } from "../state/Hunt";
 import { TimeText } from "./TimeText";
 
 export type SpawnTimeProps = {
   hunt: Hunt;
 };
 
-export const SpawnTime: React.FC<SpawnTimeProps> = ({
-  hunt: { start, end },
-}) => {
+export const SpawnTime: React.FC<SpawnTimeProps> = ({ hunt }) => {
+  const [start, end] = useHuntWindow(hunt);
   const now = useTimer();
   // Spawn time is in the future
   if (start && now < start) {
