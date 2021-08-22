@@ -69,11 +69,12 @@ export const App = ({ theme }: { theme: Theme }) => {
                   value={editedHunt.killTime}
                   open={visibleEditor === "time"}
                   onClose={stopEditing}
-                  onChange={(killTime) =>
+                  onChange={(killTime) => {
                     dispatch(
                       slice.actions.setKillTime({ id: editedHunt.id, killTime })
-                    )
-                  }
+                    );
+                    stopEditing();
+                  }}
                 />
                 <HuntLocationEditor
                   value={editedHunt}
