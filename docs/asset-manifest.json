@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "./static/js/main.8c3dae35.chunk.js",
-    "main.js.map": "./static/js/main.8c3dae35.chunk.js.map",
-    "runtime-main.js": "./static/js/runtime-main.d84c3e8f.js",
-    "runtime-main.js.map": "./static/js/runtime-main.d84c3e8f.js.map",
-    "static/js/2.c2d9822d.chunk.js": "./static/js/2.c2d9822d.chunk.js",
-    "static/js/2.c2d9822d.chunk.js.map": "./static/js/2.c2d9822d.chunk.js.map",
-    "index.html": "./index.html",
-    "static/js/2.c2d9822d.chunk.js.LICENSE.txt": "./static/js/2.c2d9822d.chunk.js.LICENSE.txt"
+    "main.js": "/ragnarok-boss-tracker/static/js/main.f55f4fff.chunk.js",
+    "main.js.map": "/ragnarok-boss-tracker/static/js/main.f55f4fff.chunk.js.map",
+    "runtime-main.js": "/ragnarok-boss-tracker/static/js/runtime-main.0842d436.js",
+    "runtime-main.js.map": "/ragnarok-boss-tracker/static/js/runtime-main.0842d436.js.map",
+    "static/js/2.e9ed8001.chunk.js": "/ragnarok-boss-tracker/static/js/2.e9ed8001.chunk.js",
+    "static/js/2.e9ed8001.chunk.js.map": "/ragnarok-boss-tracker/static/js/2.e9ed8001.chunk.js.map",
+    "index.html": "/ragnarok-boss-tracker/index.html",
+    "static/js/2.e9ed8001.chunk.js.LICENSE.txt": "/ragnarok-boss-tracker/static/js/2.e9ed8001.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.d84c3e8f.js",
-    "static/js/2.c2d9822d.chunk.js",
-    "static/js/main.8c3dae35.chunk.js"
+    "static/js/runtime-main.0842d436.js",
+    "static/js/2.e9ed8001.chunk.js",
+    "static/js/main.f55f4fff.chunk.js"
   ]
 }
