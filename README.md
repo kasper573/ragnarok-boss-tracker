@@ -2,7 +2,7 @@
 
 A boss tracker for Ragnarok Online. 
 
-[Demo](https://ksandin.github.io/ragnarok-boss-tracker/)
+[Demo](https://kasper573.github.io/ragnarok-boss-tracker/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and contain all base scripts that come with it. 
 
